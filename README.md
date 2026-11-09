@@ -9,5 +9,6 @@ Strona z wynikami badań do pracy inżynierskiej
 | `index.html` | strona (ta sama co na claude.ai; tutaj czyta dane z plików poniżej) |
 | `dane/dziennik.json` | wszystkie wpisy (`entries`) i receptury (`mixes`) |
 | `zdjecia/<id>.jpg` | zdjęcia; `id` jak w polu `photos` wpisu |
+| `kalkulatory/masa.html` | kalkulator MASA (projekt mieszanki), zakładka „Kalkulator MMA” |
 
 Przycisk w prawym górnym rogu strony: pobranie kopii (JSON, CSV do Excela) i podgląd wgranej kopii.
