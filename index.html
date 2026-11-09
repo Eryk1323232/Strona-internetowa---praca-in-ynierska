@@ -1,4 +1,11 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
 <title>Dziennik badań MMA</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -130,6 +137,49 @@ dl.spec dd{margin:0;font-family:var(--f-mono)}
 .status{font-size:14px;color:var(--muted)}
 footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 
+/* top row + backup button (wzór: Pracownia → Kopia zapasowa) */
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.kp-btn{position:relative;flex:none;width:40px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);cursor:pointer}
+.kp-btn:hover{border-color:var(--accent);color:var(--accent)}
+.kp-btn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.kp-dot{display:none;position:absolute;top:-4px;right:-4px;width:11px;height:11px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 2px var(--bg)}
+.kp-btn.due{border-color:var(--amber);color:var(--amber);animation:kpPulse 2.4s ease-in-out infinite}
+.kp-btn.due .kp-dot{display:block}
+.kp-btn.pv{background:var(--amber);border-color:var(--amber);color:var(--surface)}
+@keyframes kpPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--amber) 45%,transparent)}50%{box-shadow:0 0 0 6px transparent}}
+.kp-scrim{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.45)}
+.kp-panel{position:fixed;top:0;right:0;bottom:0;z-index:41;width:min(440px,100vw);display:flex;flex-direction:column;background:var(--bg);border-left:1px solid var(--line);box-shadow:-12px 0 40px rgba(0,0,0,.3);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.kp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:20px 20px 14px;border-bottom:1px solid var(--line)}
+.kp-head h2{font-size:22px;margin-top:4px}
+.kp-close{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--muted);cursor:pointer;flex:none}
+.kp-close:hover{color:var(--ink);border-color:var(--ink)}
+.kp-body{padding:16px 20px 24px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+.kp-card{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.kp-card.due{border-color:var(--amber)}
+.kp-card b{font-size:17px;font-weight:600}
+.kp-card .kp-when{font-family:var(--f-mono);font-weight:500}
+.kp-card.due .kp-when{color:var(--amber)}
+.kp-card p{font-size:14px;line-height:1.5;color:var(--muted);margin-bottom:6px}
+.kp-main,.kp-file{position:relative;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:999px;font:600 14px var(--f-body);cursor:pointer}
+.kp-main{border:0;background:var(--ink);color:var(--bg)}
+.kp-main:hover{background:var(--accent);color:var(--surface)}
+.kp-main:disabled{opacity:.4;cursor:not-allowed}
+.kp-card.due .kp-main{background:var(--amber);color:var(--surface)}
+.kp-file{border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.kp-file:hover{border-color:var(--ink)}
+.kp-file:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.kp-file input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.kp-main svg,.kp-file svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.kp-pv{border-color:var(--amber);background:var(--amber-soft)}
+.kp-msg{font-size:14px;color:var(--accent)} .kp-msg.err{color:#B2412B}
+.kp-note{font-size:13px;color:var(--muted)}
+.kp-bar{position:relative;z-index:6;display:flex;align-items:center;justify-content:center;gap:10px 14px;flex-wrap:wrap;padding:9px 16px;margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)));background:var(--amber);color:var(--surface);font-size:14px;text-align:center}
+.kp-bar button{border:1px solid currentColor;background:none;color:inherit;border-radius:999px;padding:4px 14px;font:600 13px var(--f-body);cursor:pointer}
+.kp-bar button:hover{background:var(--surface);color:var(--amber)}
+@media (max-width:560px){.kp-panel{top:auto;left:0;width:auto;height:min(88dvh,100%);border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;padding-left:env(safe-area-inset-left,0px)}}
+@media (prefers-reduced-motion:reduce){.kp-btn.due{animation:none}}
+
 .lightbox{position:fixed;inset:0;background:rgba(12,12,10,.9);display:grid;place-items:center;z-index:50;
   padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .lightbox figure{margin:0;display:grid;gap:10px;max-width:100%;justify-items:center}
@@ -139,9 +189,16 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 @media (prefers-reduced-motion:reduce){.photos img{transition:none}}
 </style>
 
+<div class="kp-bar" id="kpBar" role="status" hidden></div>
 <div class="wrap">
   <header class="thesis">
-    <span class="label">Praca inżynierska · Politechnika Białostocka · budownictwo drogowe</span>
+    <div class="toprow">
+      <span class="label">Praca inżynierska · Politechnika Białostocka · budownictwo drogowe</span>
+      <button type="button" class="kp-btn" id="kpBtn" aria-label="Kopia zapasowa" title="Kopia zapasowa">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7.5" ry="2.8"/><path d="M4.5 6v12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6"/><path d="M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/></svg>
+        <span class="kp-dot" aria-hidden="true"></span>
+      </button>
+    </div>
     <h1>Ocena właściwości mieszanek mineralno-asfaltowych z zastosowaniem lepiszczy pochodzenia roślinnego</h1>
     <div class="meta">
       <span>Autor: <b>Eryk Bazeyan</b></span>
@@ -157,7 +214,6 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     <a href="#wyniki" data-v="wyniki">Wyniki</a>
     <a href="#mieszanki" data-v="mieszanki">Mieszanki</a>
     <a href="#zdjecia" data-v="zdjecia">Zdjęcia</a>
-    <a href="#dane" data-v="dane">Kopia danych</a>
   </nav>
 
   <main>
@@ -171,18 +227,6 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     <section id="v-wyniki" hidden><div id="results"></div></section>
     <section id="v-mieszanki" hidden><div id="mixes"></div></section>
     <section id="v-zdjecia" hidden><div id="gallery"></div></section>
-    <section id="v-dane" hidden>
-      <div class="prose">
-        <h2>Kopia danych</h2>
-        <p>Dziennik prowadzi Claude na podstawie notatek, wyników i zdjęć przesyłanych w czacie. Wszystko jest zapisane w bazie tej strony na serwerze, a zdjęcia w jej magazynie plików, więc nic nie zginie po zamknięciu przeglądarki.</p>
-        <p>Dodatkową kopię na własny dysk możesz pobrać tutaj. Plik CSV otwiera się w Excelu i zawiera wszystkie wartości kluczowe z badań.</p>
-        <div class="toolbar">
-          <button class="btn" id="expJson" type="button">Pobierz kopię (JSON)</button>
-          <button class="btn ghost" id="expCsv" type="button">Pobierz wyniki (CSV)</button>
-          <span class="status" id="expStatus"></span>
-        </div>
-      </div>
-    </section>
   </main>
   <footer><span id="stats" class="mono"></span><span id="updated" class="mono"></span></footer>
 </div>
@@ -195,13 +239,20 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 const STAGES=[{n:1,t:"Analiza literatury"},{n:2,t:"Projekt i wykonanie próbek"},{n:3,t:"Badania laboratoryjne"},{n:4,t:"Analiza wyników i wnioski"}];
 const MONTHS=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"];
 const S={entries:[],mixes:[],loaded:false,err:"",stage:0,q:""};
-let db=null,downloads=null;
+let db=null,downloads=null,canEdit=false;
+/* MODE: "claude" = baza claude.ai; "pliki" = GitHub Pages / inny hosting → dane/dziennik.json + zdjecia/<id>.jpg z repozytorium */
+const MODE=(window.claude&&typeof window.claude.use==="function")?"claude":"pliki";
+const LIVE={entries:[],mixes:[]};   /* aktualne dane; S.* pokazuje je albo wgraną kopię (podgląd) */
+let PODGLAD=null;                    /* {plik,t,entries,mixes} gdy oglądasz wgraną kopię */
+const photoSrc=id=>MODE==="claude"?"/_blob/"+id:"zdjecia/"+encodeURIComponent(id)+".jpg";
+function show(){const src=PODGLAD||LIVE;S.entries=[...src.entries].sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.createdAt||"").localeCompare(a.createdAt||""));
+  S.mixes=[...src.mixes].sort((a,b)=>(a.order??99)-(b.order??99)||String(a.code).localeCompare(String(b.code)));render();kopiaBtn()}
 const $=s=>document.querySelector(s);
 const el=(tag,attrs={},...kids)=>{const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(v==null)continue;if(k==="class")e.className=v;else if(k==="text")e.textContent=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v)}for(const k of kids)if(k!=null)e.append(k);return e};
 const isNum=v=>typeof v==="number"||(typeof v==="string"&&/^[-−]?\d+([.,]\d+)?$/.test(v.trim()));
 const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
 
-const VIEWS=["dziennik","wyniki","mieszanki","zdjecia","dane"];
+const VIEWS=["dziennik","wyniki","mieszanki","zdjecia"];
 function route(){const h=location.hash.slice(1);const v=VIEWS.includes(h)?h:"dziennik";
   for(const x of VIEWS)$("#v-"+x).hidden=x!==v;
   document.querySelectorAll("nav.tabs a").forEach(a=>{if(a.dataset.v===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}
@@ -219,7 +270,7 @@ function tableEl(t,cap){if(!t||!Array.isArray(t.columns)||!Array.isArray(t.rows)
   const body=el("tbody");for(const r of t.rows){const tr=el("tr");r.forEach(v=>tr.append(el("td",{class:isNum(v)?"num":null,text:v==null?"":String(v)})));body.append(tr)}tb.append(body);
   const w=el("div",{class:"tbl"},tb);const c=cap||t.caption;return c?el("div",{class:"tcap"},el("span",{class:"label",text:c}),w):w}
 function photosEl(ph,title,sub){if(!Array.isArray(ph)||!ph.length)return null;const g=el("div",{class:"photos"+(ph.length===1?" one":"")});
-  for(const p of ph){const src="/_blob/"+p.id;const cap=p.caption||title||"";const img=el("img",{src,alt:cap||"Zdjęcie",loading:"lazy"});
+  for(const p of ph){const src=photoSrc(p.id);const cap=p.caption||title||"";const img=el("img",{src,alt:cap||"Zdjęcie",loading:"lazy"});
     g.append(el("figure",{},el("button",{type:"button","aria-label":"Powiększ: "+cap,onclick:()=>openLb(src,cap)},img),cap||sub?el("figcaption",{text:cap+(sub?" — "+sub:"")}):null))}return g}
 function entryEl(e){const f=fmtDate(e.date);const st=STAGES.find(s=>s.n===+e.stage);
   const card=el("div",{class:"card"},el("div",{class:"chips"},st?el("span",{class:"chip st",text:"Etap "+st.n+" · "+st.t}):null,e.mix?el("span",{class:"chip mix",text:e.mix}):null,e.test?el("span",{class:"chip",text:e.test}):null,e.norm?el("span",{class:"chip",text:e.norm}):null),
@@ -263,7 +314,7 @@ function renderMixes(){const box=$("#mixes");box.replaceChildren();
 function renderGallery(){const box=$("#gallery");box.replaceChildren();const all=[];
   S.entries.forEach(e=>(e.photos||[]).forEach(p=>all.push({p,title:e.title,sub:fmtDate(e.date).full+(e.mix?" · "+e.mix:"")})));
   if(!all.length){box.append(emptyEl("Brak zdjęć.","Zdjęcia próbek, stanowisk i wyników badań będą zebrane tutaj — przydadzą się jako rysunki w pracy."));return}
-  const g=el("div",{class:"photos"});all.forEach(({p,title,sub})=>{const src="/_blob/"+p.id;const cap=p.caption||title;
+  const g=el("div",{class:"photos"});all.forEach(({p,title,sub})=>{const src=photoSrc(p.id);const cap=p.caption||title;
     g.append(el("figure",{},el("button",{type:"button","aria-label":"Powiększ: "+cap,onclick:()=>openLb(src,cap+" — "+sub)},el("img",{src,alt:cap,loading:"lazy"})),el("figcaption",{text:cap+" — "+sub})))});box.append(g)}
 function renderFooter(){const ph=S.entries.reduce((a,e)=>a+(e.photos||[]).length,0);
   $("#stats").textContent=`${S.entries.length} ${plural(S.entries.length,"wpis","wpisy","wpisów")} · ${S.mixes.length} ${plural(S.mixes.length,"mieszanka","mieszanki","mieszanek")} · ${ph} ${plural(ph,"zdjęcie","zdjęcia","zdjęć")}`;
@@ -274,27 +325,94 @@ $("#lbClose").onclick=()=>$("#lb").hidden=true;$("#lb").onclick=e=>{if(e.target.
 addEventListener("keydown",e=>{if(e.key==="Escape")$("#lb").hidden=true});
 $("#q").addEventListener("input",e=>{S.q=e.target.value.trim().toLowerCase();renderFeed()});
 
-async function save(name,text,type){const s=$("#expStatus");
-  if(!downloads){s.textContent="Pobieranie plików nie działa w tym widoku — otwórz stronę w przeglądarce, zalogowany do claude.ai.";return}
-  try{await downloads.save({filename:name,data:new Blob([text],{type})});s.textContent="Pobrano: "+name}catch(e){s.textContent="Nie pobrano pliku."}}
+/* ---------- KOPIA ZAPASOWA (przycisk w prawym górnym rogu, jak w Pracowni) ----------
+   • Pobierz kopię — plik .json ze wszystkimi wpisami i recepturami (+ CSV z wynikami do Excela).
+   • Przycisk świeci, gdy od ostatniej kopii minęło 7 dni.
+   • Wgraj kopię — podgląd w tej karcie; nic nie jest nadpisywane. Na claude.ai właściciel może potem „Przywrócić” brakujące wpisy do bazy. */
+const KOPIA_DNI=7;
+const kopiaT=()=>{try{return +localStorage.getItem("mmaKopiaT")||0}catch(e){return 0}};
+const kopiaDue=()=>!PODGLAD&&S.loaded&&LIVE.entries.length>0&&Date.now()-kopiaT()>KOPIA_DNI*864e5;
+const kopiaDzien=t=>new Date(t).toLocaleDateString("pl-PL",{day:"numeric",month:"long",year:"numeric"});
 const stamp=()=>new Date().toISOString().slice(0,10);
-$("#expJson").onclick=()=>save(`dziennik-mma-${stamp()}.json`,JSON.stringify({exported:new Date().toISOString(),entries:S.entries,mixes:S.mixes},null,2),"application/json");
-$("#expCsv").onclick=()=>{const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const out=[["data","etap","mieszanka","badanie","norma","parametr","wartosc","jednostka","wpis"].join(";")];
-  S.entries.forEach(e=>(e.summary||[]).forEach(k=>out.push([e.date,e.stage,e.mix,e.test,e.norm,k.label,String(k.value).replace(".",","),k.unit,e.title].map(q).join(";"))));
-  save(`wyniki-mma-${stamp()}.csv`,"﻿"+out.join("\r\n"),"text/csv")};
+const strip=a=>a.map(({_id,...r})=>({_id,...r}));
+let kpOpen=false,kpMsg="",kpErr=false,kpArm=false;
+async function saveFile(name,blob){
+  if(downloads){try{await downloads.save({filename:name,data:blob});return true}catch(e){if(e&&e.code==="declined")return false;throw e}}
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);return true}
+async function kopiaPobierz(){const plik=`Dziennik-MMA-kopia-${stamp()}.json`;
+  const blob=new Blob([JSON.stringify({app:"Dziennik MMA",v:1,t:Date.now(),entries:strip(LIVE.entries),mixes:strip(LIVE.mixes)},null,1)],{type:"application/json"});
+  try{if(await saveFile(plik,blob)){try{localStorage.setItem("mmaKopiaT",String(Date.now()))}catch(e){}kpMsg=`Zapisano „${plik}” (${LIVE.entries.length} ${plural(LIVE.entries.length,"wpis","wpisy","wpisów")}).`;kpErr=false}else{kpMsg="Anulowano.";kpErr=false}}
+  catch(e){kpMsg="Nie udało się zapisać pliku.";kpErr=true}kopiaBtn();kopiaRender()}
+async function kopiaCsv(){const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const out=[["data","etap","mieszanka","badanie","norma","parametr","wartosc","jednostka","wpis"].join(";")];
+  LIVE.entries.forEach(e=>(e.summary||[]).forEach(k=>out.push([e.date,e.stage,e.mix,e.test,e.norm,k.label,String(k.value).replace(".",","),k.unit,e.title].map(q).join(";"))));
+  try{const ok=await saveFile(`Wyniki-MMA-${stamp()}.csv`,new Blob(["﻿"+out.join("\r\n")],{type:"text/csv"}));kpMsg=ok?"Zapisano wyniki (CSV — otwórz w Excelu).":"Anulowano.";kpErr=false}catch(e){kpMsg="Nie udało się zapisać pliku.";kpErr=true}kopiaRender()}
+function kopiaWgraj(file){const r=new FileReader();
+  r.onload=()=>{let j=null;try{j=JSON.parse(r.result)}catch(e){}
+    if(!j||j.app!=="Dziennik MMA"||!Array.isArray(j.entries)){kpMsg="To nie jest plik kopii tego dziennika.";kpErr=true;return kopiaRender()}
+    PODGLAD={plik:file.name,t:+j.t||0,entries:j.entries,mixes:Array.isArray(j.mixes)?j.mixes:[]};kpMsg="";kpOpen=false;kopiaRender();show();window.scrollTo(0,0)};
+  r.onerror=()=>{kpMsg="Nie udało się odczytać pliku.";kpErr=true;kopiaRender()};r.readAsText(file)}
+function kopiaKoniec(){PODGLAD=null;kpArm=false;show()}
+const missing=()=>PODGLAD?{e:PODGLAD.entries.filter(x=>x._id&&!LIVE.entries.some(y=>y._id===x._id)),m:PODGLAD.mixes.filter(x=>x._id&&!LIVE.mixes.some(y=>y._id===x._id))}:{e:[],m:[]};
+async function kopiaPrzywroc(){const {e,m}=missing();const bar=$("#kpBar");
+  try{for(const x of e){const {_id,...d}=x;await db.doc("entries/"+_id).set(d)}for(const x of m){const {_id,...d}=x;await db.doc("mixes/"+_id).set(d)}
+    PODGLAD=null;kpArm=false;show();kpMsg=`Przywrócono ${e.length+m.length} ${plural(e.length+m.length,"pozycję","pozycje","pozycji")} z kopii.`;kpErr=false;kpOpen=true;kopiaRender()}
+  catch(err){bar.querySelector("[data-kp=restore]")?.replaceWith(el("span",{text:"Nie przywrócono — spróbuj ponownie."}))}}
+function kopiaBtn(){const b=$("#kpBtn");const due=kopiaDue();b.classList.toggle("due",due);b.classList.toggle("pv",!!PODGLAD);
+  b.title=PODGLAD?"Podgląd kopii — kliknij, by zakończyć":due?"Kopia zapasowa — minął tydzień, zrób nową":"Kopia zapasowa";
+  const bar=$("#kpBar");bar.hidden=!PODGLAD;if(!PODGLAD){bar.replaceChildren();return}
+  const {e,m}=missing();const n=e.length+m.length;
+  bar.replaceChildren(el("span",{},el("b",{text:"Podgląd kopii"}),` ${PODGLAD.t?"z "+kopiaDzien(PODGLAD.t):PODGLAD.plik} — aktualne dane są nietknięte`),
+    MODE==="claude"&&canEdit&&n?el("button",{type:"button","data-kp":kpArm?"restore":"arm",text:kpArm?`Potwierdź: dodaj ${n} do strony`:`Przywróć brakujące (${n})`}):null,
+    el("button",{type:"button","data-kp":"end",text:"Zakończ podgląd"}))}
+function kopiaRender(){let sc=$("#kpScrim"),pn=$("#kpPanel");
+  if(!kpOpen){sc&&sc.remove();pn&&pn.remove();return}
+  if(!pn){sc=el("div",{id:"kpScrim",class:"kp-scrim","data-kp":"close"});pn=el("aside",{id:"kpPanel",class:"kp-panel",role:"dialog","aria-modal":"true","aria-label":"Kopia zapasowa"});document.body.append(sc,pn)}
+  const t=kopiaT(),due=kopiaDue();const ic=d=>{const s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.setAttribute("viewBox","0 0 16 16");s.setAttribute("aria-hidden","true");s.innerHTML=`<path d="${d}"/>`;return s};
+  const file=el("input",{type:"file",accept:".json,application/json",id:"kpFile"});file.addEventListener("change",()=>{if(file.files[0])kopiaWgraj(file.files[0])});
+  pn.replaceChildren(
+    el("div",{class:"kp-head"},el("div",{},el("span",{class:"label",text:"Dane dziennika"}),el("h2",{text:"Kopia zapasowa"})),el("button",{type:"button",class:"kp-close","data-kp":"close","aria-label":"Zamknij",text:"✕"})),
+    el("div",{class:"kp-body"},
+      PODGLAD?el("div",{class:"kp-card kp-pv"},el("b",{text:"Teraz oglądasz kopię"}),el("p",{text:`${PODGLAD.plik}${PODGLAD.t?" · z "+kopiaDzien(PODGLAD.t):""}. Aktualne dane strony są nietknięte.`}),el("button",{type:"button",class:"kp-main","data-kp":"end",text:"Zakończ podgląd"})):null,
+      el("div",{class:"kp-card"+(due?" due":"")},el("span",{class:"label",text:"Ostatnia kopia na tym urządzeniu"}),el("b",{class:"kp-when",text:t?kopiaDzien(t):"jeszcze nie zrobiona"}),
+        el("p",{text:(due?(t?`Minęło ${Math.floor((Date.now()-t)/864e5)} dni — czas na nową. `:"Zrób pierwszą kopię. "):t?`Kolejna za ${Math.max(1,Math.ceil((t+KOPIA_DNI*864e5-Date.now())/864e5))} dni. `:"")+"Plik zawiera wszystkie wpisy, wyniki i receptury (bez samych zdjęć — te są w magazynie strony i na GitHubie)."}),
+        el("button",{type:"button",class:"kp-main","data-kp":"get",disabled:PODGLAD?"":null},ic("M8 2v8M4.5 6.5 8 10l3.5-3.5M2.5 13.5h11"),"Pobierz kopię"),
+        el("button",{type:"button",class:"kp-file","data-kp":"csv",style:"margin-top:6px"},ic("M3 2.5h10v11H3zM3 6.5h10M3 10h10M7 2.5v11"),"Wyniki do Excela (CSV)")),
+      el("div",{class:"kp-card"},el("span",{class:"label",text:"Wgraj dane"}),el("b",{text:"Podgląd i przywracanie"}),
+        el("p",{text:"Otwiera plik kopii w tej karcie: przeglądasz stary stan dziennika, a obecne dane zostają nietknięte."+(MODE==="claude"&&canEdit?" Jeśli w kopii są wpisy, których brakuje na stronie, możesz je przywrócić jednym przyciskiem.":"")}),
+        el("label",{class:"kp-file"},file,ic("M8 13V5M4.5 8.5 8 5l3.5 3.5M2.5 2.5h11"),"Wgraj kopię…")),
+      kpMsg?el("p",{class:"kp-msg"+(kpErr?" err":""),role:"status",text:kpMsg}):null,
+      el("p",{class:"kp-note",text:MODE==="claude"?"Dane są zapisane w bazie strony na claude.ai, zdjęcia w jej magazynie plików. Kopię trzymaj dodatkowo na dysku komputera.":"Ta wersja strony czyta dane z repozytorium na GitHubie. Aktualizuje je Claude po każdej nowej porcji materiału."})));
+  pn.querySelector(".kp-close").focus()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-kp]");if(!b)return;const a=b.dataset.kp;
+  if(a==="open"){if(PODGLAD&&!kpOpen){kpOpen=true;return kopiaRender()}kpOpen=true;return kopiaRender()}
+  if(a==="close"){kpOpen=false;kpMsg="";return kopiaRender()}
+  if(a==="get")return kopiaPobierz();if(a==="csv")return kopiaCsv();
+  if(a==="end"){kpOpen=false;kopiaRender();return kopiaKoniec()}
+  if(a==="arm"){kpArm=true;return kopiaBtn()}if(a==="restore")return kopiaPrzywroc()});
+$("#kpBtn").dataset.kp="open";
+addEventListener("keydown",e=>{if(kpOpen&&e.key==="Escape"){kpOpen=false;kpMsg="";kopiaRender()}});
+document.addEventListener("error",e=>{const t=e.target;if(t&&t.tagName==="IMG"&&t.closest(".photos"))t.closest("figure").hidden=true},true);
 
-async function start(){route();render();
+/* ---------- dane ---------- */
+async function startPliki(){
+  try{const r=await fetch("dane/dziennik.json",{cache:"no-cache"});if(!r.ok)throw new Error(r.status);const j=await r.json();
+    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];S.loaded=true}
+  catch(e){S.err="Nie znaleziono pliku dane/dziennik.json obok strony."}
+  show()}
+async function start(){route();show();
+  if(MODE==="pliki")return startPliki();
   db=await claude.use("db");
-  if(!db){S.err="Otwórz stronę zalogowany do claude.ai.";render();return}
+  if(!db){S.err="Otwórz stronę zalogowany do claude.ai.";show();return}
   downloads=await claude.use("downloads");
-  const tmo=setTimeout(()=>{if(!S.loaded){S.err="Baza nie odpowiada — sprawdź połączenie z internetem.";render()}},10000);
-  db.collection("entries").onSnapshot(snap=>{S.entries=snap.docs.map(d=>({...d.data(),_id:d.id}));
-    S.entries.sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.createdAt||"").localeCompare(a.createdAt||""));
-    if(!snap.metadata.fromCache){S.loaded=true;S.err="";clearTimeout(tmo)}else if(snap.size)S.loaded=true;render()},
-    e=>{clearTimeout(tmo);S.err="Błąd bazy danych ("+e.code+").";render()});
-  db.collection("mixes").onSnapshot(snap=>{S.mixes=snap.docs.map(d=>({...d.data(),_id:d.id})).sort((a,b)=>(a.order??99)-(b.order??99)||String(a.code).localeCompare(String(b.code)));render()},()=>{});
+  const user=await claude.use("user");try{canEdit=!!(user&&await user.canEdit())}catch(e){}
+  const tmo=setTimeout(()=>{if(!S.loaded){S.err="Baza nie odpowiada — sprawdź połączenie z internetem.";show()}},10000);
+  db.collection("entries").onSnapshot(snap=>{LIVE.entries=snap.docs.map(d=>({...d.data(),_id:d.id}));
+    if(!snap.metadata.fromCache){S.loaded=true;S.err="";clearTimeout(tmo)}else if(snap.size)S.loaded=true;show()},
+    e=>{clearTimeout(tmo);S.err="Błąd bazy danych ("+e.code+").";show()});
+  db.collection("mixes").onSnapshot(snap=>{LIVE.mixes=snap.docs.map(d=>({...d.data(),_id:d.id}));show()},()=>{});
 }
 start();
 </script>
 
-</body></html>
+</body>
+</html>

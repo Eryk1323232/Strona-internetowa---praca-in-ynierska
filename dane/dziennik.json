@@ -1,0 +1,24 @@
+{
+ "app": "Dziennik MMA",
+ "entries": [
+  {
+   "conclusions": "Do ustalenia z promotorem przed rozpoczęciem badań: typ MMA, rodzaj dodatku pochodzenia roślinnego i jego dozowania, lista badań wraz z normami.",
+   "createdAt": "2026-11-09T21:30:00Z",
+   "date": "2026-11-09",
+   "description": "Karta dyplomowa podpisana przez promotora (dr inż. Andrzej Plewa).\n\nZakres pracy:\n1. Analiza literatury związanej z tematem pracy.\n2. Zaprojektowanie i wykonanie próbek wybranych MMA z zastosowaniem lepiszczy pochodzenia roślinnego.\n3. Wykonanie wybranych badań laboratoryjnych zaprojektowanych MMA.\n4. Analiza uzyskanych wyników badań, wnioski końcowe.\n\nSłowa kluczowe: mieszanka mineralno-asfaltowa, lepiszcza modyfikowane, upłynniacz pochodzenia roślinnego, lepiszcza pochodzenia roślinnego.",
+   "photos": [
+    {
+     "caption": "Karta dyplomowa z zatwierdzonym tematem",
+     "id": "073fc88dd097d6798f13f03e0b525204"
+    }
+   ],
+   "source": "claude",
+   "stage": 1,
+   "tables": [],
+   "title": "Start: zatwierdzony temat i zakres pracy",
+   "type": "notatka",
+   "_id": "2026-11-09-start"
+  }
+ ],
+ "mixes": []
+}
