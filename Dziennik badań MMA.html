@@ -1,0 +1,300 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Dziennik badań MMA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: lab notebook — thesis title block, 4-stage progress strip, timeline of dated records with a spine; results/mixes/photos as reading views */
+:root{
+  --bg:#EEF0EB;--surface:#FFFFFF;--sunk:#E4E7E0;--ink:#1F1E1B;--muted:#5D6158;--line:#D2D6CB;
+  --accent:#4F6B16;--accent-soft:#E2EACF;--amber:#9A6A08;--amber-soft:#F4E6C0;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --r:8px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#151613;--surface:#1E201B;--sunk:#262923;--ink:#E9EBE4;--muted:#A3A89B;--line:#363A31;
+  --accent:#A6C45A;--accent-soft:#2B3619;--amber:#E2B24A;--amber-soft:#3A2F14;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#151613;--surface:#1E201B;--sunk:#262923;--ink:#E9EBE4;--muted:#A3A89B;--line:#363A31;
+  --accent:#A6C45A;--accent-soft:#2B3619;--amber:#E2B24A;--amber-soft:#3A2F14;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:920px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+.label{font:500 11px/1.3 var(--f-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}
+
+/* header */
+header.thesis{padding-block:36px 24px;display:grid;gap:16px}
+.thesis h1{font-size:clamp(24px,4.4vw,38px);font-weight:800;letter-spacing:-.015em;max-width:26ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px 24px;font-size:14px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+.kw{display:flex;flex-wrap:wrap;gap:6px}
+.kw span{font-size:13px;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+
+.progress{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.stage{all:unset;box-sizing:border-box;cursor:pointer;padding:14px 14px 12px;display:grid;gap:6px;min-width:0;border-right:1px solid var(--line);position:relative}
+.stage:last-child{border-right:0}
+.stage:hover{background:var(--sunk)}
+.stage:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.stage[aria-pressed="true"]{background:var(--accent-soft)}
+.stage .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.stage .n{font:800 13px/1 var(--f-mono);color:var(--accent)}
+.stage .c{font:12px var(--f-mono);color:var(--muted)}
+.stage .t{font-size:14px;line-height:1.3;font-weight:500}
+.stage .bar{height:3px;border-radius:2px;background:var(--sunk)}
+.stage .bar i{display:block;height:100%;border-radius:2px;background:var(--accent)}
+@media (max-width:640px){.progress{grid-template-columns:repeat(2,minmax(0,1fr))}.stage:nth-child(2){border-right:0}.stage:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* tabs */
+nav.tabs{display:flex;gap:4px;overflow-x:auto;margin-block:24px 28px;border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+nav.tabs a{padding:12px 14px;text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px}
+nav.tabs a:hover{color:var(--ink)}
+nav.tabs a[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px}
+.toolbar .grow{flex:1 1 240px;min-width:0}
+input[type=search]{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px}
+.filter-note{font-size:14px;color:var(--muted)}
+.filter-note button{background:none;border:0;color:var(--accent);cursor:pointer;padding:0;text-decoration:underline}
+
+/* timeline */
+.feed{display:grid;gap:0;position:relative}
+.entry{display:grid;grid-template-columns:76px minmax(0,1fr);gap:20px;padding-bottom:36px;position:relative}
+.entry::before{content:"";position:absolute;left:37px;top:44px;bottom:0;width:1px;background:var(--line)}
+.entry:last-child::before{display:none}
+.entry .date{display:grid;justify-items:center;align-content:start;gap:2px;padding-top:4px}
+.entry .date .d{font:800 30px/1 var(--f-display)}
+.entry .date .m{font:12px var(--f-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;display:grid;gap:14px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 11px/1 var(--f-mono);padding:5px 8px;border-radius:4px;background:var(--sunk);color:var(--muted);letter-spacing:.03em}
+.chip.st{background:var(--accent-soft);color:var(--accent)}
+.chip.mix{background:var(--amber-soft);color:var(--amber);font-weight:600}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.005em}
+.desc{white-space:pre-wrap;max-width:66ch}
+.concl{background:var(--amber-soft);border-radius:6px;padding:10px 14px;max-width:66ch;display:grid;gap:2px}
+.concl .label{color:var(--amber)}
+.concl p{white-space:pre-wrap}
+@media (max-width:560px){
+  .entry{grid-template-columns:1fr;gap:8px;padding-bottom:28px}.entry::before{display:none}
+  .entry .date{display:flex;gap:8px;align-items:baseline;justify-items:start}.entry .date .d{font-size:20px}
+  .card{padding:16px}}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{background:var(--sunk);font:500 11px/1.3 var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+td.num{text-align:right;font-family:var(--f-mono)}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--sunk) 40%,transparent)}
+tr:last-child td{border-bottom:0}
+.tcap{display:grid;gap:6px}
+.summary{display:flex;flex-wrap:wrap;gap:10px}
+.kv{border-left:3px solid var(--accent);padding:2px 12px;display:grid}
+.kv .v{font:600 20px/1.3 var(--f-mono)}
+.kv .v small{font-size:13px;color:var(--muted);font-weight:400}
+
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.photos.one{grid-template-columns:minmax(0,360px)}
+.photos figure{margin:0;display:grid;gap:6px}
+.photos button{all:unset;cursor:zoom-in;display:block;border-radius:6px;overflow:hidden}
+.photos button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--sunk);display:block;transition:transform .2s}
+.photos.one img{aspect-ratio:auto;max-height:420px;object-fit:contain}
+.photos button:hover img{transform:scale(1.03)}
+.photos figcaption{font-size:13px;color:var(--muted);line-height:1.35}
+
+.empty{border:1px dashed var(--line);border-radius:var(--r);padding:28px 24px;color:var(--muted);display:grid;gap:6px;max-width:66ch}
+.empty b{color:var(--ink);font-size:17px}
+.group{display:grid;gap:12px;margin-bottom:36px}
+.group h2{font-size:22px}
+.links{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+.mixes{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.mixcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:10px;align-content:start}
+.mixcard .code{font:800 22px var(--f-display);color:var(--amber)}
+dl.spec{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:14px}
+dl.spec dt{color:var(--muted)}
+dl.spec dd{margin:0;font-family:var(--f-mono)}
+.prose{display:grid;gap:12px;max-width:66ch}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:var(--r);padding:9px 16px;font-weight:600;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.status{font-size:14px;color:var(--muted)}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+.lightbox{position:fixed;inset:0;background:rgba(12,12,10,.9);display:grid;place-items:center;z-index:50;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lightbox figure{margin:0;display:grid;gap:10px;max-width:100%;justify-items:center}
+.lightbox img{max-height:82vh;max-width:100%;border-radius:4px}
+.lightbox figcaption{color:#ECECE4;font-size:15px;text-align:center}
+.lightbox button{justify-self:end;background:none;border:1px solid #777;color:#ECECE4;border-radius:6px;padding:6px 12px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.photos img{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="thesis">
+    <span class="label">Praca inżynierska · Politechnika Białostocka · budownictwo drogowe</span>
+    <h1>Ocena właściwości mieszanek mineralno-asfaltowych z zastosowaniem lepiszczy pochodzenia roślinnego</h1>
+    <div class="meta">
+      <span>Autor: <b>Eryk Bazeyan</b></span>
+      <span>Promotor: <b>dr inż. Andrzej Plewa</b></span>
+      <span>Rok akad. <b class="mono">2026/2027</b></span>
+    </div>
+    <div class="kw"><span>mieszanka mineralno-asfaltowa</span><span>lepiszcza modyfikowane</span><span>upłynniacz pochodzenia roślinnego</span><span>lepiszcza pochodzenia roślinnego</span></div>
+    <div class="progress" id="stages" role="group" aria-label="Etapy pracy"></div>
+  </header>
+
+  <nav class="tabs" aria-label="Sekcje">
+    <a href="#dziennik" data-v="dziennik">Dziennik</a>
+    <a href="#wyniki" data-v="wyniki">Wyniki</a>
+    <a href="#mieszanki" data-v="mieszanki">Mieszanki</a>
+    <a href="#zdjecia" data-v="zdjecia">Zdjęcia</a>
+    <a href="#dane" data-v="dane">Kopia danych</a>
+  </nav>
+
+  <main>
+    <section id="v-dziennik">
+      <div class="toolbar">
+        <div class="grow"><input type="search" id="q" placeholder="Szukaj w dzienniku: mieszanka, badanie, norma…" aria-label="Szukaj wpisów"></div>
+        <span class="filter-note" id="fnote" hidden></span>
+      </div>
+      <div class="feed" id="feed"></div>
+    </section>
+    <section id="v-wyniki" hidden><div id="results"></div></section>
+    <section id="v-mieszanki" hidden><div id="mixes"></div></section>
+    <section id="v-zdjecia" hidden><div id="gallery"></div></section>
+    <section id="v-dane" hidden>
+      <div class="prose">
+        <h2>Kopia danych</h2>
+        <p>Dziennik prowadzi Claude na podstawie notatek, wyników i zdjęć przesyłanych w czacie. Wszystko jest zapisane w bazie tej strony na serwerze, a zdjęcia w jej magazynie plików, więc nic nie zginie po zamknięciu przeglądarki.</p>
+        <p>Dodatkową kopię na własny dysk możesz pobrać tutaj. Plik CSV otwiera się w Excelu i zawiera wszystkie wartości kluczowe z badań.</p>
+        <div class="toolbar">
+          <button class="btn" id="expJson" type="button">Pobierz kopię (JSON)</button>
+          <button class="btn ghost" id="expCsv" type="button">Pobierz wyniki (CSV)</button>
+          <span class="status" id="expStatus"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><span id="stats" class="mono"></span><span id="updated" class="mono"></span></footer>
+</div>
+
+<div class="lightbox" id="lb" hidden>
+  <figure><button type="button" id="lbClose">Zamknij ✕</button><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script>
+const STAGES=[{n:1,t:"Analiza literatury"},{n:2,t:"Projekt i wykonanie próbek"},{n:3,t:"Badania laboratoryjne"},{n:4,t:"Analiza wyników i wnioski"}];
+const MONTHS=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"];
+const S={entries:[],mixes:[],loaded:false,err:"",stage:0,q:""};
+let db=null,downloads=null;
+const $=s=>document.querySelector(s);
+const el=(tag,attrs={},...kids)=>{const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(v==null)continue;if(k==="class")e.className=v;else if(k==="text")e.textContent=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v)}for(const k of kids)if(k!=null)e.append(k);return e};
+const isNum=v=>typeof v==="number"||(typeof v==="string"&&/^[-−]?\d+([.,]\d+)?$/.test(v.trim()));
+const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
+
+const VIEWS=["dziennik","wyniki","mieszanki","zdjecia","dane"];
+function route(){const h=location.hash.slice(1);const v=VIEWS.includes(h)?h:"dziennik";
+  for(const x of VIEWS)$("#v-"+x).hidden=x!==v;
+  document.querySelectorAll("nav.tabs a").forEach(a=>{if(a.dataset.v===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}
+addEventListener("hashchange",route);
+
+function fmtDate(d){const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(d||"");return m?{d:+m[3],m:MONTHS[+m[2]-1]+" "+m[1],full:`${+m[3]} ${MONTHS[+m[2]-1]} ${m[1]}`}:{d:"–",m:"",full:""}}
+function render(){renderStages();renderFeed();renderResults();renderMixes();renderGallery();renderFooter()}
+function renderStages(){const box=$("#stages");box.replaceChildren();const max=Math.max(1,...STAGES.map(s=>S.entries.filter(e=>+e.stage===s.n).length));
+  for(const s of STAGES){const c=S.entries.filter(e=>+e.stage===s.n).length;
+    box.append(el("button",{class:"stage",type:"button","aria-pressed":String(S.stage===s.n),title:"Pokaż wpisy z etapu "+s.n,onclick:()=>{S.stage=S.stage===s.n?0:s.n;if(location.hash!=="#dziennik")location.hash="dziennik";render()}},
+      el("span",{class:"top"},el("span",{class:"n",text:"ETAP "+s.n}),el("span",{class:"c",text:c+" "+plural(c,"wpis","wpisy","wpisów")})),
+      el("span",{class:"t",text:s.t}),el("span",{class:"bar"},el("i",{style:`width:${c?Math.max(8,c/max*100):0}%`}))))}}
+function tableEl(t,cap){if(!t||!Array.isArray(t.columns)||!Array.isArray(t.rows)||!t.rows.length)return null;
+  const tb=el("table");const hr=el("tr");t.columns.forEach(c=>hr.append(el("th",{text:c})));tb.append(el("thead",{},hr));
+  const body=el("tbody");for(const r of t.rows){const tr=el("tr");r.forEach(v=>tr.append(el("td",{class:isNum(v)?"num":null,text:v==null?"":String(v)})));body.append(tr)}tb.append(body);
+  const w=el("div",{class:"tbl"},tb);const c=cap||t.caption;return c?el("div",{class:"tcap"},el("span",{class:"label",text:c}),w):w}
+function photosEl(ph,title,sub){if(!Array.isArray(ph)||!ph.length)return null;const g=el("div",{class:"photos"+(ph.length===1?" one":"")});
+  for(const p of ph){const src="/_blob/"+p.id;const cap=p.caption||title||"";const img=el("img",{src,alt:cap||"Zdjęcie",loading:"lazy"});
+    g.append(el("figure",{},el("button",{type:"button","aria-label":"Powiększ: "+cap,onclick:()=>openLb(src,cap)},img),cap||sub?el("figcaption",{text:cap+(sub?" — "+sub:"")}):null))}return g}
+function entryEl(e){const f=fmtDate(e.date);const st=STAGES.find(s=>s.n===+e.stage);
+  const card=el("div",{class:"card"},el("div",{class:"chips"},st?el("span",{class:"chip st",text:"Etap "+st.n+" · "+st.t}):null,e.mix?el("span",{class:"chip mix",text:e.mix}):null,e.test?el("span",{class:"chip",text:e.test}):null,e.norm?el("span",{class:"chip",text:e.norm}):null),
+    el("h3",{text:e.title||"Bez tytułu"}));
+  if(e.description)card.append(el("p",{class:"desc",text:e.description}));
+  if(Array.isArray(e.summary)&&e.summary.length){const s=el("div",{class:"summary"});for(const k of e.summary)s.append(el("div",{class:"kv"},el("span",{class:"label",text:k.label}),el("span",{class:"v"},String(k.value),k.unit?el("small",{text:" "+k.unit}):null)));card.append(s)}
+  (Array.isArray(e.tables)?e.tables:[]).forEach(t=>{const x=tableEl(t);if(x)card.append(x)});
+  const p=photosEl(e.photos,e.title);if(p)card.append(p);
+  if(e.conclusions)card.append(el("div",{class:"concl"},el("span",{class:"label",text:"Wnioski i uwagi"}),el("p",{text:e.conclusions})));
+  return el("article",{class:"entry",id:"e-"+e._id},el("div",{class:"date"},el("span",{class:"d",text:String(f.d)}),el("span",{class:"m",text:f.m})),card)}
+function matches(e){if(S.stage&&+e.stage!==S.stage)return false;if(!S.q)return true;
+  return [e.title,e.description,e.mix,e.test,e.norm,e.type,e.conclusions].join(" ").toLowerCase().includes(S.q)}
+function emptyEl(a,b){return el("div",{class:"empty"},el("b",{text:a}),b?el("span",{text:b}):null)}
+function renderFeed(){const box=$("#feed");box.replaceChildren();const fn=$("#fnote");
+  if(S.stage){fn.hidden=false;fn.replaceChildren("Etap "+S.stage+" · ",el("button",{type:"button",text:"pokaż wszystko",onclick:()=>{S.stage=0;render()}}))}else fn.hidden=true;
+  if(S.err){box.append(emptyEl("Nie można wczytać dziennika.",S.err));return}
+  if(!S.loaded){box.append(emptyEl("Wczytywanie dziennika…"));return}
+  if(!S.entries.length){box.append(emptyEl("Dziennik jest pusty.","Pierwsze wpisy pojawią się, gdy w czacie trafią tu notatki, wyniki lub zdjęcia z laboratorium."));return}
+  const list=S.entries.filter(matches);
+  if(!list.length){box.append(emptyEl("Brak pasujących wpisów.","Zmień wyszukiwanie albo pokaż wszystkie etapy."));return}
+  list.forEach(e=>box.append(entryEl(e)))}
+function jump(id){location.hash="dziennik";setTimeout(()=>document.getElementById("e-"+id)?.scrollIntoView({behavior:"smooth",block:"start"}),60)}
+function renderResults(){const box=$("#results");box.replaceChildren();
+  const withRes=S.entries.filter(e=>e.test&&((e.summary||[]).length||(e.tables||[]).length));
+  if(!withRes.length){box.append(emptyEl("Wyników badań jeszcze nie ma.","Tu zostaną zestawione wyniki według rodzaju badania, z porównaniem mieszanek — gotowe do przeniesienia do rozdziału z analizą."));return}
+  const groups={};withRes.slice().reverse().forEach(e=>(groups[e.test]=groups[e.test]||[]).push(e));
+  for(const[test,list]of Object.entries(groups)){const g=el("div",{class:"group"},el("h2",{text:test}));
+    const norms=[...new Set(list.map(e=>e.norm).filter(Boolean))];if(norms.length)g.append(el("span",{class:"label",text:norms.join(" · ")}));
+    const labels=[];list.forEach(e=>(e.summary||[]).forEach(k=>{const L=k.label+(k.unit?` [${k.unit}]`:"");if(!labels.includes(L))labels.push(L)}));
+    if(labels.length)g.append(tableEl({columns:["Mieszanka","Data",...labels],rows:list.map(e=>{const m={};(e.summary||[]).forEach(k=>m[k.label+(k.unit?` [${k.unit}]`:"")]=k.value);return[e.mix||"—",fmtDate(e.date).full,...labels.map(l=>m[l]??"—")]})}));
+    else list.forEach(e=>(e.tables||[]).forEach(t=>{const x=tableEl(t,(e.mix||"")+" · "+fmtDate(e.date).full);if(x)g.append(x)}));
+    const links=el("div",{class:"links"});list.forEach(e=>links.append(el("a",{href:"#dziennik",text:"→ "+(e.title||e.date),onclick:ev=>{ev.preventDefault();jump(e._id)}})));g.append(links);
+    box.append(g)}}
+function renderMixes(){const box=$("#mixes");box.replaceChildren();
+  if(!S.mixes.length){box.append(emptyEl("Receptury nie są jeszcze ustalone.","Tu znajdą się karty zaprojektowanych mieszanek: mieszanka referencyjna i mieszanki z dodatkiem pochodzenia roślinnego, każda z kodem używanym przy wynikach."));return}
+  const g=el("div",{class:"mixes"});
+  for(const m of S.mixes){const n=S.entries.filter(e=>e.mix===m.code).length;const spec=el("dl",{class:"spec"});
+    [["Typ MMA",m.mixType],["Lepiszcze",m.binder],["Dodatek roślinny",m.plantAdditive],["Dozowanie",m.dosage],["Zawartość lepiszcza",m.binderContent],["Kruszywo",m.aggregate]].forEach(([k,v])=>{if(v)spec.append(el("dt",{text:k}),el("dd",{text:String(v)}))});
+    g.append(el("div",{class:"mixcard"},el("span",{class:"code",text:m.code||"—"}),m.name?el("strong",{text:m.name}):null,spec,m.notes?el("p",{class:"desc",style:"font-size:14px;color:var(--muted)",text:m.notes}):null,tableEl(m.grading,"Uziarnienie"),el("span",{class:"label",text:n+" "+plural(n,"wpis","wpisy","wpisów")})))}
+  box.append(g)}
+function renderGallery(){const box=$("#gallery");box.replaceChildren();const all=[];
+  S.entries.forEach(e=>(e.photos||[]).forEach(p=>all.push({p,title:e.title,sub:fmtDate(e.date).full+(e.mix?" · "+e.mix:"")})));
+  if(!all.length){box.append(emptyEl("Brak zdjęć.","Zdjęcia próbek, stanowisk i wyników badań będą zebrane tutaj — przydadzą się jako rysunki w pracy."));return}
+  const g=el("div",{class:"photos"});all.forEach(({p,title,sub})=>{const src="/_blob/"+p.id;const cap=p.caption||title;
+    g.append(el("figure",{},el("button",{type:"button","aria-label":"Powiększ: "+cap,onclick:()=>openLb(src,cap+" — "+sub)},el("img",{src,alt:cap,loading:"lazy"})),el("figcaption",{text:cap+" — "+sub})))});box.append(g)}
+function renderFooter(){const ph=S.entries.reduce((a,e)=>a+(e.photos||[]).length,0);
+  $("#stats").textContent=`${S.entries.length} ${plural(S.entries.length,"wpis","wpisy","wpisów")} · ${S.mixes.length} ${plural(S.mixes.length,"mieszanka","mieszanki","mieszanek")} · ${ph} ${plural(ph,"zdjęcie","zdjęcia","zdjęć")}`;
+  const last=S.entries.map(e=>e.date).filter(Boolean).sort().pop();$("#updated").textContent=last?"Ostatni wpis: "+fmtDate(last).full:""}
+
+function openLb(src,cap){$("#lbImg").src=src;$("#lbImg").alt=cap||"";$("#lbCap").textContent=cap||"";$("#lb").hidden=false;$("#lbClose").focus()}
+$("#lbClose").onclick=()=>$("#lb").hidden=true;$("#lb").onclick=e=>{if(e.target.id==="lb")$("#lb").hidden=true};
+addEventListener("keydown",e=>{if(e.key==="Escape")$("#lb").hidden=true});
+$("#q").addEventListener("input",e=>{S.q=e.target.value.trim().toLowerCase();renderFeed()});
+
+async function save(name,text,type){const s=$("#expStatus");
+  if(!downloads){s.textContent="Pobieranie plików nie działa w tym widoku — otwórz stronę w przeglądarce, zalogowany do claude.ai.";return}
+  try{await downloads.save({filename:name,data:new Blob([text],{type})});s.textContent="Pobrano: "+name}catch(e){s.textContent="Nie pobrano pliku."}}
+const stamp=()=>new Date().toISOString().slice(0,10);
+$("#expJson").onclick=()=>save(`dziennik-mma-${stamp()}.json`,JSON.stringify({exported:new Date().toISOString(),entries:S.entries,mixes:S.mixes},null,2),"application/json");
+$("#expCsv").onclick=()=>{const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const out=[["data","etap","mieszanka","badanie","norma","parametr","wartosc","jednostka","wpis"].join(";")];
+  S.entries.forEach(e=>(e.summary||[]).forEach(k=>out.push([e.date,e.stage,e.mix,e.test,e.norm,k.label,String(k.value).replace(".",","),k.unit,e.title].map(q).join(";"))));
+  save(`wyniki-mma-${stamp()}.csv`,"﻿"+out.join("\r\n"),"text/csv")};
+
+async function start(){route();render();
+  db=await claude.use("db");
+  if(!db){S.err="Otwórz stronę zalogowany do claude.ai.";render();return}
+  downloads=await claude.use("downloads");
+  const tmo=setTimeout(()=>{if(!S.loaded){S.err="Baza nie odpowiada — sprawdź połączenie z internetem.";render()}},10000);
+  db.collection("entries").onSnapshot(snap=>{S.entries=snap.docs.map(d=>({...d.data(),_id:d.id}));
+    S.entries.sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.createdAt||"").localeCompare(a.createdAt||""));
+    if(!snap.metadata.fromCache){S.loaded=true;S.err="";clearTimeout(tmo)}else if(snap.size)S.loaded=true;render()},
+    e=>{clearTimeout(tmo);S.err="Błąd bazy danych ("+e.code+").";render()});
+  db.collection("mixes").onSnapshot(snap=>{S.mixes=snap.docs.map(d=>({...d.data(),_id:d.id})).sort((a,b)=>(a.order??99)-(b.order??99)||String(a.code).localeCompare(String(b.code)));render()},()=>{});
+}
+start();
+</script>
+
+</body></html>
