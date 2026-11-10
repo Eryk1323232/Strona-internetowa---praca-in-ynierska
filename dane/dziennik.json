@@ -100,18 +100,141 @@
    "title": "Próby lepiszczy z pozostałościami olejów roślinnych (część kolegi)",
    "type": "przygotowanie próbek",
    "_id": "2026-11-10-proby-lepiszczy"
+  },
+  {
+   "conclusions": "Do sprawdzenia w WT-2 2014: Bmin (3,8 % wg WT-2 2010, 4,0 % w kalkulatorze MASA i w wytycznych PZDW) oraz graniczna wartość WTS_AIR dla KR3–KR4.\nW kalkulatorze MASA nie ma wpisu „AC 22 P KR 3-4” wg WT-2 — krzywe graniczne takie jak w WT-2 ma wpis „AC 22 P KR 5-7” (Bmin 4,0 %); wpis „KR 3-4 ZDW Olsztyn” to wymagania regionalne z dodatkowymi ograniczeniami na sitach 4, 5,6 i 11,2 mm.",
+   "createdAt": "2026-11-10T08:05:00Z",
+   "date": "2026-11-10",
+   "description": "Projektowana mieszanka: beton asfaltowy do warstwy podbudowy AC 22 P, kategoria ruchu KR3–KR4.\n\nWymagania (WT-2, zgodnie ze specyfikacjami D-04.07.01 i PZDW Białystok):\n• uziarnienie wg krzywych granicznych w tabeli,\n• wolna przestrzeń Vm 4,0–7,0 % w próbkach Marshalla zagęszczanych 2 × 75 uderzeń,\n• wrażliwość na wodę ITSR ≥ 70 % (próbki 2 × 35 uderzeń, 40 °C z jednym cyklem zamrażania, ITS w 25 °C),\n• koleinowanie: płyty 60 mm, 60 °C, 10 000 cykli, metoda B w powietrzu,\n• temperatura zagęszczania próbek: 140 ± 5 °C dla 35/50, 135 ± 5 °C dla 50/70.",
+   "mix": "AC22P",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "Vm (2×75)",
+     "unit": "%",
+     "value": "4,0–7,0"
+    },
+    {
+     "label": "ITSR",
+     "unit": "%",
+     "value": "≥ 70"
+    },
+    {
+     "label": "Bmin",
+     "unit": "%",
+     "value": "3,8–4,0"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Krzywe graniczne uziarnienia AC 22 P, KR3–KR4 [% przechodzi przez sito]",
+     "columns": [
+      "Sito [mm]",
+      "31,5",
+      "22,4",
+      "16",
+      "8",
+      "2",
+      "0,125",
+      "0,063"
+     ],
+     "rows": [
+      [
+       "min",
+       "100",
+       "90",
+       "65",
+       "42",
+       "15",
+       "4",
+       "4"
+      ],
+      [
+       "max",
+       "–",
+       "100",
+       "90",
+       "68",
+       "45",
+       "12",
+       "8"
+      ]
+     ]
+    }
+   ],
+   "title": "Wybór typu mieszanki: AC 22 P dla KR3–KR4",
+   "type": "receptura",
+   "_id": "2026-11-10-wybor-ac22p"
   }
  ],
- "mixes": [],
+ "mixes": [
+  {
+   "aggregate": "do ustalenia: frakcje np. 0/2, 2/8, 8/16, 16/22 + wypełniacz",
+   "binder": "do ustalenia: referencyjnie asfalt drogowy (35/50 lub 50/70), warianty z lepiszczem roślinnym (L3–L6)",
+   "binderContent": "do obliczenia; Bmin 3,8 % (WT-2 2010) / 4,0 % (MASA, PZDW) — sprawdź w WT-2 2014",
+   "code": "AC22P",
+   "grading": {
+    "columns": [
+     "Sito [mm]",
+     "min [%]",
+     "max [%]"
+    ],
+    "rows": [
+     [
+      "31,5",
+      "100",
+      "–"
+     ],
+     [
+      "22,4",
+      "90",
+      "100"
+     ],
+     [
+      "16",
+      "65",
+      "90"
+     ],
+     [
+      "8",
+      "42",
+      "68"
+     ],
+     [
+      "2",
+      "15",
+      "45"
+     ],
+     [
+      "0,125",
+      "4",
+      "12"
+     ],
+     [
+      "0,063",
+      "4",
+      "8"
+     ]
+    ]
+   },
+   "mixType": "AC 22 P, beton asfaltowy do warstwy podbudowy, KR3–KR4",
+   "name": "AC 22 P dla KR3–KR4 — mieszanka projektowana",
+   "notes": "Wymagania dla mieszanki: Vm 4,0–7,0 % (próbki 2×75 uderzeń), ITSR ≥ 70 %, koleinowanie na płytach 60 mm (60 °C, 10 000 cykli). Tabela poniżej to krzywe graniczne uziarnienia, a nie projekt — projekt powstanie w zakładce Liczenie.",
+   "order": 1,
+   "_id": "AC22P-KR34"
+  }
+ ],
  "plan": [
   {
    "ask": true,
    "items": [
-    "Które lepiszcze (L1–L6, karta Wyniki → Lepiszcza) idzie do mieszanek MMA — i czy L1 (czysty 50/70) jest mieszanką referencyjną.",
+    "Ustalone: mieszanka AC 22 P (podbudowa) dla KR3–KR4.",
+    "Które lepiszcze (L1–L6, karta Wyniki → Lepiszcza) idzie do mieszanek — i czy mieszanką referencyjną jest AC 22 P z czystym asfaltem (35/50 czy 50/70?).",
     "Podział pracy z kolegą: kto robi lepiszcza, a kto mieszanki MMA i które badania.",
-    "Typ mieszanki i kategoria ruchu (np. AC 11 S, KR3–KR4) — od tego zależą wymagania i zagęszczanie.",
-    "Temperatury mieszania i zagęszczania dla lepiszczy z olejem i SBS (dla 50/70: 150 °C / 135 °C).",
-    "Lista badań mieszanek i czy próbki mają być sezonowane (ile dni, w jakich warunkach).",
+    "Temperatury mieszania i zagęszczania dla lepiszczy z olejem i SBS (dla 35/50: zagęszczanie 140 ± 5 °C, dla 50/70: 135 ± 5 °C).",
+    "Lista badań mieszanek (Vm, ITSR, koleinowanie, sztywność?) i czy próbki mają być sezonowane.",
     "Terminy w laboratorium, kto obsługuje urządzenia."
    ],
    "norms": [],
@@ -128,9 +251,9 @@
   {
    "ask": false,
    "items": [
-    "Kruszywa w ustalonych frakcjach (np. 0/2, 2/5, 5/8, 8/11) i wypełniacz (mączka wapienna).",
-    "Asfalt bazowy i dodatek roślinny — z zapasem.",
-    "Szacunek ilości: jedna próbka Marshalla to ok. 1,2 kg mieszanki; seria do wyboru lepiszcza to 5 zawartości × 3–4 próbki, plus próbki do ITSR i oznaczania gęstości maksymalnej.",
+    "Kruszywa do AC 22 P, np. 0/2, 2/8, 8/16, 16/22 (największe ziarno 22,4 mm), i wypełniacz (mączka wapienna).",
+    "Asfalt referencyjny i lepiszcza do wariantów — z zapasem.",
+    "Szacunek ilości: jedna próbka Marshalla to ok. 1,2 kg mieszanki; seria do wyboru lepiszcza to 5 zawartości × 3–4 próbki, plus próbki do ITSR i oznaczania gęstości maksymalnej. Płyta do koleinowania 60 mm to kilkanaście kg mieszanki.",
     "Weź kruszywa z zapasem ok. 30–50 % na powtórki."
    ],
    "norms": [],
@@ -167,7 +290,8 @@
    "ask": false,
    "items": [
     "Przesiew z przemywaniem: zważ, przemyj na sicie 0,063 mm, wysusz ponownie, przesiej na zestawie sit.",
-    "Sita jak w kalkulatorze: 0,063 … 16 mm. Zapisz masy pozostające na każdym sicie i na dnie.",
+    "Sita od 0,063 do 31,5 mm (dla AC 22 ważne: 22,4 i 31,5 mm). Zapisz masy pozostające na każdym sicie i na dnie.",
+    "Frakcja grubsza (16/22) wymaga większej próbki do przesiewu niż drobne frakcje.",
     "Wypełniacz: uziarnienie zwykle z karty producenta albo przesiew strumieniem powietrza."
    ],
    "norms": [
@@ -209,10 +333,10 @@
   {
    "ask": false,
    "items": [
-    "Liczenie → Przyjęcie założeń: rodzaj MMA (np. AC 11 S KR 3-4), asfalt.",
+    "Liczenie → Przyjęcie założeń: wybierz „AC 22 P KR 5-7” — ma krzywe graniczne jak w WT-2 dla AC 22 P (KR3–KR7). Wpis „KR 3-4 ZDW Olsztyn” to wymagania regionalne. Możesz też zmienić nazwę na „AC 22 P KR 3-4”.",
     "Dobór składników: wpisz frakcje z gęstościami i wynikami przesiewu.",
-    "Obliczenie składu: krzywa musi leżeć między krzywymi granicznymi.",
-    "Obliczenie ilości lepiszcza: punkt startowy; sprawdź warunek B ≥ Bmin·α (dla AC 11 S Bmin = 5,8 %).",
+    "Obliczenie składu: krzywa musi leżeć między krzywymi granicznymi (sprawdź z tabelą w Wyniki → Mieszanki → AC22P).",
+    "Obliczenie ilości lepiszcza: punkt startowy; sprawdź B ≥ Bmin·α (Bmin 3,8–4,0 % — potwierdź w WT-2 2014).",
     "Zarób próbny: 5 zawartości lepiszcza z krokiem 0,3–0,5 % wokół wartości startowej."
    ],
    "norms": [
@@ -314,8 +438,9 @@
    "ask": true,
    "items": [
     "Mieszanie w mieszalniku laboratoryjnym do pełnego otoczenia ziaren (zwykle kilka minut). Wypełniacz dodaj na końcu.",
-    "Zagęszczanie ubijakiem Marshalla: 2 × 75 uderzeń dla AC 11 S KR3–KR4 (2 × 50 dla KR1–KR2).",
-    "Temperatura zagęszczania dla 50/70: 135 ± 5 °C. Dla lepiszczy z olejem — niższa, do ustalenia.",
+    "Zagęszczanie ubijakiem Marshalla: 2 × 75 uderzeń (AC 22 P, KR3–KR4).",
+    "Temperatura zagęszczania: 140 ± 5 °C dla 35/50, 135 ± 5 °C dla 50/70. Dla lepiszczy z olejem — niższa, do ustalenia.",
+    "Przy ziarnie 22 mm pilnuj, żeby do formy nie trafiały same grube ziarna — mieszankę wsypuj szpachelką równomiernie.",
     "Odłóż porcję luźnej mieszanki z każdej zawartości lepiszcza do oznaczenia gęstości maksymalnej."
    ],
    "norms": [
@@ -372,9 +497,9 @@
   {
    "ask": true,
    "items": [
-    "Wymaganie WT-2 2014 dla AC 11 S KR3–KR4: Vm 2,0–4,0 % (próbki 2 × 75 uderzeń).",
-    "Wybierz zawartość, przy której Vm wypada w środku tego przedziału i jest spełnione B ≥ Bmin·α.",
-    "Tę zawartość stosuj dla wszystkich wariantów z dodatkiem — wtedy porównujesz wpływ samego dodatku."
+    "Wymaganie dla AC 22 P KR3–KR4: Vm 4,0–7,0 % (próbki 2 × 75 uderzeń).",
+    "Wybierz zawartość, przy której Vm wypada w środku tego przedziału (ok. 5–5,5 %) i jest spełnione B ≥ Bmin·α.",
+    "Tę zawartość stosuj dla wszystkich wariantów z dodatkiem — wtedy porównujesz wpływ samego lepiszcza."
    ],
    "norms": [
     "WT-2 2014"
@@ -410,9 +535,9 @@
    "ask": false,
    "items": [
     "Próbki zagęszczane 2 × 35 uderzeń, podział na zestaw suchy i mokry.",
-    "Zestaw mokry: kondycjonowanie w wodzie w 40 °C z jednym cyklem zamrażania wg załącznika 1 do WT-2 2014 — sprawdź tam dokładne czasy.",
+    "Zestaw mokry: kondycjonowanie w wodzie w 40 °C z jednym cyklem zamrażania wg załącznika 1 do WT-2 — sprawdź tam dokładne czasy.",
     "Wytrzymałość na rozciąganie pośrednie (ITS) obu zestawów w 25 °C; ITSR = ITS mokre / ITS suche.",
-    "Wymaganie dla AC 11 S: ITSR ≥ 90 %."
+    "Wymaganie dla AC 22 P: ITSR ≥ 70 %."
    ],
    "norms": [
     "PN-EN 12697-12",
@@ -450,8 +575,8 @@
   {
    "ask": true,
    "items": [
-    "Płyty wałowane, grubość 40 mm dla AC 11; badanie w powietrzu, 60 °C, 10 000 cykli (mały aparat, metoda B).",
-    "Wymagania WT-2 dla AC 11 S KR3–KR4: WTS_AIR ≤ 0,15, PRD_AIR ≤ 9,0.",
+    "Płyty wałowane, grubość 60 mm dla AC 22; badanie w powietrzu, 60 °C, 10 000 cykli (mały aparat, metoda B).",
+    "Graniczne WTS_AIR dla AC 22 P KR3–KR4 sprawdź w WT-2 2014 — specyfikacje podają różne wartości.",
     "Ważne przy oleju roślinnym: zmiękczone lepiszcze może słabiej opierać się koleinowaniu."
    ],
    "norms": [
@@ -529,12 +654,12 @@
     }
    ],
    "name": "Asfalt 50/70 (referencyjny)",
+   "noMass": true,
    "note": "Podstawowe badania asfaltu bazowego — punkt odniesienia dla pozostałych lepiszczy. Wyniki (penetracja, PiK, Fraass…) do uzupełnienia.",
    "order": 1,
    "status": "ok",
    "statusNote": "zbadany",
-   "_id": "L1-5070",
-   "noMass": true
+   "_id": "L1-5070"
   },
   {
    "code": "L2",
