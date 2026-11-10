@@ -28,9 +28,40 @@
   --accent:#A6C45A;--accent-soft:#2B3619;--amber:#E2B24A;--amber-soft:#3A2F14;color-scheme:dark}
 
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
-.wrap{max-width:920px;margin:0 auto}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-block:0}
+
+/* app shell: menu po lewej + treść */
+.app{display:grid;grid-template-columns:236px minmax(0,1fr);min-height:100dvh}
+.side{position:sticky;top:env(safe-area-inset-top,0px);height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));align-self:start;display:flex;flex-direction:column;gap:22px;
+  background:var(--surface);border-right:1px solid var(--line);padding-block:24px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:18px;z-index:8}
+.side-brand{display:grid;gap:2px;padding-inline:6px}
+.side-brand b{font:800 19px/1.15 var(--f-display);letter-spacing:-.01em}
+.side-brand small{font:11px/1.35 var(--f-mono);color:var(--muted);letter-spacing:.03em}
+.side-nav{display:grid;gap:4px}
+.side-nav a{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:center;column-gap:12px;padding:10px 12px;border-radius:var(--r);text-decoration:none;color:var(--ink)}
+.side-nav a svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;grid-row:span 2;color:var(--muted)}
+.side-nav a span{font-weight:600;font-size:15px;line-height:1.25}
+.side-nav a small{font-size:12px;color:var(--muted);line-height:1.3}
+.side-nav a:hover{background:var(--sunk)}
+.side-nav a[aria-current="page"]{background:var(--accent-soft)}
+.side-nav a[aria-current="page"] svg,.side-nav a[aria-current="page"] span{color:var(--accent)}
+.side-foot{margin-top:auto;font-size:12px;color:var(--muted);padding-inline:6px;display:grid;gap:2px}
+.content{min-width:0;padding-left:clamp(20px,3vw,40px);padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:18px 0}
+.page-wyniki{max-width:920px}
+.page-liczenie{max-width:1500px;padding-top:18px}
+@media (max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 16px;border-right:0;border-bottom:1px solid var(--line);
+    padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .side-brand{flex:1 1 auto;padding:0}.side-brand small{display:none}
+  .side-nav{grid-auto-flow:column;gap:4px;background:var(--sunk);padding:3px;border-radius:calc(var(--r) + 3px)}
+  .side-nav a{grid-template-columns:18px auto;column-gap:8px;padding:7px 12px}
+  .side-nav a svg{width:18px;height:18px;grid-row:auto}
+  .side-nav a small,.side-foot{display:none}
+  .side-nav a[aria-current="page"]{background:var(--surface)}
+  .content{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+}
 h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
 p{margin:0}
 .label{font:500 11px/1.3 var(--f-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
@@ -40,7 +71,7 @@ button,input{font:inherit;color:inherit}
 a{color:var(--accent)}
 
 /* header */
-header.thesis{padding-block:36px 24px;display:grid;gap:16px}
+header.thesis{padding-block:20px 24px;display:grid;gap:16px}
 .thesis h1{font-size:clamp(24px,4.4vw,38px);font-weight:800;letter-spacing:-.015em;max-width:26ch}
 .meta{display:flex;flex-wrap:wrap;gap:6px 24px;font-size:14px;color:var(--muted)}
 .meta b{color:var(--ink);font-weight:600}
@@ -174,14 +205,13 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 .kp-pv{border-color:var(--amber);background:var(--amber-soft)}
 .kp-msg{font-size:14px;color:var(--accent)} .kp-msg.err{color:#B2412B}
 .kp-note{font-size:13px;color:var(--muted)}
-.kp-bar{position:relative;z-index:6;display:flex;align-items:center;justify-content:center;gap:10px 14px;flex-wrap:wrap;padding:9px 16px;margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)));background:var(--amber);color:var(--surface);font-size:14px;text-align:center}
+.kp-bar{position:relative;z-index:6;display:flex;align-items:center;justify-content:center;gap:10px 14px;flex-wrap:wrap;padding:9px 16px;background:var(--amber);color:var(--surface);font-size:14px;text-align:center}
 .kp-bar button{border:1px solid currentColor;background:none;color:inherit;border-radius:999px;padding:4px 14px;font:600 13px var(--f-body);cursor:pointer}
 .kp-bar button:hover{background:var(--surface);color:var(--amber)}
 @media (max-width:560px){.kp-panel{top:auto;left:0;width:auto;height:min(88dvh,100%);border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;padding-left:env(safe-area-inset-left,0px)}}
 @media (prefers-reduced-motion:reduce){.kp-btn.due{animation:none}}
 
 /* kalkulator */
-.wrap.wide{max-width:1500px}
 .calc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 16px;margin-bottom:12px}
 .calc-head h2{font-size:22px}
 .calc-head p{font-size:14px;color:var(--muted);max-width:70ch}
@@ -205,15 +235,34 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 </style>
 
 <div class="kp-bar" id="kpBar" role="status" hidden></div>
-<div class="wrap">
-  <header class="thesis">
-    <div class="toprow">
-      <span class="label">Praca inżynierska · Politechnika Białostocka · budownictwo drogowe</span>
+<div class="app">
+  <aside class="side">
+    <div class="side-brand"><b>Dziennik MMA</b><small>Praca inżynierska · PB<br>budownictwo drogowe</small></div>
+    <nav class="side-nav" aria-label="Podstrony">
+      <a href="#liczenie" data-p="liczenie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h0M14 11h2M8 14.5h2M14 14.5h2M8 18h2M12 14.5v3.5M14 18h2"/></svg><span>Liczenie</span><small>Kalkulator MASA</small></a>
+      <a href="#dziennik" data-p="wyniki" id="sideWyniki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Wyniki</span><small>Dziennik, badania, mieszanki, zdjęcia</small></a>
+    </nav>
+    <div class="side-foot"><span>Prowadzi Claude</span><span id="sideUpd" class="mono"></span></div>
+  </aside>
+  <div class="content">
+    <div class="topbar">
+      <span class="label" id="crumb">Wyniki</span>
       <button type="button" class="kp-btn" id="kpBtn" aria-label="Kopia zapasowa" title="Kopia zapasowa">
         <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7.5" ry="2.8"/><path d="M4.5 6v12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6"/><path d="M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/></svg>
         <span class="kp-dot" aria-hidden="true"></span>
       </button>
     </div>
+
+    <div class="page-liczenie" id="p-liczenie" hidden>
+      <div class="calc-head">
+        <div style="display:grid;gap:4px;min-width:0"><h2>Kalkulator MASA — projekt mieszanki</h2><p>Krzywa uziarnienia, dobór składu kruszyw, zawartość lepiszcza i receptura. Gotową recepturę Claude przeniesie do Wyników → Mieszanki.</p></div>
+        <div class="calc-acts"><span class="calc-sync" id="calcSync" role="status"></span><a class="calc-link" href="kalkulatory/masa.html" target="_blank" rel="noopener">Otwórz w nowej karcie ↗</a></div>
+      </div>
+      <div class="calc-box" id="calcBox"></div>
+    </div>
+
+    <div class="page-wyniki" id="p-wyniki">
+      <header class="thesis">
     <h1>Ocena właściwości mieszanek mineralno-asfaltowych z zastosowaniem lepiszczy pochodzenia roślinnego</h1>
     <div class="meta">
       <span>Autor: <b>Eryk Bazeyan</b></span>
@@ -222,17 +271,16 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     </div>
     <div class="kw"><span>mieszanka mineralno-asfaltowa</span><span>lepiszcza modyfikowane</span><span>upłynniacz pochodzenia roślinnego</span><span>lepiszcza pochodzenia roślinnego</span></div>
     <div class="progress" id="stages" role="group" aria-label="Etapy pracy"></div>
-  </header>
+      </header>
 
-  <nav class="tabs" aria-label="Sekcje">
-    <a href="#dziennik" data-v="dziennik">Dziennik</a>
-    <a href="#wyniki" data-v="wyniki">Wyniki</a>
-    <a href="#mieszanki" data-v="mieszanki">Mieszanki</a>
-    <a href="#zdjecia" data-v="zdjecia">Zdjęcia</a>
-    <a href="#kalkulator" data-v="kalkulator">Kalkulator MMA</a>
-  </nav>
+      <nav class="tabs" aria-label="Sekcje wyników">
+        <a href="#dziennik" data-v="dziennik">Dziennik</a>
+        <a href="#badania" data-v="badania">Wyniki badań</a>
+        <a href="#mieszanki" data-v="mieszanki">Mieszanki</a>
+        <a href="#zdjecia" data-v="zdjecia">Zdjęcia</a>
+      </nav>
 
-  <main>
+      <main>
     <section id="v-dziennik">
       <div class="toolbar">
         <div class="grow"><input type="search" id="q" placeholder="Szukaj w dzienniku: mieszanka, badanie, norma…" aria-label="Szukaj wpisów"></div>
@@ -240,18 +288,13 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
       </div>
       <div class="feed" id="feed"></div>
     </section>
-    <section id="v-wyniki" hidden><div id="results"></div></section>
+    <section id="v-badania" hidden><div id="results"></div></section>
     <section id="v-mieszanki" hidden><div id="mixes"></div></section>
     <section id="v-zdjecia" hidden><div id="gallery"></div></section>
-    <section id="v-kalkulator" hidden>
-      <div class="calc-head">
-        <div style="display:grid;gap:4px;min-width:0"><h2>Kalkulator MASA — projekt mieszanki</h2><p>Krzywa uziarnienia, dobór składu kruszyw, zawartość lepiszcza i receptura. Gotową recepturę Claude przeniesie do zakładki Mieszanki.</p></div>
-        <div class="calc-acts"><span class="calc-sync" id="calcSync" role="status"></span><a class="calc-link" href="kalkulatory/masa.html" target="_blank" rel="noopener">Otwórz w nowej karcie ↗</a></div>
-      </div>
-      <div class="calc-box" id="calcBox"></div>
-    </section>
-  </main>
-  <footer><span id="stats" class="mono"></span><span id="updated" class="mono"></span></footer>
+      </main>
+      <footer><span id="stats" class="mono"></span><span id="updated" class="mono"></span></footer>
+    </div>
+  </div>
 </div>
 
 <div class="lightbox" id="lb" hidden>
@@ -275,11 +318,18 @@ const el=(tag,attrs={},...kids)=>{const e=document.createElement(tag);for(const[
 const isNum=v=>typeof v==="number"||(typeof v==="string"&&/^[-−]?\d+([.,]\d+)?$/.test(v.trim()));
 const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
 
-const VIEWS=["dziennik","wyniki","mieszanki","zdjecia","kalkulator"];
-function route(){const h=location.hash.slice(1);const v=VIEWS.includes(h)?h:"dziennik";
-  for(const x of VIEWS)$("#v-"+x).hidden=x!==v;
-  document.querySelectorAll("nav.tabs a").forEach(a=>{if(a.dataset.v===v)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-  $(".wrap").classList.toggle("wide",v==="kalkulator");if(v==="kalkulator")calcOpen()}
+/* podstrony: #liczenie (kalkulator) oraz Wyniki z kartami #dziennik #badania #mieszanki #zdjecia */
+const SUB=["dziennik","badania","mieszanki","zdjecia"],SUBNAME={dziennik:"Dziennik",badania:"Wyniki badań",mieszanki:"Mieszanki",zdjecia:"Zdjęcia"};
+const ALIAS={wyniki:"dziennik",kalkulator:"liczenie"};
+let lastSub="dziennik";
+function route(){let h=location.hash.slice(1);h=ALIAS[h]||h;if(h!=="liczenie"&&!SUB.includes(h))h="dziennik";
+  const calc=h==="liczenie";$("#p-liczenie").hidden=!calc;$("#p-wyniki").hidden=calc;
+  if(!calc){lastSub=h;for(const x of SUB)$("#v-"+x).hidden=x!==h;
+    document.querySelectorAll("nav.tabs a").forEach(a=>{if(a.dataset.v===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}
+  $("#sideWyniki").href="#"+lastSub;
+  document.querySelectorAll(".side-nav a").forEach(a=>{if(a.dataset.p===(calc?"liczenie":"wyniki"))a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  $("#crumb").textContent=calc?"Liczenie · kalkulator MASA":"Wyniki · "+SUBNAME[h];
+  if(calc)calcOpen()}
 addEventListener("hashchange",route);
 
 function fmtDate(d){const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(d||"");return m?{d:+m[3],m:MONTHS[+m[2]-1]+" "+m[1],full:`${+m[3]} ${MONTHS[+m[2]-1]} ${m[1]}`}:{d:"–",m:"",full:""}}
@@ -342,7 +392,7 @@ function renderGallery(){const box=$("#gallery");box.replaceChildren();const all
     g.append(el("figure",{},el("button",{type:"button","aria-label":"Powiększ: "+cap,onclick:()=>openLb(src,cap+" — "+sub)},el("img",{src,alt:cap,loading:"lazy"})),el("figcaption",{text:cap+" — "+sub})))});box.append(g)}
 function renderFooter(){const ph=S.entries.reduce((a,e)=>a+(e.photos||[]).length,0);
   $("#stats").textContent=`${S.entries.length} ${plural(S.entries.length,"wpis","wpisy","wpisów")} · ${S.mixes.length} ${plural(S.mixes.length,"mieszanka","mieszanki","mieszanek")} · ${ph} ${plural(ph,"zdjęcie","zdjęcia","zdjęć")}`;
-  const last=S.entries.map(e=>e.date).filter(Boolean).sort().pop();$("#updated").textContent=last?"Ostatni wpis: "+fmtDate(last).full:""}
+  const last=S.entries.map(e=>e.date).filter(Boolean).sort().pop();$("#updated").textContent=last?"Ostatni wpis: "+fmtDate(last).full:"";$("#sideUpd").textContent=last?"ostatni wpis "+fmtDate(last).full:""}
 
 function openLb(src,cap){$("#lbImg").src=src;$("#lbImg").alt=cap||"";$("#lbCap").textContent=cap||"";$("#lb").hidden=false;$("#lbClose").focus()}
 $("#lbClose").onclick=()=>$("#lb").hidden=true;$("#lb").onclick=e=>{if(e.target.id==="lb")$("#lb").hidden=true};
@@ -461,7 +511,7 @@ async function start(){route();show();
   if(!db){S.err="Otwórz stronę zalogowany do claude.ai.";show();return}
   downloads=await claude.use("downloads");
   const user=await claude.use("user");try{canEdit=!!(user&&await user.canEdit())}catch(e){}
-  if(location.hash==="#kalkulator"){calcStarted=false;$("#calcBox").replaceChildren();calcOpen()}
+  if(location.hash==="#liczenie"||location.hash==="#kalkulator"){calcStarted=false;$("#calcBox").replaceChildren();calcOpen()}
   const tmo=setTimeout(()=>{if(!S.loaded){S.err="Baza nie odpowiada — sprawdź połączenie z internetem.";show()}},10000);
   db.collection("entries").onSnapshot(snap=>{LIVE.entries=snap.docs.map(d=>({...d.data(),_id:d.id}));
     if(!snap.metadata.fromCache){S.loaded=true;S.err="";clearTimeout(tmo)}else if(snap.size)S.loaded=true;show()},
