@@ -18,119 +18,196 @@
    "title": "Start: zatwierdzony temat i zakres pracy",
    "type": "notatka",
    "_id": "2026-11-09-start"
+  },
+  {
+   "conclusions": "L2 nieudane: w temperaturze pokojowej próbka była płynna, badania niemożliwe.\nDo uzupełnienia: daty wykonania, wyniki badań L1 i pozostałych lepiszczy, które z L3–L6 się udały oraz rodzaj SBS i upłynniacza.",
+   "createdAt": "2026-11-10T07:40:00Z",
+   "date": "2026-11-10",
+   "description": "Materiał: dwie pozostałości z produkcji olejów roślinnych odebrane z rafinerii — gęsta („olej gęsty”) i rzadka („olej rzadki”). Pozostałe składniki: asfalt 50/70, SBS, upłynniacz roślinny (olej roślinny).\n\nPrzygotowano 6 lepiszczy (każde ok. 1 litra, poza samym asfaltem):\nL1 — asfalt 50/70 (badania podstawowe)\nL2 — 50/70 + olej gęsty 50/50\nL3 — 50/70 + olej gęsty + SBS + upłynniacz\nL4 — olej rzadki + SBS 30 %\nL5 — olej rzadki + olej gęsty (70/30) + SBS 20 %\nL6 — olej rzadki + SBS 40 %\n\nSkłady przeliczone na udziały masowe: Wyniki → Lepiszcza.",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "tables": [
+    {
+     "caption": "Składy lepiszczy [% masy]",
+     "columns": [
+      "Lepiszcze",
+      "Asfalt 50/70",
+      "Olej gęsty",
+      "Olej rzadki",
+      "Upłynniacz",
+      "SBS",
+      "Wynik"
+     ],
+     "rows": [
+      [
+       "L1",
+       "100,0",
+       "–",
+       "–",
+       "–",
+       "–",
+       "zbadany"
+      ],
+      [
+       "L2",
+       "50,0",
+       "50,0",
+       "–",
+       "–",
+       "–",
+       "płynne – nieudane"
+      ],
+      [
+       "L3",
+       "36,4",
+       "22,7",
+       "–",
+       "22,7",
+       "18,2",
+       "do uzupełnienia"
+      ],
+      [
+       "L4",
+       "–",
+       "–",
+       "70,0",
+       "–",
+       "30,0",
+       "do uzupełnienia"
+      ],
+      [
+       "L5",
+       "–",
+       "24,0",
+       "56,0",
+       "–",
+       "20,0",
+       "do uzupełnienia"
+      ],
+      [
+       "L6",
+       "–",
+       "–",
+       "60,0",
+       "–",
+       "40,0",
+       "do uzupełnienia"
+      ]
+     ]
+    }
+   ],
+   "title": "Próby lepiszczy z pozostałościami olejów roślinnych (część kolegi)",
+   "type": "przygotowanie próbek",
+   "_id": "2026-11-10-proby-lepiszczy"
   }
  ],
  "mixes": [],
  "plan": [
   {
-   "_id": "p01-konsultacja",
-   "phase": 1,
-   "phaseTitle": "Ustalenia przed startem",
-   "phaseTime": "1–2 dni",
-   "title": "Konsultacja z promotorem: zakres badań",
-   "time": "ok. 1 h + notatka",
-   "items": [
-    "Typ mieszanki i kategoria ruchu (np. AC 11 S, KR3–KR4) — od tego zależą wymagania i zagęszczanie.",
-    "Asfalt bazowy (np. 50/70) oraz rodzaj dodatku roślinnego: olej czy ester, który olej (rzepakowy?).",
-    "Dozowania dodatku do porównania, np. 0 % (mieszanka referencyjna) + 2–3 poziomy.",
-    "Lista badań lepiszczy i mieszanek oraz czy próbki z olejem mają być sezonowane (ile dni, w jakich warunkach).",
-    "Terminy w laboratorium, kto obsługuje urządzenia, skąd materiały."
-   ],
-   "tip": "Zrób zdjęcie notatki z konsultacji i wyślij w czacie — wpiszę ustalenia do planu i dziennika.",
-   "norms": [],
    "ask": true,
+   "items": [
+    "Które lepiszcze (L1–L6, karta Wyniki → Lepiszcza) idzie do mieszanek MMA — i czy L1 (czysty 50/70) jest mieszanką referencyjną.",
+    "Podział pracy z kolegą: kto robi lepiszcza, a kto mieszanki MMA i które badania.",
+    "Typ mieszanki i kategoria ruchu (np. AC 11 S, KR3–KR4) — od tego zależą wymagania i zagęszczanie.",
+    "Temperatury mieszania i zagęszczania dla lepiszczy z olejem i SBS (dla 50/70: 150 °C / 135 °C).",
+    "Lista badań mieszanek i czy próbki mają być sezonowane (ile dni, w jakich warunkach).",
+    "Terminy w laboratorium, kto obsługuje urządzenia."
+   ],
+   "norms": [],
+   "order": 1,
+   "phase": 1,
+   "phaseTime": "1–2 dni",
+   "phaseTitle": "Ustalenia przed startem",
    "status": "todo",
-   "order": 1
+   "time": "ok. 1 h + notatka",
+   "tip": "Zrób zdjęcie notatki z konsultacji i wyślij w czacie — wpiszę ustalenia do planu i dziennika.",
+   "title": "Konsultacja z promotorem: zakres badań",
+   "_id": "p01-konsultacja"
   },
   {
-   "_id": "p02-materialy",
-   "phase": 1,
-   "phaseTitle": "Ustalenia przed startem",
-   "phaseTime": "1–2 dni",
-   "title": "Zebranie materiałów i zaplanowanie ilości",
-   "time": "1 dzień",
+   "ask": false,
    "items": [
     "Kruszywa w ustalonych frakcjach (np. 0/2, 2/5, 5/8, 8/11) i wypełniacz (mączka wapienna).",
     "Asfalt bazowy i dodatek roślinny — z zapasem.",
     "Szacunek ilości: jedna próbka Marshalla to ok. 1,2 kg mieszanki; seria do wyboru lepiszcza to 5 zawartości × 3–4 próbki, plus próbki do ITSR i oznaczania gęstości maksymalnej.",
     "Weź kruszywa z zapasem ok. 30–50 % na powtórki."
    ],
-   "tip": "Pobieraj kruszywo z różnych miejsc pryzmy albo worka i mieszaj — ograniczysz rozrzut uziarnienia.",
    "norms": [],
-   "ask": false,
+   "order": 2,
+   "phase": 1,
+   "phaseTime": "1–2 dni",
+   "phaseTitle": "Ustalenia przed startem",
    "status": "todo",
-   "order": 2
+   "time": "1 dzień",
+   "tip": "Pobieraj kruszywo z różnych miejsc pryzmy albo worka i mieszaj — ograniczysz rozrzut uziarnienia.",
+   "title": "Zebranie materiałów i zaplanowanie ilości",
+   "_id": "p02-materialy"
   },
   {
-   "_id": "p03-suszenie",
-   "phase": 2,
-   "phaseTitle": "Badania materiałów",
-   "phaseTime": "3–5 dni",
-   "title": "Suszenie kruszyw do stałej masy",
-   "time": "zwykle 16–24 h (przez noc)",
+   "ask": false,
    "items": [
     "Suszarka 110 ± 5 °C.",
     "Stała masa: dwa ważenia w odstępie co najmniej 1 h różnią się nie więcej niż o 0,1 %.",
     "Po wysuszeniu studź w zamkniętym pojemniku albo w eksykatorze, żeby kruszywo nie chłonęło wilgoci."
    ],
-   "tip": null,
    "norms": [
     "PN-EN 1097-5"
    ],
-   "ask": false,
+   "order": 3,
+   "phase": 2,
+   "phaseTime": "3–5 dni",
+   "phaseTitle": "Badania materiałów",
    "status": "todo",
-   "order": 3
+   "time": "zwykle 16–24 h (przez noc)",
+   "title": "Suszenie kruszyw do stałej masy",
+   "_id": "p03-suszenie"
   },
   {
-   "_id": "p04-sitowa",
-   "phase": 2,
-   "phaseTitle": "Badania materiałów",
-   "phaseTime": "3–5 dni",
-   "title": "Analiza sitowa każdej frakcji",
-   "time": "ok. 0,5 dnia na frakcję (+ suszenie po przemyciu)",
+   "ask": false,
    "items": [
     "Przesiew z przemywaniem: zważ, przemyj na sicie 0,063 mm, wysusz ponownie, przesiej na zestawie sit.",
     "Sita jak w kalkulatorze: 0,063 … 16 mm. Zapisz masy pozostające na każdym sicie i na dnie.",
     "Wypełniacz: uziarnienie zwykle z karty producenta albo przesiew strumieniem powietrza."
    ],
-   "tip": "Wyślij mi masy z sit (zdjęcie kartki albo Excel) — przeliczę je na % przechodzące i wpiszę do kalkulatora.",
    "norms": [
     "PN-EN 933-1",
     "PN-EN 933-10 (wypełniacz)"
    ],
-   "ask": false,
+   "order": 4,
+   "phase": 2,
+   "phaseTime": "3–5 dni",
+   "phaseTitle": "Badania materiałów",
    "status": "todo",
-   "order": 4
+   "time": "ok. 0,5 dnia na frakcję (+ suszenie po przemyciu)",
+   "tip": "Wyślij mi masy z sit (zdjęcie kartki albo Excel) — przeliczę je na % przechodzące i wpiszę do kalkulatora.",
+   "title": "Analiza sitowa każdej frakcji",
+   "_id": "p04-sitowa"
   },
   {
-   "_id": "p05-gestosci",
-   "phase": 2,
-   "phaseTitle": "Badania materiałów",
-   "phaseTime": "3–5 dni",
-   "title": "Gęstości kruszyw, wypełniacza i asfaltu",
-   "time": "1–2 dni",
+   "ask": true,
    "items": [
     "Gęstość ziaren kruszyw metodą piknometryczną — potrzebna do gęstości mieszanki i Vm.",
     "Gęstość wypełniacza (piknometr).",
     "Gęstość asfaltu i lepiszczy z dodatkiem — albo z karty producenta, jeśli promotor się zgodzi."
    ],
-   "tip": "Jeśli laboratorium ma aktualne gęstości tych kruszyw z kart producenta, zapytaj, czy można je przyjąć — oszczędzisz 1–2 dni.",
    "norms": [
     "PN-EN 1097-6",
     "PN-EN 1097-7",
     "PN-EN 15326"
    ],
-   "ask": true,
+   "order": 5,
+   "phase": 2,
+   "phaseTime": "3–5 dni",
+   "phaseTitle": "Badania materiałów",
    "status": "todo",
-   "order": 5
+   "time": "1–2 dni",
+   "tip": "Jeśli laboratorium ma aktualne gęstości tych kruszyw z kart producenta, zapytaj, czy można je przyjąć — oszczędzisz 1–2 dni.",
+   "title": "Gęstości kruszyw, wypełniacza i asfaltu",
+   "_id": "p05-gestosci"
   },
   {
-   "_id": "p06-projekt",
-   "phase": 3,
-   "phaseTitle": "Projekt mieszanki",
-   "phaseTime": "1–2 dni",
-   "title": "Projekt składu w kalkulatorze MASA",
-   "time": "2–4 h",
+   "ask": false,
    "items": [
     "Liczenie → Przyjęcie założeń: rodzaj MMA (np. AC 11 S KR 3-4), asfalt.",
     "Dobór składników: wpisz frakcje z gęstościami i wynikami przesiewu.",
@@ -138,65 +215,64 @@
     "Obliczenie ilości lepiszcza: punkt startowy; sprawdź warunek B ≥ Bmin·α (dla AC 11 S Bmin = 5,8 %).",
     "Zarób próbny: 5 zawartości lepiszcza z krokiem 0,3–0,5 % wokół wartości startowej."
    ],
-   "tip": "Gdy skończysz, napisz w czacie — odczytam recepturę z bazy i dodam kartę w Wyniki → Mieszanki.",
    "norms": [
     "WT-2 2014",
     "PN-EN 13108-1"
    ],
-   "ask": false,
+   "order": 6,
+   "phase": 3,
+   "phaseTime": "1–2 dni",
+   "phaseTitle": "Projekt mieszanki",
    "status": "todo",
-   "order": 6
+   "time": "2–4 h",
+   "tip": "Gdy skończysz, napisz w czacie — odczytam recepturę z bazy i dodam kartę w Wyniki → Mieszanki.",
+   "title": "Projekt składu w kalkulatorze MASA",
+   "_id": "p06-projekt"
   },
   {
-   "_id": "p07-nawazki",
-   "phase": 3,
-   "phaseTitle": "Projekt mieszanki",
-   "phaseTime": "1–2 dni",
-   "title": "Naważki na każdą próbkę",
-   "time": "1–2 h na serię",
+   "ask": false,
    "items": [
     "Z tabeli zarobu: masa każdej frakcji na jedną próbkę i na zarób do gęstości maksymalnej.",
     "Każdą próbkę odważaj osobno, frakcja po frakcji, do metalowej miski. Opisz miskę: zawartość lepiszcza i nr próbki.",
     "Waga z dokładnością 0,1 g; asfaltu nie odważaj na zapas — dopiero przy mieszaniu."
    ],
+   "norms": [],
+   "order": 7,
+   "phase": 3,
+   "phaseTime": "1–2 dni",
+   "phaseTitle": "Projekt mieszanki",
+   "status": "todo",
+   "time": "1–2 h na serię",
    "tip": "Odważenie frakcji osobno na każdą próbkę daje mniejszy rozrzut niż dzielenie jednego dużego zarobu.",
-   "norms": [],
+   "title": "Naważki na każdą próbkę",
+   "_id": "p07-nawazki"
+  },
+  {
    "ask": false,
-   "status": "todo",
-   "order": 7
-  },
-  {
-   "_id": "p08-lepiszcze",
-   "phase": 4,
-   "phaseTitle": "Lepiszcza z dodatkiem roślinnym",
-   "phaseTime": "2–3 dni",
-   "title": "Przygotowanie lepiszczy z olejem",
-   "time": "ok. 1 h na wariant",
+   "doneAt": "2026-11-10",
    "items": [
-    "W pracy promotora olej dodawano do asfaltu podgrzanego do ok. 140 °C, a następnie mieszano i wygrzewano (dla wariantu z SBS: 160 °C przez 45 min).",
-    "Dokładna procedura dla Twoich wariantów (temperatura, czas, prędkość mieszadła) — do potwierdzenia.",
-    "Każdy wariant opisz: % dodatku liczony do masy asfaltu czy lepiszcza."
+    "Przygotowano 6 lepiszczy: L1 asfalt 50/70, L2 50/70 + olej gęsty 50/50, L3 50/70 + olej gęsty + SBS + upłynniacz, L4 olej rzadki + SBS 30 %, L5 olej rzadki + olej gęsty + SBS 20 %, L6 olej rzadki + SBS 40 %.",
+    "L2 nieudane — płynne w temperaturze pokojowej.",
+    "Składy w Wyniki → Lepiszcza. Do uzupełnienia: daty, rodzaj SBS i upłynniacza, temperatury i czas mieszania."
    ],
-   "tip": null,
    "norms": [],
-   "ask": true,
-   "status": "todo",
-   "order": 8
+   "order": 8,
+   "phase": 4,
+   "phaseTime": "2–3 dni",
+   "phaseTitle": "Lepiszcza z dodatkiem roślinnym",
+   "status": "done",
+   "time": "zrobione",
+   "tip": "Wyślij mi notatki kolegi z przygotowania lepiszczy (temperatury, czasy, mieszadło) — to trafi do rozdziału z metodyką.",
+   "title": "Przygotowanie lepiszczy z pozostałościami olejów (część kolegi)",
+   "_id": "p08-lepiszcze"
   },
   {
-   "_id": "p09-bad-lepiszczy",
-   "phase": 4,
-   "phaseTitle": "Lepiszcza z dodatkiem roślinnym",
-   "phaseTime": "2–3 dni",
-   "title": "Badania lepiszczy",
-   "time": "1–2 dni",
+   "ask": true,
    "items": [
-    "Penetracja w 25 °C.",
-    "Temperatura mięknienia PiK.",
-    "Temperatura łamliwości Fraassa.",
-    "Opcjonalnie: lepkość dynamiczna (do doboru temperatur mieszania i zagęszczania), starzenie RTFOT."
+    "L1 (50/70): badania podstawowe wykonane — wyślij wyniki, wpiszę je do karty.",
+    "L3–L6: które się udały i jakie badania zrobiono (penetracja, PiK, Fraass, lepkość, nawrót sprężysty?).",
+    "Do mieszanek MMA potrzebna jest co najmniej lepkość albo zalecane temperatury mieszania i zagęszczania wybranego lepiszcza."
    ],
-   "tip": "Te wyniki pokażą, jak olej „upłynnia” asfalt — to podstawa do wyjaśnienia wyników mieszanek.",
    "norms": [
     "PN-EN 1426",
     "PN-EN 1427",
@@ -204,243 +280,378 @@
     "PN-EN 13302",
     "PN-EN 12607-1"
    ],
-   "ask": true,
+   "order": 9,
+   "phase": 4,
+   "phaseTime": "2–3 dni",
+   "phaseTitle": "Lepiszcza z dodatkiem roślinnym",
    "status": "todo",
-   "order": 9
+   "time": "zależy od tego, co już zrobione",
+   "tip": "Zwróć uwagę na lepkość: przy 20–40 % SBS lepiszcze może być bardzo gęste w temperaturze mieszania i słabo otaczać kruszywo.",
+   "title": "Badania lepiszczy — zebranie wyników",
+   "_id": "p09-bad-lepiszczy"
   },
   {
-   "_id": "p10-grzanie",
-   "phase": 5,
-   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
-   "phaseTime": "3–4 dni na mieszankę",
-   "title": "Grzanie kruszyw i lepiszcza",
-   "time": "kruszywo: kilka godzin lub przez noc; asfalt: jak najkrócej",
+   "ask": true,
    "items": [
     "Miski z kruszywem do suszarki w temperaturze mieszania (dla 50/70 ok. 150 °C) — muszą osiągnąć temperaturę w całej objętości.",
     "Asfalt grzej możliwie krótko (zwykle 1–2 h) i nie podgrzewaj go kilka razy — starzeje się.",
     "Formy Marshalla i ubijak też wstaw do suszarki."
    ],
-   "tip": "Mieszanki z olejem roślinnym promotor mieszał w niższej temperaturze (ok. 140 °C) niż z czystym 50/70 (150 °C). Ustal temperatury dla swoich wariantów.",
    "norms": [
     "PN-EN 12697-35"
    ],
-   "ask": true,
+   "order": 10,
+   "phase": 5,
+   "phaseTime": "3–4 dni na mieszankę",
+   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
    "status": "todo",
-   "order": 10
+   "time": "kruszywo: kilka godzin lub przez noc; asfalt: jak najkrócej",
+   "tip": "Mieszanki z olejem roślinnym promotor mieszał w niższej temperaturze (ok. 140 °C) niż z czystym 50/70 (150 °C). Ustal temperatury dla swoich wariantów.",
+   "title": "Grzanie kruszyw i lepiszcza",
+   "_id": "p10-grzanie"
   },
   {
-   "_id": "p11-mieszanie",
-   "phase": 5,
-   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
-   "phaseTime": "3–4 dni na mieszankę",
-   "title": "Mieszanie i zagęszczanie próbek",
-   "time": "ok. 15–20 min na próbkę",
+   "ask": true,
    "items": [
     "Mieszanie w mieszalniku laboratoryjnym do pełnego otoczenia ziaren (zwykle kilka minut). Wypełniacz dodaj na końcu.",
     "Zagęszczanie ubijakiem Marshalla: 2 × 75 uderzeń dla AC 11 S KR3–KR4 (2 × 50 dla KR1–KR2).",
     "Temperatura zagęszczania dla 50/70: 135 ± 5 °C. Dla lepiszczy z olejem — niższa, do ustalenia.",
     "Odłóż porcję luźnej mieszanki z każdej zawartości lepiszcza do oznaczenia gęstości maksymalnej."
    ],
-   "tip": null,
    "norms": [
     "PN-EN 12697-30",
     "PN-EN 13108-20"
    ],
-   "ask": true,
+   "order": 11,
+   "phase": 5,
+   "phaseTime": "3–4 dni na mieszankę",
+   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
    "status": "todo",
-   "order": 11
+   "time": "ok. 15–20 min na próbkę",
+   "title": "Mieszanie i zagęszczanie próbek",
+   "_id": "p11-mieszanie"
   },
   {
-   "_id": "p12-studzenie",
-   "phase": 5,
-   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
-   "phaseTime": "3–4 dni na mieszankę",
-   "title": "Studzenie i wyjęcie próbek z form",
-   "time": "przez noc",
+   "ask": false,
    "items": [
     "Studź w formach w temperaturze pokojowej, wyjmij wyciskarką następnego dnia.",
     "Opisz każdą próbkę markerem (mieszanka, % lepiszcza, nr) i zrób zdjęcie serii z kartką z kodem."
    ],
-   "tip": null,
    "norms": [],
-   "ask": false,
+   "order": 12,
+   "phase": 5,
+   "phaseTime": "3–4 dni na mieszankę",
+   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
    "status": "todo",
-   "order": 12
+   "time": "przez noc",
+   "title": "Studzenie i wyjęcie próbek z form",
+   "_id": "p12-studzenie"
   },
   {
-   "_id": "p13-gestosci",
-   "phase": 5,
-   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
-   "phaseTime": "3–4 dni na mieszankę",
-   "title": "Gęstość objętościowa, gęstość maksymalna, Vm",
-   "time": "1–2 dni",
+   "ask": false,
    "items": [
     "Gęstość objętościowa próbek — metoda nasyconej powierzchniowo suchej próbki (SSD).",
     "Gęstość maksymalna — luźna mieszanka w piknometrze (metoda wolumetryczna).",
     "Obliczenie Vm, VMA, VFB dla każdej zawartości lepiszcza."
    ],
-   "tip": "Wyślij mi masy z ważenia (w powietrzu, w wodzie, SSD) — policzę gęstości i wolną przestrzeń i dodam wykres Vm od zawartości lepiszcza.",
    "norms": [
     "PN-EN 12697-6",
     "PN-EN 12697-5",
     "PN-EN 12697-8"
    ],
-   "ask": false,
+   "order": 13,
+   "phase": 5,
+   "phaseTime": "3–4 dni na mieszankę",
+   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
    "status": "todo",
-   "order": 13
+   "time": "1–2 dni",
+   "tip": "Wyślij mi masy z ważenia (w powietrzu, w wodzie, SSD) — policzę gęstości i wolną przestrzeń i dodam wykres Vm od zawartości lepiszcza.",
+   "title": "Gęstość objętościowa, gęstość maksymalna, Vm",
+   "_id": "p13-gestosci"
   },
   {
-   "_id": "p14-optimum",
-   "phase": 5,
-   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
-   "phaseTime": "3–4 dni na mieszankę",
-   "title": "Wybór optymalnej zawartości lepiszcza",
-   "time": "1–2 h",
+   "ask": true,
    "items": [
     "Wymaganie WT-2 2014 dla AC 11 S KR3–KR4: Vm 2,0–4,0 % (próbki 2 × 75 uderzeń).",
     "Wybierz zawartość, przy której Vm wypada w środku tego przedziału i jest spełnione B ≥ Bmin·α.",
     "Tę zawartość stosuj dla wszystkich wariantów z dodatkiem — wtedy porównujesz wpływ samego dodatku."
    ],
-   "tip": "Najpierw zrób cały ten etap dla mieszanki referencyjnej (bez dodatku). Dopiero potem warianty z olejem.",
    "norms": [
     "WT-2 2014"
    ],
-   "ask": true,
+   "order": 14,
+   "phase": 5,
+   "phaseTime": "3–4 dni na mieszankę",
+   "phaseTitle": "Próbki Marshalla i wybór lepiszcza",
    "status": "todo",
-   "order": 14
+   "time": "1–2 h",
+   "tip": "Najpierw zrób cały ten etap dla mieszanki referencyjnej (bez dodatku). Dopiero potem warianty z olejem.",
+   "title": "Wybór optymalnej zawartości lepiszcza",
+   "_id": "p14-optimum"
   },
   {
-   "_id": "p15-proby",
-   "phase": 6,
-   "phaseTitle": "Badania właściwości mieszanek",
-   "phaseTime": "1–3 tygodnie",
-   "title": "Próbki do badań: referencyjna i warianty z dodatkiem",
-   "time": "2–3 dni na wariant",
+   "ask": true,
    "items": [
     "Nowe próbki przy optymalnej zawartości lepiszcza dla każdego wariantu.",
     "Jeśli promotor tak ustali — sezonowanie próbek z olejem przed badaniem (olej roślinny z czasem zmienia właściwości lepiszcza).",
     "Liczbę próbek dobierz do badań poniżej (do ITSR co najmniej 2 zestawy po 3–4 próbki)."
    ],
-   "tip": null,
    "norms": [],
-   "ask": true,
+   "order": 15,
+   "phase": 6,
+   "phaseTime": "1–3 tygodnie",
+   "phaseTitle": "Badania właściwości mieszanek",
    "status": "todo",
-   "order": 15
+   "time": "2–3 dni na wariant",
+   "title": "Próbki do badań: referencyjna i warianty z dodatkiem",
+   "_id": "p15-proby"
   },
   {
-   "_id": "p16-itsr",
-   "phase": 6,
-   "phaseTitle": "Badania właściwości mieszanek",
-   "phaseTime": "1–3 tygodnie",
-   "title": "Wrażliwość na wodę ITSR",
-   "time": "ok. 4–5 dni (z kondycjonowaniem)",
+   "ask": false,
    "items": [
     "Próbki zagęszczane 2 × 35 uderzeń, podział na zestaw suchy i mokry.",
     "Zestaw mokry: kondycjonowanie w wodzie w 40 °C z jednym cyklem zamrażania wg załącznika 1 do WT-2 2014 — sprawdź tam dokładne czasy.",
     "Wytrzymałość na rozciąganie pośrednie (ITS) obu zestawów w 25 °C; ITSR = ITS mokre / ITS suche.",
     "Wymaganie dla AC 11 S: ITSR ≥ 90 %."
    ],
-   "tip": "U promotora mieszanka z olejem miała ITSR ok. 101 % — będziesz miał punkt odniesienia do dyskusji.",
    "norms": [
     "PN-EN 12697-12",
     "PN-EN 12697-23",
     "WT-2 2014 zał. 1"
    ],
-   "ask": false,
+   "order": 16,
+   "phase": 6,
+   "phaseTime": "1–3 tygodnie",
+   "phaseTitle": "Badania właściwości mieszanek",
    "status": "todo",
-   "order": 16
+   "time": "ok. 4–5 dni (z kondycjonowaniem)",
+   "tip": "U promotora mieszanka z olejem miała ITSR ok. 101 % — będziesz miał punkt odniesienia do dyskusji.",
+   "title": "Wrażliwość na wodę ITSR",
+   "_id": "p16-itsr"
   },
   {
-   "_id": "p17-sztywnosc",
-   "phase": 6,
-   "phaseTitle": "Badania właściwości mieszanek",
-   "phaseTime": "1–3 tygodnie",
-   "title": "Moduł sztywności IT-CY",
-   "time": "1 dzień",
+   "ask": true,
    "items": [
     "Rozciąganie pośrednie próbek walcowych, np. w 5, 15 i 25 °C (tak badał promotor).",
     "Badanie nieniszczące — te same próbki można potem zużyć do innego badania, jeśli promotor się zgodzi."
    ],
-   "tip": null,
    "norms": [
     "PN-EN 12697-26 zał. C"
    ],
-   "ask": true,
+   "order": 17,
+   "phase": 6,
+   "phaseTime": "1–3 tygodnie",
+   "phaseTitle": "Badania właściwości mieszanek",
    "status": "todo",
-   "order": 17
+   "time": "1 dzień",
+   "title": "Moduł sztywności IT-CY",
+   "_id": "p17-sztywnosc"
   },
   {
-   "_id": "p18-koleiny",
-   "phase": 6,
-   "phaseTitle": "Badania właściwości mieszanek",
-   "phaseTime": "1–3 tygodnie",
-   "title": "Koleinowanie (jeśli jest koleinomierz)",
-   "time": "płyty: 1–2 dni; badanie: ok. 1 dzień na płytę",
+   "ask": true,
    "items": [
     "Płyty wałowane, grubość 40 mm dla AC 11; badanie w powietrzu, 60 °C, 10 000 cykli (mały aparat, metoda B).",
     "Wymagania WT-2 dla AC 11 S KR3–KR4: WTS_AIR ≤ 0,15, PRD_AIR ≤ 9,0.",
     "Ważne przy oleju roślinnym: zmiękczone lepiszcze może słabiej opierać się koleinowaniu."
    ],
-   "tip": null,
    "norms": [
     "PN-EN 12697-22",
     "PN-EN 12697-33"
    ],
-   "ask": true,
+   "order": 18,
+   "phase": 6,
+   "phaseTime": "1–3 tygodnie",
+   "phaseTitle": "Badania właściwości mieszanek",
    "status": "todo",
-   "order": 18
+   "time": "płyty: 1–2 dni; badanie: ok. 1 dzień na płytę",
+   "title": "Koleinowanie (jeśli jest koleinomierz)",
+   "_id": "p18-koleiny"
   },
   {
-   "_id": "p19-marshall",
-   "phase": 6,
-   "phaseTitle": "Badania właściwości mieszanek",
-   "phaseTime": "1–3 tygodnie",
-   "title": "Opcjonalnie: stabilność i osiadanie Marshalla",
-   "time": "0,5 dnia",
+   "ask": true,
    "items": [
     "Szybkie porównanie wariantów, jeśli laboratorium ma prasę Marshalla, a promotor uzna to za przydatne."
    ],
-   "tip": null,
    "norms": [
     "PN-EN 12697-34"
    ],
-   "ask": true,
+   "order": 19,
+   "phase": 6,
+   "phaseTime": "1–3 tygodnie",
+   "phaseTitle": "Badania właściwości mieszanek",
    "status": "todo",
-   "order": 19
+   "time": "0,5 dnia",
+   "title": "Opcjonalnie: stabilność i osiadanie Marshalla",
+   "_id": "p19-marshall"
   },
   {
-   "_id": "p20-analiza",
-   "phase": 7,
-   "phaseTitle": "Analiza i pisanie",
-   "phaseTime": "2–3 tygodnie",
-   "title": "Zestawienie wyników i wykresy",
-   "time": "2–4 dni",
+   "ask": false,
    "items": [
     "Tabele i wykresy: wariant z dodatkiem vs. referencyjny dla każdego badania, z wymaganiami WT-2.",
     "Statystyka: średnia, odchylenie standardowe, odrzucenie wyników odstających."
    ],
-   "tip": "Zakładka Wyniki badań zestawi to automatycznie, jeśli będziesz wysyłał wyniki na bieżąco.",
    "norms": [],
-   "ask": false,
+   "order": 20,
+   "phase": 7,
+   "phaseTime": "2–3 tygodnie",
+   "phaseTitle": "Analiza i pisanie",
    "status": "todo",
-   "order": 20
+   "time": "2–4 dni",
+   "tip": "Zakładka Wyniki badań zestawi to automatycznie, jeśli będziesz wysyłał wyniki na bieżąco.",
+   "title": "Zestawienie wyników i wykresy",
+   "_id": "p20-analiza"
   },
   {
-   "_id": "p21-praca",
-   "phase": 7,
-   "phaseTitle": "Analiza i pisanie",
-   "phaseTime": "2–3 tygodnie",
-   "title": "Rozdziały badawcze i wnioski",
-   "time": "1–2 tygodnie",
+   "ask": false,
    "items": [
     "Metodyka (materiały, receptury, procedury), wyniki, analiza, wnioski końcowe — punkty 2–4 karty dyplomowej.",
     "Część literaturową (punkt 1) najlepiej pisać równolegle, w czasie oczekiwania na sezonowanie i badania."
    ],
-   "tip": null,
    "norms": [],
-   "ask": false,
+   "order": 21,
+   "phase": 7,
+   "phaseTime": "2–3 tygodnie",
+   "phaseTitle": "Analiza i pisanie",
    "status": "todo",
-   "order": 21
+   "time": "1–2 tygodnie",
+   "title": "Rozdziały badawcze i wnioski",
+   "_id": "p21-praca"
+  }
+ ],
+ "binders": [
+  {
+   "code": "L1",
+   "components": [
+    {
+     "g": 1000,
+     "kind": "asf",
+     "name": "Asfalt 50/70"
+    }
+   ],
+   "name": "Asfalt 50/70 (referencyjny)",
+   "note": "Podstawowe badania asfaltu bazowego — punkt odniesienia dla pozostałych lepiszczy. Wyniki (penetracja, PiK, Fraass…) do uzupełnienia.",
+   "order": 1,
+   "status": "ok",
+   "statusNote": "zbadany",
+   "_id": "L1-5070",
+   "noMass": true
+  },
+  {
+   "code": "L2",
+   "components": [
+    {
+     "g": 500,
+     "kind": "asf",
+     "name": "Asfalt 50/70"
+    },
+    {
+     "g": 500,
+     "kind": "og",
+     "name": "Olej gęsty"
+    }
+   ],
+   "name": "Asfalt 50/70 + olej gęsty 50/50",
+   "note": "W temperaturze pokojowej próbka była płynna, więc nie dało się wykonać badań. Wniosek: 50 % pozostałości gęstej za bardzo upłynnia asfalt.",
+   "order": 2,
+   "status": "fail",
+   "statusNote": "nieudane — płynne w temp. pokojowej",
+   "_id": "L2-5070-og"
+  },
+  {
+   "code": "L3",
+   "components": [
+    {
+     "g": 400,
+     "kind": "asf",
+     "name": "Asfalt 50/70"
+    },
+    {
+     "g": 250,
+     "kind": "og",
+     "name": "Olej gęsty"
+    },
+    {
+     "g": 200,
+     "kind": "sbs",
+     "name": "SBS"
+    },
+    {
+     "g": 250,
+     "kind": "up",
+     "name": "Upłynniacz roślinny"
+    }
+   ],
+   "name": "50/70 + olej gęsty + SBS + upłynniacz roślinny",
+   "note": "Kolejność dodawania: 500 g mieszaniny 50/70 + olej gęsty (50/50) → 200 g SBS → 150 g upłynniacza → dodatkowe 150 g asfaltu 50/70 → dodatkowe 100 g upłynniacza. Razem ok. 1100 g (lekko ponad litr).",
+   "order": 3,
+   "status": "unknown",
+   "_id": "L3-5070-og-sbs-up"
+  },
+  {
+   "code": "L4",
+   "components": [
+    {
+     "g": 700,
+     "kind": "or",
+     "name": "Olej rzadki"
+    },
+    {
+     "g": 300,
+     "kind": "sbs",
+     "name": "SBS"
+    }
+   ],
+   "name": "Olej rzadki + SBS 30 % (bez asfaltu)",
+   "note": "Lepiszcze w całości bezasfaltowe: pozostałość rzadka modyfikowana SBS (70/30).",
+   "order": 4,
+   "status": "unknown",
+   "_id": "L4-or-sbs30"
+  },
+  {
+   "assumption": "przyjęto, że SBS to 20 % całości (200 g na 1000 g), a oleje 800 g w proporcji 70/30. Jeśli oleje miały razem 1000 g (700 + 300) i do tego 200 g SBS, udział SBS wynosi 16,7 %.",
+   "code": "L5",
+   "components": [
+    {
+     "g": 560,
+     "kind": "or",
+     "name": "Olej rzadki"
+    },
+    {
+     "g": 240,
+     "kind": "og",
+     "name": "Olej gęsty"
+    },
+    {
+     "g": 200,
+     "kind": "sbs",
+     "name": "SBS"
+    }
+   ],
+   "name": "Olej rzadki + olej gęsty (70/30) + SBS 20 % (bez asfaltu)",
+   "note": "Lepiszcze bezasfaltowe.",
+   "order": 5,
+   "status": "unknown",
+   "_id": "L5-or-og-sbs20"
+  },
+  {
+   "code": "L6",
+   "components": [
+    {
+     "g": 600,
+     "kind": "or",
+     "name": "Olej rzadki"
+    },
+    {
+     "g": 400,
+     "kind": "sbs",
+     "name": "SBS"
+    }
+   ],
+   "name": "Olej rzadki + SBS 40 % (bez asfaltu)",
+   "note": "Lepiszcze bezasfaltowe, najwyższy udział SBS w serii.",
+   "order": 6,
+   "status": "unknown",
+   "_id": "L6-or-sbs40"
   }
  ]
 }

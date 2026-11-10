@@ -19,13 +19,14 @@
   --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
   --r:8px;
+  --c-asf:#3B3A36;--c-og:#8A5A1E;--c-or:#D9A441;--c-up:#6F8F2A;--c-sbs:#3F6E8C;--ok:#2E7350;--ok-soft:#DCEEDF;--bad:#B2412B;--bad-soft:#F6DFD8;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#151613;--surface:#1E201B;--sunk:#262923;--ink:#E9EBE4;--muted:#A3A89B;--line:#363A31;
-  --accent:#A6C45A;--accent-soft:#2B3619;--amber:#E2B24A;--amber-soft:#3A2F14;color-scheme:dark}}
+  --accent:#A6C45A;--accent-soft:#2B3619;--amber:#E2B24A;--amber-soft:#3A2F14;--c-asf:#C9C7BF;--c-og:#C08A4A;--c-or:#E8C26A;--c-up:#A6C45A;--c-sbs:#7FA9C4;--ok:#6FB287;--ok-soft:#1F3527;--bad:#E37A64;--bad-soft:#3D2321;color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#151613;--surface:#1E201B;--sunk:#262923;--ink:#E9EBE4;--muted:#A3A89B;--line:#363A31;
-  --accent:#A6C45A;--accent-soft:#2B3619;--amber:#E2B24A;--amber-soft:#3A2F14;color-scheme:dark}
+  --accent:#A6C45A;--accent-soft:#2B3619;--amber:#E2B24A;--amber-soft:#3A2F14;--c-asf:#C9C7BF;--c-og:#C08A4A;--c-or:#E8C26A;--c-up:#A6C45A;--c-sbs:#7FA9C4;--ok:#6FB287;--ok-soft:#1F3527;--bad:#E37A64;--bad-soft:#3D2321;color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-block:0}
@@ -211,6 +212,30 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 @media (max-width:560px){.kp-panel{top:auto;left:0;width:auto;height:min(88dvh,100%);border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;padding-left:env(safe-area-inset-left,0px)}}
 @media (prefers-reduced-motion:reduce){.kp-btn.due{animation:none}}
 
+/* lepiszcza */
+.binders{display:grid;gap:14px}
+.bcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:12px;min-width:0}
+.bcard-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.bcard .code{font:800 22px var(--f-display);color:var(--ink)}
+.bcard h3{font-size:17px;font-weight:600;flex:1 1 220px;min-width:0}
+.bstat{font:600 11px/1 var(--f-mono);padding:5px 8px;border-radius:4px;letter-spacing:.03em}
+.bstat.ok{background:var(--ok-soft);color:var(--ok)}.bstat.fail{background:var(--bad-soft);color:var(--bad)}.bstat.unknown{background:var(--sunk);color:var(--muted)}
+.bbar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:var(--sunk)}
+.bbar i{display:block;height:100%}
+.bcomp{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:4px 14px;font-size:14px;align-items:center;max-width:520px}
+.bcomp .sw{width:10px;height:10px;border-radius:2px}
+.bcomp .g,.bcomp .pc{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.bcomp .pc{font-weight:600}
+.bcomp .tot{grid-column:2;font-weight:600;border-top:1px solid var(--line);padding-top:4px}
+.bcomp .tot-g{grid-column:3;border-top:1px solid var(--line);padding-top:4px}
+.bcomp .tot-p{grid-column:4;border-top:1px solid var(--line);padding-top:4px}
+.bnote{font-size:14px;max-width:68ch;white-space:pre-wrap}
+.bassume{font-size:13px;background:var(--amber-soft);color:var(--ink);border-radius:6px;padding:8px 12px;max-width:68ch}
+.bassume b{color:var(--amber)}
+.bintro{font-size:14.5px;color:var(--muted);max-width:68ch;margin-bottom:16px}
+.blegend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);margin-bottom:14px}
+.blegend span{display:inline-flex;align-items:center;gap:6px}
+.blegend i{width:10px;height:10px;border-radius:2px;display:inline-block}
 /* plan działania */
 .page-plan{max-width:920px;padding-top:18px;display:grid;gap:22px}
 .plan-head{display:grid;gap:8px}
@@ -328,6 +353,7 @@ button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <nav class="tabs" aria-label="Sekcje wyników">
         <a href="#dziennik" data-v="dziennik">Dziennik</a>
         <a href="#badania" data-v="badania">Wyniki badań</a>
+        <a href="#lepiszcza" data-v="lepiszcza">Lepiszcza</a>
         <a href="#mieszanki" data-v="mieszanki">Mieszanki</a>
         <a href="#zdjecia" data-v="zdjecia">Zdjęcia</a>
       </nav>
@@ -341,7 +367,8 @@ button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <div class="feed" id="feed"></div>
     </section>
     <section id="v-badania" hidden><div id="results"></div></section>
-    <section id="v-mieszanki" hidden><div id="mixes"></div></section>
+    <section id="v-lepiszcza" hidden><div id="binders"></div></section>
+<section id="v-mieszanki" hidden><div id="mixes"></div></section>
     <section id="v-zdjecia" hidden><div id="gallery"></div></section>
       </main>
       <footer><span id="stats" class="mono"></span><span id="updated" class="mono"></span></footer>
@@ -360,7 +387,7 @@ const S={entries:[],mixes:[],loaded:false,err:"",stage:0,q:""};
 let db=null,downloads=null,canEdit=false;
 /* MODE: "claude" = baza claude.ai; "pliki" = GitHub Pages / inny hosting → dane/dziennik.json + zdjecia/<id>.jpg z repozytorium */
 const MODE=(window.claude&&typeof window.claude.use==="function")?"claude":"pliki";
-const LIVE={entries:[],mixes:[],plan:[]};   /* aktualne dane; S.* pokazuje je albo wgraną kopię (podgląd) */
+const LIVE={entries:[],mixes:[],plan:[],binders:[]};   /* aktualne dane; S.* pokazuje je albo wgraną kopię (podgląd) */
 let PODGLAD=null;                    /* {plik,t,entries,mixes} gdy oglądasz wgraną kopię */
 const photoSrc=id=>MODE==="claude"?"/_blob/"+id:"zdjecia/"+encodeURIComponent(id)+".jpg";
 function show(){const src=PODGLAD||LIVE;S.entries=[...src.entries].sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.createdAt||"").localeCompare(a.createdAt||""));
@@ -371,7 +398,7 @@ const isNum=v=>typeof v==="number"||(typeof v==="string"&&/^[-−]?\d+([.,]\d+)?
 const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
 
 /* podstrony: #liczenie (kalkulator) oraz Wyniki z kartami #dziennik #badania #mieszanki #zdjecia */
-const SUB=["dziennik","badania","mieszanki","zdjecia"],SUBNAME={dziennik:"Dziennik",badania:"Wyniki badań",mieszanki:"Mieszanki",zdjecia:"Zdjęcia"};
+const SUB=["dziennik","badania","lepiszcza","mieszanki","zdjecia"],SUBNAME={dziennik:"Dziennik",badania:"Wyniki badań",lepiszcza:"Lepiszcza",mieszanki:"Mieszanki",zdjecia:"Zdjęcia"};
 const ALIAS={wyniki:"dziennik",kalkulator:"liczenie"};
 let lastSub="dziennik";
 function route(){let h=location.hash.slice(1);h=ALIAS[h]||h;if(h!=="liczenie"&&h!=="plan"&&!SUB.includes(h))h="dziennik";
@@ -386,7 +413,7 @@ function route(){let h=location.hash.slice(1);h=ALIAS[h]||h;if(h!=="liczenie"&&h
 addEventListener("hashchange",route);
 
 function fmtDate(d){const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(d||"");return m?{d:+m[3],m:MONTHS[+m[2]-1]+" "+m[1],full:`${+m[3]} ${MONTHS[+m[2]-1]} ${m[1]}`}:{d:"–",m:"",full:""}}
-function render(){renderPlan();renderStages();renderFeed();renderResults();renderMixes();renderGallery();renderFooter()}
+function render(){renderPlan();renderBinders();renderStages();renderFeed();renderResults();renderMixes();renderGallery();renderFooter()}
 function renderStages(){const box=$("#stages");box.replaceChildren();const max=Math.max(1,...STAGES.map(s=>S.entries.filter(e=>+e.stage===s.n).length));
   for(const s of STAGES){const c=S.entries.filter(e=>+e.stage===s.n).length;
     box.append(el("button",{class:"stage",type:"button","aria-pressed":String(S.stage===s.n),title:"Pokaż wpisy z etapu "+s.n,onclick:()=>{S.stage=S.stage===s.n?0:s.n;if(location.hash!=="#dziennik")location.hash="dziennik";render()}},
@@ -467,7 +494,7 @@ async function saveFile(name,blob){
   if(downloads){try{await downloads.save({filename:name,data:blob});return true}catch(e){if(e&&e.code==="declined")return false;throw e}}
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);return true}
 async function kopiaPobierz(){const plik=`Dziennik-MMA-kopia-${stamp()}.json`;
-  const blob=new Blob([JSON.stringify({app:"Dziennik MMA",v:1,t:Date.now(),entries:strip(LIVE.entries),mixes:strip(LIVE.mixes),plan:strip(LIVE.plan)},null,1)],{type:"application/json"});
+  const blob=new Blob([JSON.stringify({app:"Dziennik MMA",v:1,t:Date.now(),entries:strip(LIVE.entries),mixes:strip(LIVE.mixes),plan:strip(LIVE.plan),binders:strip(LIVE.binders)},null,1)],{type:"application/json"});
   try{if(await saveFile(plik,blob)){try{localStorage.setItem("mmaKopiaT",String(Date.now()))}catch(e){}kpMsg=`Zapisano „${plik}” (${LIVE.entries.length} ${plural(LIVE.entries.length,"wpis","wpisy","wpisów")}).`;kpErr=false}else{kpMsg="Anulowano.";kpErr=false}}
   catch(e){kpMsg="Nie udało się zapisać pliku.";kpErr=true}kopiaBtn();kopiaRender()}
 async function kopiaCsv(){const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const out=[["data","etap","mieszanka","badanie","norma","parametr","wartosc","jednostka","wpis"].join(";")];
@@ -519,6 +546,29 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-kp]");if(!
 $("#kpBtn").dataset.kp="open";
 addEventListener("keydown",e=>{if(kpOpen&&e.key==="Escape"){kpOpen=false;kpMsg="";kopiaRender()}});
 document.addEventListener("error",e=>{const t=e.target;if(t&&t.tagName==="IMG"&&t.closest(".photos"))t.closest("figure").hidden=true},true);
+
+/* ---------- LEPISZCZA ----------
+   Kolekcja "binders": {code, name, order, status:"ok"|"fail"|"unknown", statusNote, components:[{name, kind, g}], note, assumption?, tests?:[{label,value,unit}]}.
+   kind: asf | og (olej gęsty) | or (olej rzadki) | up (upłynniacz roślinny) | sbs — kolor paska. */
+const BKIND={asf:["Asfalt 50/70","--c-asf"],og:["Olej gęsty (pozostałość)","--c-og"],or:["Olej rzadki (pozostałość)","--c-or"],up:["Upłynniacz roślinny","--c-up"],sbs:["SBS","--c-sbs"]};
+const BSTAT={ok:"udane",fail:"nieudane",unknown:"wynik do uzupełnienia"};
+const fmtPL=(v,d=1)=>Number(v).toLocaleString("pl-PL",{minimumFractionDigits:d,maximumFractionDigits:d});
+function renderBinders(){const box=$("#binders");if(!box)return;box.replaceChildren();
+  const list=[...LIVE.binders].sort((a,b)=>(a.order??99)-(b.order??99));
+  if(!list.length){box.append(emptyEl("Brak zapisanych lepiszczy.","Tu trafią składy lepiszczy (asfalt, pozostałości olejów roślinnych, SBS) z udziałami procentowymi i wynikami badań."));return}
+  box.append(el("p",{class:"bintro",text:"Składy lepiszczy przygotowanych w laboratorium, przeliczone na udziały masowe. Pasek pokazuje proporcje składników."}));
+  const lg=el("div",{class:"blegend"});Object.values(BKIND).forEach(([n,c])=>lg.append(el("span",{},el("i",{style:`background:var(${c})`}),n)));box.append(lg);
+  const wrap=el("div",{class:"binders"});
+  for(const b of list){const comps=Array.isArray(b.components)?b.components:[];const tot=comps.reduce((a,c)=>a+(+c.g||0),0);
+    const card=el("article",{class:"bcard",id:"b-"+b._id},el("div",{class:"bcard-top"},el("span",{class:"code",text:b.code||"—"}),el("h3",{text:b.name||""}),el("span",{class:"bstat "+(BSTAT[b.status]?b.status:"unknown"),text:b.statusNote||BSTAT[b.status]||BSTAT.unknown})));
+    if(tot>0){const bar=el("div",{class:"bbar",role:"img","aria-label":comps.map(c=>`${c.name} ${fmtPL(c.g/tot*100)} %`).join(", ")});comps.forEach(c=>bar.append(el("i",{style:`width:${c.g/tot*100}%;background:var(${(BKIND[c.kind]||BKIND.asf)[1]})`,title:`${c.name}: ${fmtPL(c.g/tot*100)} %`})));card.append(bar);
+      const t=el("div",{class:"bcomp"});comps.forEach(c=>t.append(el("i",{class:"sw",style:`background:var(${(BKIND[c.kind]||BKIND.asf)[1]})`}),el("span",{text:c.name}),el("span",{class:"g",text:b.noMass?"":fmtPL(c.g,0)+" g"}),el("span",{class:"pc",text:fmtPL(c.g/tot*100)+" %"})));
+      if(comps.length>1)t.append(el("span",{class:"tot",text:"Razem"}),el("span",{class:"g tot-g",text:fmtPL(tot,0)+" g"}),el("span",{class:"pc tot-p",text:"100,0 %"}));card.append(t)}
+    if(b.assumption)card.append(el("p",{class:"bassume"},el("b",{text:"Założenie do potwierdzenia: "}),b.assumption));
+    if(Array.isArray(b.tests)&&b.tests.length){const sm=el("div",{class:"summary"});b.tests.forEach(k=>sm.append(el("div",{class:"kv"},el("span",{class:"label",text:k.label}),el("span",{class:"v"},String(k.value),k.unit?el("small",{text:" "+k.unit}):null))));card.append(sm)}
+    if(b.note)card.append(el("p",{class:"bnote",text:b.note}));
+    wrap.append(card)}
+  box.append(wrap)}
 
 /* ---------- PLAN DZIAŁANIA ----------
    Kroki w kolekcji "plan": {order, phase, phaseTitle, title, time, items[], tip, norms[], ask, status:"todo"|"done"}.
@@ -584,7 +634,7 @@ async function calcSync(){if(calcBusy)return;const snap=calcSnap();if(snap===cal
 /* ---------- dane ---------- */
 async function startPliki(){
   try{const r=await fetch("dane/dziennik.json",{cache:"no-cache"});if(!r.ok)throw new Error(r.status);const j=await r.json();
-    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];LIVE.plan=Array.isArray(j.plan)?j.plan:[];S.loaded=true}
+    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];LIVE.plan=Array.isArray(j.plan)?j.plan:[];LIVE.binders=Array.isArray(j.binders)?j.binders:[];S.loaded=true}
   catch(e){S.err="Nie znaleziono pliku dane/dziennik.json obok strony."}
   show()}
 async function start(){route();show();
@@ -599,6 +649,7 @@ async function start(){route();show();
     if(!snap.metadata.fromCache){S.loaded=true;S.err="";clearTimeout(tmo)}else if(snap.size)S.loaded=true;show()},
     e=>{clearTimeout(tmo);S.err="Błąd bazy danych ("+e.code+").";show()});
   db.collection("mixes").onSnapshot(snap=>{LIVE.mixes=snap.docs.map(d=>({...d.data(),_id:d.id}));show()},()=>{});
+  db.collection("binders").onSnapshot(snap=>{LIVE.binders=snap.docs.map(d=>({...d.data(),_id:d.id}));renderBinders()},()=>{});
   db.collection("plan").onSnapshot(snap=>{LIVE.plan=snap.docs.map(d=>({...d.data(),_id:d.id}));renderPlan()},()=>{});
 }
 start();
