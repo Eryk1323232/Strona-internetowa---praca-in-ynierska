@@ -211,6 +211,49 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 @media (max-width:560px){.kp-panel{top:auto;left:0;width:auto;height:min(88dvh,100%);border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;padding-left:env(safe-area-inset-left,0px)}}
 @media (prefers-reduced-motion:reduce){.kp-btn.due{animation:none}}
 
+/* plan działania */
+.page-plan{max-width:920px;padding-top:18px;display:grid;gap:22px}
+.plan-head{display:grid;gap:8px}
+#planBody{display:grid;gap:28px}
+#planBody>.plan-warn{margin-top:-14px}
+.plan-head h1{font-size:clamp(24px,3.6vw,32px);font-weight:800;letter-spacing:-.01em}
+.plan-head p{max-width:66ch;color:var(--muted)}
+.plan-sum{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.plan-sum .bar{grid-column:1/-1;height:6px;border-radius:3px;background:var(--sunk);overflow:hidden}
+.plan-sum .bar i{display:block;height:100%;background:var(--accent);border-radius:3px;transition:width .3s}
+.plan-next{display:grid;gap:2px;min-width:0}
+.plan-next b{font-size:17px}
+.plan-count{font:600 22px var(--f-mono);text-align:right}
+.plan-count small{display:block;font:12px var(--f-body);color:var(--muted)}
+.plan-warn{background:var(--amber-soft);border-radius:var(--r);padding:12px 16px;font-size:14px;display:grid;gap:4px;max-width:none}
+.plan-warn b{color:var(--amber)}
+.phase{display:grid;gap:10px}
+.phase-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px}
+.phase-h .n{font:800 13px var(--f-mono);color:var(--accent);letter-spacing:.06em}
+.phase-h h2{font-size:20px}
+.phase-h .t{margin-left:auto;font:12px var(--f-mono);color:var(--muted)}
+.step{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.step.done{background:transparent}
+.step.done .step-t{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.step.now{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.chk{all:unset;box-sizing:border-box;width:24px;height:24px;border:1.5px solid var(--line);border-radius:6px;display:grid;place-items:center;margin-top:1px;background:var(--bg)}
+button.chk{cursor:pointer}
+button.chk:hover{border-color:var(--accent)}
+button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chk svg{width:14px;height:14px;fill:none;stroke:var(--surface);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.step.done .chk{background:var(--accent);border-color:var(--accent)}
+.step.done .chk svg{opacity:1}
+.step-b{display:grid;gap:8px;min-width:0}
+.step-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.step-t{font-weight:600;font-size:16px}
+.step-time{font:12px var(--f-mono);color:var(--muted);min-width:0;overflow-wrap:anywhere}
+.step ul{margin:0;padding-left:18px;display:grid;gap:3px;font-size:14.5px;max-width:68ch}
+.step-tip{font-size:13.5px;color:var(--muted);max-width:68ch}
+.step-tip b{color:var(--ink);font-weight:600}
+.norms{display:flex;flex-wrap:wrap;gap:6px}
+.norm{font:500 11px/1 var(--f-mono);padding:5px 7px;border-radius:4px;background:var(--sunk);color:var(--muted)}
+.ask{font:600 11px/1 var(--f-mono);padding:5px 7px;border-radius:4px;background:var(--amber-soft);color:var(--amber);letter-spacing:.02em}
+.plan-src{font-size:13px;color:var(--muted);display:grid;gap:4px}
 /* kalkulator */
 .calc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:10px 16px;margin-bottom:12px}
 .calc-head h2{font-size:22px}
@@ -241,6 +284,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     <nav class="side-nav" aria-label="Podstrony">
       <a href="#liczenie" data-p="liczenie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h0M14 11h2M8 14.5h2M14 14.5h2M8 18h2M12 14.5v3.5M14 18h2"/></svg><span>Liczenie</span><small>Kalkulator MASA</small></a>
       <a href="#dziennik" data-p="wyniki" id="sideWyniki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Wyniki</span><small>Dziennik, badania, mieszanki, zdjęcia</small></a>
+      <a href="#plan" data-p="plan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1.2 1.2L7 5M4 12l1.2 1.2L7 11"/><circle cx="5.2" cy="18" r="1.2"/></svg><span>Plan działania</span><small>Kroki, czasy, normy</small></a>
     </nav>
     <div class="side-foot"><span>Prowadzi Claude</span><span id="sideUpd" class="mono"></span></div>
   </aside>
@@ -259,6 +303,14 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
         <div class="calc-acts"><span class="calc-sync" id="calcSync" role="status"></span><a class="calc-link" href="kalkulatory/masa.html" target="_blank" rel="noopener">Otwórz w nowej karcie ↗</a></div>
       </div>
       <div class="calc-box" id="calcBox"></div>
+    </div>
+
+    <div class="page-plan" id="p-plan" hidden>
+      <div class="plan-head">
+        <h1>Plan działania</h1>
+        <p>Kolejność prac w laboratorium od materiałów do wniosków, z orientacyjnymi czasami i normami. Odhaczaj kroki albo napisz w czacie, co zrobiłeś, a Claude zaktualizuje plan.</p>
+      </div>
+      <div id="planBody"></div>
     </div>
 
     <div class="page-wyniki" id="p-wyniki">
@@ -308,7 +360,7 @@ const S={entries:[],mixes:[],loaded:false,err:"",stage:0,q:""};
 let db=null,downloads=null,canEdit=false;
 /* MODE: "claude" = baza claude.ai; "pliki" = GitHub Pages / inny hosting → dane/dziennik.json + zdjecia/<id>.jpg z repozytorium */
 const MODE=(window.claude&&typeof window.claude.use==="function")?"claude":"pliki";
-const LIVE={entries:[],mixes:[]};   /* aktualne dane; S.* pokazuje je albo wgraną kopię (podgląd) */
+const LIVE={entries:[],mixes:[],plan:[]};   /* aktualne dane; S.* pokazuje je albo wgraną kopię (podgląd) */
 let PODGLAD=null;                    /* {plik,t,entries,mixes} gdy oglądasz wgraną kopię */
 const photoSrc=id=>MODE==="claude"?"/_blob/"+id:"zdjecia/"+encodeURIComponent(id)+".jpg";
 function show(){const src=PODGLAD||LIVE;S.entries=[...src.entries].sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.createdAt||"").localeCompare(a.createdAt||""));
@@ -322,18 +374,19 @@ const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
 const SUB=["dziennik","badania","mieszanki","zdjecia"],SUBNAME={dziennik:"Dziennik",badania:"Wyniki badań",mieszanki:"Mieszanki",zdjecia:"Zdjęcia"};
 const ALIAS={wyniki:"dziennik",kalkulator:"liczenie"};
 let lastSub="dziennik";
-function route(){let h=location.hash.slice(1);h=ALIAS[h]||h;if(h!=="liczenie"&&!SUB.includes(h))h="dziennik";
-  const calc=h==="liczenie";$("#p-liczenie").hidden=!calc;$("#p-wyniki").hidden=calc;
-  if(!calc){lastSub=h;for(const x of SUB)$("#v-"+x).hidden=x!==h;
+function route(){let h=location.hash.slice(1);h=ALIAS[h]||h;if(h!=="liczenie"&&h!=="plan"&&!SUB.includes(h))h="dziennik";
+  const calc=h==="liczenie",plan=h==="plan",page=calc?"liczenie":plan?"plan":"wyniki";
+  $("#p-liczenie").hidden=!calc;$("#p-plan").hidden=!plan;$("#p-wyniki").hidden=calc||plan;
+  if(page==="wyniki"){lastSub=h;for(const x of SUB)$("#v-"+x).hidden=x!==h;
     document.querySelectorAll("nav.tabs a").forEach(a=>{if(a.dataset.v===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}
   $("#sideWyniki").href="#"+lastSub;
-  document.querySelectorAll(".side-nav a").forEach(a=>{if(a.dataset.p===(calc?"liczenie":"wyniki"))a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-  $("#crumb").textContent=calc?"Liczenie · kalkulator MASA":"Wyniki · "+SUBNAME[h];
+  document.querySelectorAll(".side-nav a").forEach(a=>{if(a.dataset.p===page)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  $("#crumb").textContent=calc?"Liczenie · kalkulator MASA":plan?"Plan działania":"Wyniki · "+SUBNAME[h];
   if(calc)calcOpen()}
 addEventListener("hashchange",route);
 
 function fmtDate(d){const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(d||"");return m?{d:+m[3],m:MONTHS[+m[2]-1]+" "+m[1],full:`${+m[3]} ${MONTHS[+m[2]-1]} ${m[1]}`}:{d:"–",m:"",full:""}}
-function render(){renderStages();renderFeed();renderResults();renderMixes();renderGallery();renderFooter()}
+function render(){renderPlan();renderStages();renderFeed();renderResults();renderMixes();renderGallery();renderFooter()}
 function renderStages(){const box=$("#stages");box.replaceChildren();const max=Math.max(1,...STAGES.map(s=>S.entries.filter(e=>+e.stage===s.n).length));
   for(const s of STAGES){const c=S.entries.filter(e=>+e.stage===s.n).length;
     box.append(el("button",{class:"stage",type:"button","aria-pressed":String(S.stage===s.n),title:"Pokaż wpisy z etapu "+s.n,onclick:()=>{S.stage=S.stage===s.n?0:s.n;if(location.hash!=="#dziennik")location.hash="dziennik";render()}},
@@ -414,7 +467,7 @@ async function saveFile(name,blob){
   if(downloads){try{await downloads.save({filename:name,data:blob});return true}catch(e){if(e&&e.code==="declined")return false;throw e}}
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);return true}
 async function kopiaPobierz(){const plik=`Dziennik-MMA-kopia-${stamp()}.json`;
-  const blob=new Blob([JSON.stringify({app:"Dziennik MMA",v:1,t:Date.now(),entries:strip(LIVE.entries),mixes:strip(LIVE.mixes)},null,1)],{type:"application/json"});
+  const blob=new Blob([JSON.stringify({app:"Dziennik MMA",v:1,t:Date.now(),entries:strip(LIVE.entries),mixes:strip(LIVE.mixes),plan:strip(LIVE.plan)},null,1)],{type:"application/json"});
   try{if(await saveFile(plik,blob)){try{localStorage.setItem("mmaKopiaT",String(Date.now()))}catch(e){}kpMsg=`Zapisano „${plik}” (${LIVE.entries.length} ${plural(LIVE.entries.length,"wpis","wpisy","wpisów")}).`;kpErr=false}else{kpMsg="Anulowano.";kpErr=false}}
   catch(e){kpMsg="Nie udało się zapisać pliku.";kpErr=true}kopiaBtn();kopiaRender()}
 async function kopiaCsv(){const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const out=[["data","etap","mieszanka","badanie","norma","parametr","wartosc","jednostka","wpis"].join(";")];
@@ -467,6 +520,35 @@ $("#kpBtn").dataset.kp="open";
 addEventListener("keydown",e=>{if(kpOpen&&e.key==="Escape"){kpOpen=false;kpMsg="";kopiaRender()}});
 document.addEventListener("error",e=>{const t=e.target;if(t&&t.tagName==="IMG"&&t.closest(".photos"))t.closest("figure").hidden=true},true);
 
+/* ---------- PLAN DZIAŁANIA ----------
+   Kroki w kolekcji "plan": {order, phase, phaseTitle, title, time, items[], tip, norms[], ask, status:"todo"|"done"}.
+   Właściciel może odhaczać kroki (zapis do bazy); treść planu uzupełnia Claude. */
+let planBusy=new Set();
+function renderPlan(){const box=$("#planBody");if(!box)return;box.replaceChildren();
+  const steps=[...LIVE.plan].sort((a,b)=>(a.order??0)-(b.order??0));
+  if(!steps.length){box.append(emptyEl(S.err?"Nie można wczytać planu.":S.loaded?"Plan nie jest jeszcze zapisany.":"Wczytywanie planu…",S.err||null));return}
+  const done=steps.filter(x=>x.status==="done").length,next=steps.find(x=>x.status!=="done");
+  const editable=MODE==="claude"&&canEdit&&!PODGLAD;
+  box.append(el("div",{class:"plan-sum"},
+    el("div",{class:"plan-next"},el("span",{class:"label",text:next?"Następny krok":"Plan ukończony"}),el("b",{text:next?next.title:"Wszystkie kroki zrobione"}),next&&next.time?el("span",{class:"step-time",text:next.time}):null),
+    el("div",{class:"plan-count"},`${done}/${steps.length}`,el("small",{text:"kroków zrobionych"})),
+    el("div",{class:"bar"},el("i",{style:`width:${steps.length?done/steps.length*100:0}%`}))));
+  box.append(el("div",{class:"plan-warn"},el("b",{text:"Plan orientacyjny"}),el("span",{text:"Ułożony na podstawie WT-2 2014, norm PN-EN 12697 i badań promotora nad lepiszczami z olejem roślinnym. Pozycje oznaczone „ustal z promotorem” zależą od jego decyzji i od wyposażenia laboratorium — potwierdź je przed startem."})));
+  const phases=[];steps.forEach(x=>{let ph=phases.find(p=>p.n===x.phase);if(!ph){ph={n:x.phase,t:x.phaseTitle||"",time:x.phaseTime||"",list:[]};phases.push(ph)}if(x.phaseTime)ph.time=x.phaseTime;ph.list.push(x)});
+  const tick=()=>{const s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.setAttribute("viewBox","0 0 16 16");s.setAttribute("aria-hidden","true");s.innerHTML='<path d="M3.5 8.5l3 3 6-7"/>';return s};
+  for(const ph of phases){const sec=el("section",{class:"phase"},el("div",{class:"phase-h"},el("span",{class:"n",text:"ETAP "+ph.n}),el("h2",{text:ph.t}),ph.time?el("span",{class:"t",text:ph.time}):null));
+    for(const x of ph.list){const isDone=x.status==="done";
+      const chk=editable?el("button",{type:"button",class:"chk","aria-pressed":String(isDone),"aria-label":(isDone?"Oznacz jako niezrobione: ":"Oznacz jako zrobione: ")+x.title,disabled:planBusy.has(x._id)?"":null,onclick:async()=>{planBusy.add(x._id);try{await db.doc("plan/"+x._id).update({status:isDone?"todo":"done",doneAt:isDone?null:new Date().toISOString().slice(0,10)})}catch(e){}planBusy.delete(x._id)}},tick()):el("span",{class:"chk","aria-hidden":"true"},tick());
+      const b=el("div",{class:"step-b"},el("div",{class:"step-top"},el("span",{class:"step-t",text:x.title}),x.time?el("span",{class:"step-time",text:"⏱ "+x.time}):null));
+      if(Array.isArray(x.items)&&x.items.length){const ul=el("ul");x.items.forEach(t=>ul.append(el("li",{text:t})));b.append(ul)}
+      if(x.tip)b.append(el("p",{class:"step-tip"},el("b",{text:"Wskazówka: "}),x.tip));
+      const tags=el("div",{class:"norms"});(x.norms||[]).forEach(n=>tags.append(el("span",{class:"norm",text:n})));if(x.ask)tags.append(el("span",{class:"ask",text:"ustal z promotorem"}));if(tags.childNodes.length)b.append(tags);
+      sec.append(el("div",{class:"step"+(isDone?" done":"")+(x===next?" now":"")},chk,b))}
+    box.append(sec)}
+  box.append(el("div",{class:"plan-src"},el("span",{class:"label",text:"Źródła"}),
+    el("span",{},"WT-2 2014 (GDDKiA) — wymagania dla AC 11 S, KR3–KR4."),
+    el("span",{},"A. Plewa, „Mieszanki mineralno-asfaltowe z elastomeroasfaltami upłynnionymi olejami roślinnymi”, Drogi i Mosty 18 (2019) 181–192.")))}
+
 /* ---------- KALKULATOR MASA (kalkulatory/masa.html w ramce) ----------
    Kalkulator zapisuje się sam w pamięci przeglądarki (klucze masaweb.*). Na claude.ai strona dodatkowo
    kopiuje ten stan do bazy (dokument kalkulator/stan) — działa na każdym urządzeniu, a Claude może odczytać recepturę. */
@@ -502,7 +584,7 @@ async function calcSync(){if(calcBusy)return;const snap=calcSnap();if(snap===cal
 /* ---------- dane ---------- */
 async function startPliki(){
   try{const r=await fetch("dane/dziennik.json",{cache:"no-cache"});if(!r.ok)throw new Error(r.status);const j=await r.json();
-    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];S.loaded=true}
+    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];LIVE.plan=Array.isArray(j.plan)?j.plan:[];S.loaded=true}
   catch(e){S.err="Nie znaleziono pliku dane/dziennik.json obok strony."}
   show()}
 async function start(){route();show();
@@ -517,6 +599,7 @@ async function start(){route();show();
     if(!snap.metadata.fromCache){S.loaded=true;S.err="";clearTimeout(tmo)}else if(snap.size)S.loaded=true;show()},
     e=>{clearTimeout(tmo);S.err="Błąd bazy danych ("+e.code+").";show()});
   db.collection("mixes").onSnapshot(snap=>{LIVE.mixes=snap.docs.map(d=>({...d.data(),_id:d.id}));show()},()=>{});
+  db.collection("plan").onSnapshot(snap=>{LIVE.plan=snap.docs.map(d=>({...d.data(),_id:d.id}));renderPlan()},()=>{});
 }
 start();
 </script>

@@ -7,7 +7,7 @@ Strona z wynikami badań do pracy inżynierskiej
 | Plik / folder | Zawartość |
 |---|---|
 | `index.html` | strona (ta sama co na claude.ai; tutaj czyta dane z plików poniżej) |
-| `dane/dziennik.json` | wszystkie wpisy (`entries`) i receptury (`mixes`) |
+| `dane/dziennik.json` | wpisy (`entries`), receptury (`mixes`) i plan działania (`plan`) |
 | `zdjecia/<id>.jpg` | zdjęcia; `id` jak w polu `photos` wpisu |
 | `kalkulatory/masa.html` | kalkulator MASA (projekt mieszanki), zakładka „Kalkulator MMA” |
 
