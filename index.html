@@ -1,12 +1,4 @@
-<!doctype html>
-<html lang="pl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-</head>
-<body>
-<title>Dziennik badań MMA</title>
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Dziennik badań MMA</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -65,7 +57,7 @@ body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-b
 }
 h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
 p{margin:0}
-.label{font:500 11px/1.3 var(--f-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.label{font:600 13px/1.35 var(--f-body);letter-spacing:.01em;color:var(--muted)}
 .mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
 button,input{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -73,7 +65,7 @@ a{color:var(--accent)}
 
 /* header */
 header.thesis{padding-block:20px 24px;display:grid;gap:16px}
-.thesis h1{font-size:clamp(24px,4.4vw,38px);font-weight:800;letter-spacing:-.015em;max-width:26ch}
+.thesis h1{font-size:clamp(20px,3vw,26px);font-weight:700;letter-spacing:-.01em;max-width:40ch}
 .meta{display:flex;flex-wrap:wrap;gap:6px 24px;font-size:14px;color:var(--muted)}
 .meta b{color:var(--ink);font-weight:600}
 .kw{display:flex;flex-wrap:wrap;gap:6px}
@@ -132,7 +124,7 @@ input[type=search]{width:100%;background:var(--surface);border:1px solid var(--l
 .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
 table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
 th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-th{background:var(--sunk);font:500 11px/1.3 var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+th{background:var(--sunk);font:600 13px/1.3 var(--f-body);color:var(--ink)}
 td.num{text-align:right;font-family:var(--f-mono)}
 tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--sunk) 40%,transparent)}
 tr:last-child td{border-bottom:0}
@@ -301,6 +293,90 @@ button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .lightbox figcaption{color:#ECECE4;font-size:15px;text-align:center}
 .lightbox button{justify-self:end;background:none;border:1px solid #777;color:#ECECE4;border-radius:6px;padding:6px 12px;cursor:pointer}
 @media (prefers-reduced-motion:reduce){.photos img{transition:none}}
+/* szczegóły wpisu w dzienniku (zwijane) */
+details.more{border-top:1px solid var(--line);padding-top:10px}
+details.more>summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--accent);list-style:none;display:flex;align-items:center;gap:6px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"▸";transition:transform .15s}
+details.more[open]>summary::before{transform:rotate(90deg)}
+details.more>div{display:grid;gap:14px;margin-top:12px}
+/* podgląd */
+.page-podglad{max-width:980px;padding-top:18px}
+.pg{display:grid;gap:26px}
+.pg-head{display:grid;gap:4px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.pg-head h1{font-size:clamp(22px,3.2vw,30px);font-weight:800;letter-spacing:-.01em}
+.pg-head p{color:var(--muted);font-size:14.5px}
+.pg-sec{display:grid;gap:12px;min-width:0}
+.pg-sec>h2{font-size:20px;display:flex;align-items:center;gap:10px}
+.pg-sec>h2 small{font:500 13px var(--f-body);color:var(--muted)}
+.pg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px}
+.pg-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:10px;min-width:0;align-content:start}
+.pg-card h3{font-size:16px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.pg-card h3 span{font:500 13px var(--f-body);color:var(--muted)}
+.pg-files{display:grid;gap:12px}
+.pg-folder{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.pg-fhead{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--sunk);font-weight:600}
+.pg-fhead svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;color:var(--amber)}
+.pg-fhead .n{color:var(--muted);font-weight:400;font-size:13px}
+.pg-plus{margin-left:auto;width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--accent);font:600 20px/1 var(--f-body);cursor:pointer;display:grid;place-items:center}
+.pg-plus:hover{border-color:var(--accent)}
+.pg-file{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 14px;border-top:1px solid var(--line)}
+.pg-file .ic{font:700 10px var(--f-mono);background:var(--bad-soft);color:var(--bad);border-radius:4px;padding:6px 5px;min-width:34px;text-align:center}
+.pg-file .nm{display:grid;min-width:0}.pg-file .nm b{font-weight:600;overflow-wrap:anywhere}.pg-file .nm small{color:var(--muted);font-size:12.5px}
+.pg-acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.pg-btn{font:600 13px var(--f-body);padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;white-space:nowrap}
+.pg-btn.pri{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.pg-btn.del{color:var(--muted)}.pg-btn.del.armed{color:var(--bad);border-color:var(--bad)}
+.pg-newf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:14px;color:var(--muted)}
+.pg-newf input{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:7px 10px;min-width:0;flex:0 1 220px}
+.pg-msg{font-size:13.5px;color:var(--accent)}.pg-msg.err{color:var(--bad)}
+.pg-empty{padding:12px 14px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+/* projekt mieszanki */
+.pj{display:grid;gap:18px}
+.pj-hero{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;display:grid;gap:14px}
+.pj-hero h2{font-size:24px}
+.pj-hero p{color:var(--muted);max-width:66ch}
+.pj-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.pj-kpi{background:var(--sunk);border-radius:6px;padding:10px 14px;display:grid;gap:2px}
+.pj-kpi b{font:700 24px/1.2 var(--f-display);font-variant-numeric:tabular-nums}
+.pj-kpi span{font-size:13px;color:var(--muted)}
+.pj-kpi.ok b{color:var(--ok)}
+.pj-sec{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:12px;min-width:0}
+.pj-sec h3{font-size:19px}
+.pj-sec .hint{font-size:14px;color:var(--muted);max-width:68ch}
+.pj-bar{display:flex;height:30px;border-radius:6px;overflow:hidden}
+.pj-bar i{display:flex;align-items:center;justify-content:center;font:600 12px var(--f-body);color:#fff;font-style:normal;min-width:0;overflow:hidden;white-space:nowrap}
+.pj-steps{margin:0;padding-left:20px;display:grid;gap:6px;font-size:15px;max-width:68ch}
+.pj-steps li.done{color:var(--muted);text-decoration:line-through}
+td.ok{color:var(--ok);font-weight:600}td.bad{color:var(--bad);font-weight:600}
+.pj-chart text{font:12px var(--f-body);fill:var(--muted)}
+.pj-chart .val{font:600 12px var(--f-body);fill:var(--ink)}
+/* kruszywa */
+.ag-intro{font-size:14.5px;color:var(--muted);max-width:68ch;margin-bottom:18px}
+.ag-over{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:14px;margin-bottom:22px;min-width:0}
+.ag-over h2{font-size:20px}
+.ag-chart{width:100%;height:auto;display:block}
+.ag-chart text{fill:var(--muted);font:11px var(--f-mono)}
+.ag-chart .grid{stroke:var(--line);stroke-width:1}
+.ag-chart .env{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1;stroke-dasharray:4 3}
+.ag-leg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.ag-leg span{display:inline-flex;align-items:center;gap:6px}
+.ag-leg i{width:14px;height:3px;border-radius:2px;display:inline-block}
+.ag-leg i.env{height:10px;background:var(--accent-soft);border:1px dashed var(--accent)}
+.ag-list{display:grid;gap:14px}
+.agcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:12px;min-width:0}
+.agcard.todo{background:transparent;border-style:dashed}
+.ag-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.ag-top .code{font:800 24px var(--f-display);display:inline-flex;align-items:center;gap:8px}
+.ag-top .code i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.ag-top h3{font-size:16px;font-weight:500;color:var(--muted);flex:1 1 200px;min-width:0}
+.ag-kpis{display:flex;flex-wrap:wrap;gap:10px 22px}
+.ag-flag{font-size:13.5px;background:var(--amber-soft);border-radius:6px;padding:8px 12px;max-width:68ch;white-space:pre-wrap}
+.ag-flag b{color:var(--amber)}
+.ag-links{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+:root{--f1:#7A4E1D;--f2:#2F6F8F;--f3:#9A6A08;--f4:#6B4C8A;--f5:#3B7A57;--f6:#8C3B3B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--f1:#D9A15E;--f2:#79B8D6;--f3:#E2B24A;--f4:#B597D6;--f5:#7CC49C;--f6:#E08A7E}}
+:root[data-theme="dark"]{--f1:#D9A15E;--f2:#79B8D6;--f3:#E2B24A;--f4:#B597D6;--f5:#7CC49C;--f6:#E08A7E}
 </style>
 
 <div class="kp-bar" id="kpBar" role="status" hidden></div>
@@ -308,8 +384,9 @@ button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <aside class="side">
     <div class="side-brand"><b>Dziennik MMA</b><small>Praca inżynierska · PB<br>budownictwo drogowe</small></div>
     <nav class="side-nav" aria-label="Podstrony">
+      <a href="#podglad" data-p="podglad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><span>Podgląd</span><small>Aktualne wyniki i pliki</small></a>
       <a href="#liczenie" data-p="liczenie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h0M14 11h2M8 14.5h2M14 14.5h2M8 18h2M12 14.5v3.5M14 18h2"/></svg><span>Liczenie</span><small>Kalkulator MASA</small></a>
-      <a href="#dziennik" data-p="wyniki" id="sideWyniki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Wyniki</span><small>Dziennik, badania, mieszanki, zdjęcia</small></a>
+      <a href="#projekt" data-p="wyniki" id="sideWyniki"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Wyniki</span><small>Projekt, kruszywa, dziennik, zdjęcia</small></a>
       <a href="#plan" data-p="plan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1.2 1.2L7 5M4 12l1.2 1.2L7 11"/><circle cx="5.2" cy="18" r="1.2"/></svg><span>Plan działania</span><small>Kroki, czasy, normy</small></a>
     </nav>
     <div class="side-foot"><span>Prowadzi Claude</span><span id="sideUpd" class="mono"></span></div>
@@ -331,6 +408,8 @@ button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <div class="calc-box" id="calcBox"></div>
     </div>
 
+    <div class="page-podglad" id="p-podglad" hidden><div id="pgBody"></div></div>
+
     <div class="page-plan" id="p-plan" hidden>
       <div class="plan-head">
         <h1>Plan działania</h1>
@@ -340,18 +419,19 @@ button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     </div>
 
     <div class="page-wyniki" id="p-wyniki">
-      <header class="thesis">
+      <header class="thesis" id="thesisHead">
     <h1>Ocena właściwości mieszanek mineralno-asfaltowych z zastosowaniem lepiszczy pochodzenia roślinnego</h1>
     <div class="meta">
       <span>Autor: <b>Eryk Bazeyan</b></span>
       <span>Promotor: <b>dr inż. Andrzej Plewa</b></span>
       <span>Rok akad. <b class="mono">2026/2027</b></span>
     </div>
-    <div class="kw"><span>mieszanka mineralno-asfaltowa</span><span>lepiszcza modyfikowane</span><span>upłynniacz pochodzenia roślinnego</span><span>lepiszcza pochodzenia roślinnego</span></div>
     <div class="progress" id="stages" role="group" aria-label="Etapy pracy"></div>
       </header>
 
       <nav class="tabs" aria-label="Sekcje wyników">
+        <a href="#projekt" data-v="projekt">Projekt mieszanki</a>
+        <a href="#kruszywa" data-v="kruszywa">Kruszywa</a>
         <a href="#dziennik" data-v="dziennik">Dziennik</a>
         <a href="#badania" data-v="badania">Wyniki badań</a>
         <a href="#lepiszcza" data-v="lepiszcza">Lepiszcza</a>
@@ -360,13 +440,15 @@ button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       </nav>
 
       <main>
-    <section id="v-dziennik">
+    <section id="v-dziennik" hidden>
       <div class="toolbar">
         <div class="grow"><input type="search" id="q" placeholder="Szukaj w dzienniku: mieszanka, badanie, norma…" aria-label="Szukaj wpisów"></div>
         <span class="filter-note" id="fnote" hidden></span>
       </div>
       <div class="feed" id="feed"></div>
     </section>
+    <section id="v-projekt" hidden><div id="proj"></div></section>
+    <section id="v-kruszywa" hidden><div id="aggs"></div></section>
     <section id="v-badania" hidden><div id="results"></div></section>
     <section id="v-lepiszcza" hidden><div id="binders"></div></section>
 <section id="v-mieszanki" hidden><div id="mixes"></div></section>
@@ -385,10 +467,10 @@ button.chk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 const STAGES=[{n:1,t:"Analiza literatury"},{n:2,t:"Projekt i wykonanie próbek"},{n:3,t:"Badania laboratoryjne"},{n:4,t:"Analiza wyników i wnioski"}];
 const MONTHS=["sty","lut","mar","kwi","maj","cze","lip","sie","wrz","paź","lis","gru"];
 const S={entries:[],mixes:[],loaded:false,err:"",stage:0,q:""};
-let db=null,downloads=null,canEdit=false;
+let db=null,downloads=null,canEdit=false,assets=null;
 /* MODE: "claude" = baza claude.ai; "pliki" = GitHub Pages / inny hosting → dane/dziennik.json + zdjecia/<id>.jpg z repozytorium */
 const MODE=(window.claude&&typeof window.claude.use==="function")?"claude":"pliki";
-const LIVE={entries:[],mixes:[],plan:[],binders:[]};   /* aktualne dane; S.* pokazuje je albo wgraną kopię (podgląd) */
+const LIVE={entries:[],mixes:[],plan:[],binders:[],aggregates:[],files:[]};   /* aktualne dane; S.* pokazuje je albo wgraną kopię (podgląd) */
 let PODGLAD=null;                    /* {plik,t,entries,mixes} gdy oglądasz wgraną kopię */
 const photoSrc=id=>MODE==="claude"?"/_blob/"+id:"zdjecia/"+encodeURIComponent(id)+".jpg";
 function show(){const src=PODGLAD||LIVE;S.entries=[...src.entries].sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.createdAt||"").localeCompare(a.createdAt||""));
@@ -399,22 +481,22 @@ const isNum=v=>typeof v==="number"||(typeof v==="string"&&/^[-−]?\d+([.,]\d+)?
 const plural=(n,a,b,c)=>n===1?a:(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20))?b:c;
 
 /* podstrony: #liczenie (kalkulator) oraz Wyniki z kartami #dziennik #badania #mieszanki #zdjecia */
-const SUB=["dziennik","badania","lepiszcza","mieszanki","zdjecia"],SUBNAME={dziennik:"Dziennik",badania:"Wyniki badań",lepiszcza:"Lepiszcza",mieszanki:"Mieszanki",zdjecia:"Zdjęcia"};
-const ALIAS={wyniki:"dziennik",kalkulator:"liczenie"};
-let lastSub="dziennik";
-function route(){let h=location.hash.slice(1);h=ALIAS[h]||h;if(h!=="liczenie"&&h!=="plan"&&!SUB.includes(h))h="dziennik";
-  const calc=h==="liczenie",plan=h==="plan",page=calc?"liczenie":plan?"plan":"wyniki";
-  $("#p-liczenie").hidden=!calc;$("#p-plan").hidden=!plan;$("#p-wyniki").hidden=calc||plan;
+const SUB=["projekt","kruszywa","dziennik","badania","lepiszcza","mieszanki","zdjecia"],SUBNAME={projekt:"Projekt mieszanki",kruszywa:"Kruszywa",dziennik:"Dziennik",badania:"Wyniki badań",lepiszcza:"Lepiszcza",mieszanki:"Mieszanki",zdjecia:"Zdjęcia"};
+const ALIAS={wyniki:"projekt",kalkulator:"liczenie"};
+let lastSub="projekt";
+function route(){let h=location.hash.slice(1);h=ALIAS[h]||h;if(h!=="liczenie"&&h!=="plan"&&h!=="podglad"&&!SUB.includes(h))h="podglad";
+  const calc=h==="liczenie",plan=h==="plan",pg=h==="podglad",page=calc?"liczenie":plan?"plan":pg?"podglad":"wyniki";
+  $("#p-liczenie").hidden=!calc;$("#p-plan").hidden=!plan;$("#p-podglad").hidden=!pg;$("#p-wyniki").hidden=calc||plan||pg;
   if(page==="wyniki"){lastSub=h;for(const x of SUB)$("#v-"+x).hidden=x!==h;
     document.querySelectorAll("nav.tabs a").forEach(a=>{if(a.dataset.v===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}
   $("#sideWyniki").href="#"+lastSub;
   document.querySelectorAll(".side-nav a").forEach(a=>{if(a.dataset.p===page)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-  $("#crumb").textContent=calc?"Liczenie · kalkulator MASA":plan?"Plan działania":"Wyniki · "+SUBNAME[h];
+  $("#crumb").textContent=calc?"Liczenie · kalkulator MASA":plan?"Plan działania":pg?"Podgląd wyników":"Wyniki · "+SUBNAME[h];
   if(calc)calcOpen()}
 addEventListener("hashchange",route);
 
 function fmtDate(d){const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(d||"");return m?{d:+m[3],m:MONTHS[+m[2]-1]+" "+m[1],full:`${+m[3]} ${MONTHS[+m[2]-1]} ${m[1]}`}:{d:"–",m:"",full:""}}
-function render(){renderPlan();renderBinders();renderStages();renderFeed();renderResults();renderMixes();renderGallery();renderFooter()}
+function render(){renderPodglad();renderPlan();renderBinders();renderAggs();renderProj();renderStages();renderFeed();renderResults();renderMixes();renderGallery();renderFooter()}
 function renderStages(){const box=$("#stages");box.replaceChildren();const max=Math.max(1,...STAGES.map(s=>S.entries.filter(e=>+e.stage===s.n).length));
   for(const s of STAGES){const c=S.entries.filter(e=>+e.stage===s.n).length;
     box.append(el("button",{class:"stage",type:"button","aria-pressed":String(S.stage===s.n),title:"Pokaż wpisy z etapu "+s.n,onclick:()=>{S.stage=S.stage===s.n?0:s.n;if(location.hash!=="#dziennik")location.hash="dziennik";render()}},
@@ -432,9 +514,11 @@ function entryEl(e){const f=fmtDate(e.date);const st=STAGES.find(s=>s.n===+e.sta
     el("h3",{text:e.title||"Bez tytułu"}));
   if(e.description)card.append(el("p",{class:"desc",text:e.description}));
   if(Array.isArray(e.summary)&&e.summary.length){const s=el("div",{class:"summary"});for(const k of e.summary)s.append(el("div",{class:"kv"},el("span",{class:"label",text:k.label}),el("span",{class:"v"},String(k.value),k.unit?el("small",{text:" "+k.unit}):null)));card.append(s)}
-  (Array.isArray(e.tables)?e.tables:[]).forEach(t=>{const x=tableEl(t);if(x)card.append(x)});
-  const p=photosEl(e.photos,e.title);if(p)card.append(p);
-  if(e.conclusions)card.append(el("div",{class:"concl"},el("span",{class:"label",text:"Wnioski i uwagi"}),el("p",{text:e.conclusions})));
+  const det=el("div");(Array.isArray(e.tables)?e.tables:[]).forEach(t=>{const x=tableEl(t);if(x)det.append(x)});
+  const p=photosEl(e.photos,e.title);if(p)det.append(p);
+  if(e.conclusions)det.append(el("div",{class:"concl"},el("span",{class:"label",text:"Wnioski i uwagi"}),el("p",{text:e.conclusions})));
+  if(det.childNodes.length){const nt=(e.tables||[]).length,np=(e.photos||[]).length;const bits=[nt?nt+" "+plural(nt,"tabela","tabele","tabel"):"",np?np+" "+plural(np,"zdjęcie","zdjęcia","zdjęć"):"",e.conclusions?"uwagi":""].filter(Boolean).join(" · ");
+    card.append(el("details",{class:"more"},el("summary",{text:"Pokaż szczegóły ("+bits+")"}),det))}
   return el("article",{class:"entry",id:"e-"+e._id},el("div",{class:"date"},el("span",{class:"d",text:String(f.d)}),el("span",{class:"m",text:f.m})),card)}
 function matches(e){if(S.stage&&+e.stage!==S.stage)return false;if(!S.q)return true;
   return [e.title,e.description,e.mix,e.test,e.norm,e.type,e.conclusions].join(" ").toLowerCase().includes(S.q)}
@@ -447,7 +531,7 @@ function renderFeed(){const box=$("#feed");box.replaceChildren();const fn=$("#fn
   const list=S.entries.filter(matches);
   if(!list.length){box.append(emptyEl("Brak pasujących wpisów.","Zmień wyszukiwanie albo pokaż wszystkie etapy."));return}
   list.forEach(e=>box.append(entryEl(e)))}
-function jump(id){location.hash="dziennik";setTimeout(()=>document.getElementById("e-"+id)?.scrollIntoView({behavior:"smooth",block:"start"}),60)}
+function jump(id){location.hash="dziennik";S.stage=0;S.q="";const q=$("#q");if(q)q.value="";renderFeed();setTimeout(()=>{const d=document.querySelector("#e-"+CSS.escape(id)+" details.more");if(d)d.open=true},20);setTimeout(()=>document.getElementById("e-"+id)?.scrollIntoView({behavior:"smooth",block:"start"}),60)}
 function renderResults(){const box=$("#results");box.replaceChildren();
   const withRes=S.entries.filter(e=>e.test&&((e.summary||[]).length||(e.tables||[]).length));
   if(!withRes.length){box.append(emptyEl("Wyników badań jeszcze nie ma.","Tu zostaną zestawione wyniki według rodzaju badania, z porównaniem mieszanek — gotowe do przeniesienia do rozdziału z analizą."));return}
@@ -495,7 +579,7 @@ async function saveFile(name,blob){
   if(downloads){try{await downloads.save({filename:name,data:blob});return true}catch(e){if(e&&e.code==="declined")return false;throw e}}
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);return true}
 async function kopiaPobierz(){const plik=`Dziennik-MMA-kopia-${stamp()}.json`;
-  const blob=new Blob([JSON.stringify({app:"Dziennik MMA",v:1,t:Date.now(),entries:strip(LIVE.entries),mixes:strip(LIVE.mixes),plan:strip(LIVE.plan),binders:strip(LIVE.binders)},null,1)],{type:"application/json"});
+  const blob=new Blob([JSON.stringify({app:"Dziennik MMA",v:1,t:Date.now(),entries:strip(LIVE.entries),mixes:strip(LIVE.mixes),plan:strip(LIVE.plan),binders:strip(LIVE.binders),aggregates:strip(LIVE.aggregates)},null,1)],{type:"application/json"});
   try{if(await saveFile(plik,blob)){try{localStorage.setItem("mmaKopiaT",String(Date.now()))}catch(e){}kpMsg=`Zapisano „${plik}” (${LIVE.entries.length} ${plural(LIVE.entries.length,"wpis","wpisy","wpisów")}).`;kpErr=false}else{kpMsg="Anulowano.";kpErr=false}}
   catch(e){kpMsg="Nie udało się zapisać pliku.";kpErr=true}kopiaBtn();kopiaRender()}
 async function kopiaCsv(){const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const out=[["data","etap","mieszanka","badanie","norma","parametr","wartosc","jednostka","wpis"].join(";")];
@@ -571,6 +655,175 @@ function renderBinders(){const box=$("#binders");if(!box)return;box.replaceChild
     wrap.append(card)}
   box.append(wrap)}
 
+
+
+
+/* ---------- PODGLĄD (czysty przegląd aktualnych wyników + pliki) ----------
+   Kolekcja "files": {name, folder, assetId, size, type, addedAt}. Pliki w magazynie strony (/_blob/<id>). */
+let pgMsg="",pgErr=false,pgArm="",pgNewFolder="";
+const fileSrc=f=>MODE==="claude"?"/_blob/"+f.assetId:(f.folder||"pdf")+"/"+encodeURIComponent(f.name);
+const fmtSize=b=>b>1048576?fmtPL(b/1048576,1)+" MB":fmtPL(b/1024,0)+" kB";
+async function pgUpload(folder,files){if(!assets||!db)return;pgErr=false;
+  for(const f of files){pgMsg="Wgrywam „"+f.name+"”…";renderPodglad();
+    try{const r=await assets.upload(f);const id=(Date.now().toString(36)+Math.random().toString(36).slice(2,6));
+      await db.doc("files/"+id).set({name:f.name,folder,assetId:r.id,size:r.sizeBytes||f.size,type:r.contentType||f.type,addedAt:new Date().toISOString()});pgMsg="Dodano „"+f.name+"” do katalogu "+folder+"."}
+    catch(e){pgErr=true;pgMsg=e&&e.code==="too_large"?"Plik „"+f.name+"” jest za duży (limit 20 MB).":"Nie udało się dodać „"+f.name+"”. Spróbuj ponownie."}}
+  pgNewFolder="";renderPodglad()}
+async function pgDelete(f){if(pgArm!==f._id){pgArm=f._id;renderPodglad();setTimeout(()=>{if(pgArm===f._id){pgArm="";renderPodglad()}},4000);return}
+  pgArm="";try{await db.doc("files/"+f._id).delete();try{await assets.delete(f.assetId)}catch(e){}pgMsg="Usunięto „"+f.name+"”.";pgErr=false}catch(e){pgMsg="Nie udało się usunąć pliku.";pgErr=true}renderPodglad()}
+async function pgSave(f){try{const b=await (await fetch(fileSrc(f))).blob();await saveFile(f.name,b)}catch(e){pgMsg="Nie udało się pobrać pliku.";pgErr=true;renderPodglad()}}
+function pgFolderEl(name,list){const pick=el("input",{type:"file",multiple:"",accept:".pdf,application/pdf,image/*,.csv,.txt,.md,.json",hidden:""});pick.addEventListener("change",()=>{if(pick.files.length)pgUpload(name,[...pick.files]);pick.value=""});
+  const ico=document.createElementNS("http://www.w3.org/2000/svg","svg");ico.setAttribute("viewBox","0 0 24 24");ico.innerHTML='<path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2.5h8.5A1.5 1.5 0 0 1 21 9v9.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/>';
+  const head=el("div",{class:"pg-fhead"},ico,el("span",{text:name}),el("span",{class:"n",text:list.length+" "+plural(list.length,"plik","pliki","plików")}));
+  if(assets&&MODE==="claude")head.append(pick,el("button",{type:"button",class:"pg-plus","aria-label":"Dodaj plik do katalogu "+name,title:"Dodaj plik",text:"+",onclick:()=>pick.click()}));
+  const box=el("div",{class:"pg-folder"},head);
+  if(!list.length)box.append(el("div",{class:"pg-empty",text:"Katalog jest pusty."+(assets?" Kliknij +, żeby dodać plik.":"")}));
+  list.sort((a,b)=>(b.addedAt||"").localeCompare(a.addedAt||"")).forEach(f=>{const ext=(f.name.split(".").pop()||"").toUpperCase().slice(0,4);const src=fileSrc(f);
+    const acts=el("div",{class:"pg-acts"},el("a",{class:"pg-btn pri",href:src,target:"_blank",rel:"noopener",text:"Otwórz w nowej karcie"}));
+    if(downloads)acts.append(el("button",{type:"button",class:"pg-btn",text:"Pobierz",onclick:()=>pgSave(f)}));
+    if(assets&&canEdit)acts.append(el("button",{type:"button",class:"pg-btn del"+(pgArm===f._id?" armed":""),text:pgArm===f._id?"Potwierdź usunięcie":"Usuń",onclick:()=>pgDelete(f)}));
+    box.append(el("div",{class:"pg-file"},el("span",{class:"ic",text:ext}),el("div",{class:"nm"},el("b",{text:f.name}),el("small",{text:[f.size?fmtSize(f.size):"",f.addedAt?"dodano "+fmtDate(f.addedAt).full:""].filter(Boolean).join(" · ")})),acts))});
+  return box}
+function renderPodglad(){const box=$("#pgBody");if(!box)return;box.replaceChildren();const w=el("div",{class:"pg"});
+  const last=[...LIVE.entries.map(e=>e.date),...LIVE.files.map(f=>(f.addedAt||"").slice(0,10))].filter(Boolean).sort().pop();
+  w.append(el("div",{class:"pg-head"},el("span",{class:"label",text:"Praca inżynierska · dr inż. Andrzej Plewa"}),el("h1",{text:"Podgląd wyników"}),el("p",{text:"AC 22 P KR3–KR4 z asfaltem 50/70 i lepiszczami pochodzenia roślinnego"+(last?" · stan na "+fmtDate(last).full:"")})));
+  /* pliki */
+  const fs=el("section",{class:"pg-sec"},el("h2",{},"Pliki",el("small",{text:"otwierają się w nowej karcie"})));
+  const folders={pdf:[]};LIVE.files.forEach(f=>(folders[f.folder||"pdf"]=folders[f.folder||"pdf"]||[]).push(f));
+  const fl=el("div",{class:"pg-files"});Object.keys(folders).sort((a,b)=>a==="pdf"?-1:b==="pdf"?1:a.localeCompare(b,"pl")).forEach(k=>fl.append(pgFolderEl(k,folders[k])));fs.append(fl);
+  if(assets&&MODE==="claude"){const inp=el("input",{type:"text",id:"pgNewFolder",placeholder:"nazwa nowego katalogu",value:pgNewFolder,"aria-label":"Nazwa nowego katalogu"});inp.addEventListener("input",()=>pgNewFolder=inp.value);
+    const pick=el("input",{type:"file",multiple:"",hidden:"",accept:".pdf,application/pdf,image/*,.csv,.txt,.md,.json"});pick.addEventListener("change",()=>{const n=(pgNewFolder||"").trim();if(n&&pick.files.length)pgUpload(n,[...pick.files]);pick.value=""});
+    fs.append(el("div",{class:"pg-newf"},el("span",{text:"Nowy katalog:"}),inp,pick,el("button",{type:"button",class:"pg-btn",text:"+ dodaj plik do nowego katalogu",onclick:()=>{if(!(pgNewFolder||"").trim()){pgMsg="Wpisz najpierw nazwę katalogu.";pgErr=true;renderPodglad();return}pick.click()}})))}
+  if(pgMsg)fs.append(el("p",{class:"pg-msg"+(pgErr?" err":""),role:"status",text:pgMsg}));
+  w.append(fs);
+  /* mieszanka */
+  const m=LIVE.mixes.find(x=>x.variants||x.composition);
+  if(m){const V=m.variants||[{code:"W1",name:"bazowy",binderPct:m.binderPct,composition:m.composition,curve:m.curve,batches:m.batches}];
+    const sec=el("section",{class:"pg-sec"},el("h2",{},"Projekt mieszanki AC 22 P",el("small",{text:V.length+" "+plural(V.length,"wariant","warianty","wariantów")+" · naważki na 5 kg"})));
+    sec.append(tableEl({columns:["Materiał",...V.map(v=>v.code+" "+v.name)],rows:[...V[0].composition.map((c,k)=>[c.code,...V.map(v=>fmtPL(v.composition[k].pct,0)+" %")]),["Asfalt 50/70 w MMA",...V.map(v=>fmtPL(v.binderPct,1)+" %")]]}));
+    const g=el("div",{class:"pg-grid"});
+    V.forEach(v=>{const c=el("div",{class:"pg-card"},el("h3",{},v.code+" · "+v.name,el("span",{text:"asfalt "+fmtPL(v.binderPct,1)+" %"})));if(v.curve)c.append(projChart(v.curve));
+      const b=(v.batches||[]).find(x=>/5 ?kg/.test(x.label))||(v.batches||[])[0];
+      if(b)c.append(tableEl({columns:["Składnik","Dosypać [g]","Waga pokazuje [g]"],rows:[...b.rows.map(r=>[r[0],fmtPL(r[1],1),fmtPL(r[2],1)]),["Asfalt 50/70",fmtPL(b.asphalt,1),"przy mieszaniu"]]},"Naważka – "+b.label));
+      g.append(c)});
+    sec.append(g);w.append(sec)}
+  /* analizy sitowe */
+  const ag=[...LIVE.aggregates].filter(a=>a.status!=="envelope"&&a.grading&&Array.isArray(a.grading.sieves)).sort((a,b)=>(a.order??99)-(b.order??99));
+  if(ag.length){const env=LIVE.aggregates.find(a=>a.status==="envelope");const sec=el("section",{class:"pg-sec"},el("h2",{},"Analizy sitowe",el("small",{text:ag.length+" "+plural(ag.length,"materiał","materiały","materiałów")+" · PN-EN 933-1"})));
+    const c=el("div",{class:"pg-card"});c.append(aggChart(ag,env));const lg=el("div",{class:"ag-leg"});ag.forEach(a=>lg.append(el("span",{},el("i",{style:`background:var(--f${a.color||1})`}),a.code)));if(env)lg.append(el("span",{},el("i",{class:"env"}),"pole AC 22 P"));c.append(lg);
+    const S2=[...new Set(ag.flatMap(a=>a.grading.sieves))].sort((x,y)=>y-x);
+    c.append(tableEl({columns:["Sito [mm]",...ag.map(a=>a.code)],rows:S2.map(d=>[String(d).replace(".",","),...ag.map(a=>{const i=a.grading.sieves.indexOf(d);return i<0?"—":fmtPL(a.grading.passing[i],1)})])},"Przechodzi przez sito [%]"));
+    sec.append(c);w.append(sec)}
+  /* gęstości */
+  const dn=[...LIVE.aggregates].filter(a=>a.density&&a.density.value!=null).sort((a,b)=>(a.order??99)-(b.order??99));
+  if(dn.length){const sec=el("section",{class:"pg-sec"},el("h2",{},"Gęstości ziaren (piknometr)",el("small",{text:"PN-EN 1097-6"})));const g=el("div",{class:"pg-grid"});
+    g.append(el("div",{class:"pg-card"},el("h3",{text:"Gęstość ziaren materiałów"}),tableEl({columns:["Materiał","Próba 1","Próba 2","Średnia [Mg/m³]"],rows:dn.map(a=>{const t=a.density.trials||[];return[a.code,t[0]!=null?fmtPL(t[0],3):"—",t[1]!=null?fmtPL(t[1],3):"—",fmtPL(a.density.value,3)]})}),el("p",{class:"hint",style:"font-size:13px;color:var(--muted)",text:"„—” = wartość przyjęta (karta producenta lub biblioteka MASA), nie badana."})));
+    const cal=LIVE.entries.find(e=>e._id==="2026-11-10-kalibracja-piknometrow");
+    if(cal&&cal.tables&&cal.tables[0]){const t=cal.tables[0];const ix=["Piknometr","Masa pustego [g]","Masa z wodą [g]","Temp. wody [°C]","Objętość Vp [cm³]"].map(c=>t.columns.indexOf(c));
+      g.append(el("div",{class:"pg-card"},el("h3",{text:"Kalibracja piknometrów"}),tableEl({columns:["Piknometr","Pusty [g]","Z wodą [g]","t [°C]","Vp [cm³]"],rows:t.rows.map(r=>ix.map(i=>i<0?"—":r[i]))}),el("p",{style:"font-size:13px;color:var(--muted)",text:"Woda destylowana do kreski na nasadce, waga Radwag APP 10.R2, 10.11.2026."})))}
+    sec.append(g);w.append(sec)}
+  box.append(w)}
+
+/* ---------- PROJEKT MIESZANKI (strona startowa) ----------
+   Dane z mixes/AC22P-KR34: composition[{code,pct,density,color}], curve{sieves,passing,min,max,normative[]}, binderPct, rhoAgg, batches[{label,mass,rows:[[code,g,cum]],asphalt}], next[{t,done}] */
+function projChart(c){const W=720,H=360,L=46,R=18,T=18,B=44,ns="http://www.w3.org/2000/svg";
+  const dmin=Math.min(...c.sieves),dmax=Math.max(...c.sieves);
+  const lx=d=>L+(Math.log(d)-Math.log(dmin))/(Math.log(dmax)-Math.log(dmin))*(W-L-R),ly=p=>T+(100-p)/100*(H-T-B);
+  const svg=document.createElementNS(ns,"svg");svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.setAttribute("class","ag-chart pj-chart");svg.setAttribute("role","img");svg.setAttribute("aria-label","Krzywa uziarnienia mieszanki na tle pola dobrego uziarnienia");
+  const add=(t,a,txt)=>{const e=document.createElementNS(ns,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.append(e);return e};
+  for(let p=0;p<=100;p+=10){add("line",{x1:L,x2:W-R,y1:ly(p),y2:ly(p),class:"grid"});if(p%20===0)add("text",{x:L-8,y:ly(p)+4,"text-anchor":"end"},p)}
+  c.sieves.forEach(d=>{add("line",{x1:lx(d),x2:lx(d),y1:T,y2:H-B,class:"grid"});add("text",{x:lx(d),y:H-B+16,"text-anchor":"middle"},String(d).replace(".",","))});
+  add("text",{x:(L+W-R)/2,y:H-6,"text-anchor":"middle"},"sito [mm]");
+  const ix=c.sieves.map((d,i)=>i).filter(i=>c.min[i]!=null);
+  add("polygon",{points:[...ix.map(i=>lx(c.sieves[i])+","+ly(c.max[i])),...ix.slice().reverse().map(i=>lx(c.sieves[i])+","+ly(c.min[i]))].join(" "),class:"env"});
+  add("polyline",{points:c.sieves.map((d,i)=>lx(d)+","+ly(c.passing[i])).join(" "),fill:"none",stroke:"var(--accent)","stroke-width":2.6,"stroke-linejoin":"round"});
+  c.sieves.forEach((d,i)=>{const nrm=(c.normative||[]).includes(d);add("circle",{cx:lx(d),cy:ly(c.passing[i]),r:nrm?5:3.5,fill:"var(--accent)",stroke:"var(--surface)","stroke-width":1.5});
+    if(c.passing[i]<100||i===c.sieves.length-2)add("text",{x:lx(d),y:ly(c.passing[i])+(i%2?-10:18),"text-anchor":"middle",class:"val"},fmtPL(c.passing[i],1))});
+  return el("div",{class:"tbl",style:"border:0"},svg)}
+function renderProj(){const box=$("#proj");if(!box)return;box.replaceChildren();
+  const m=LIVE.mixes.find(x=>x.composition)||null;
+  if(!m){box.append(emptyEl(S.loaded?"Projekt mieszanki jeszcze nie jest gotowy.":"Wczytywanie…","Gdy skład zostanie policzony, tu pojawi się receptura, krzywa uziarnienia i naważki."));return}
+  const w=el("div",{class:"pj"});
+  const kp=el("div",{class:"pj-kpis"});const k=(v,l,cls)=>kp.append(el("div",{class:"pj-kpi"+(cls?" "+cls:"")},el("b",{text:v}),el("span",{text:l})));
+  k(fmtPL(m.binderPct,1)+" %","asfalt 50/70 w mieszance");k(m.composition.length+" materiałów","w mieszance mineralnej");if(m.rhoAgg)k(fmtPL(m.rhoAgg,3),"gęstość kruszywa [Mg/m³]");
+  if(m.curve){const bad=m.curve.sieves.filter((d,i)=>(m.curve.normative||[]).includes(d)&&(m.curve.passing[i]<m.curve.min[i]||m.curve.passing[i]>m.curve.max[i])).length;k(bad?"poza polem":"w polu","krzywa uziarnienia",bad?"":"ok")}
+  w.append(el("div",{class:"pj-hero"},el("span",{class:"label",text:"Mieszanka referencyjna · stan na "+fmtDate(m.updated||"").full}),el("h2",{text:m.name||m.code}),m.summary?el("p",{text:m.summary}):null,kp));
+  const comp=el("div",{class:"pj-sec"},el("h3",{text:"Skład mieszanki mineralnej"}));
+  const bar=el("div",{class:"pj-bar"});m.composition.forEach(c=>bar.append(el("i",{style:`width:${c.pct}%;background:var(--f${c.color||1})`,title:c.code+" "+c.pct+" %",text:c.pct>=6?c.code:""})));comp.append(bar);
+  comp.append(tableEl({columns:["Materiał","Udział [%]","Gęstość [Mg/m³]"],rows:m.composition.map(c=>[c.code,fmtPL(c.pct,0),fmtPL(c.density,3)])}));w.append(comp);
+  if(m.curve){const cs=el("div",{class:"pj-sec"},el("h3",{text:"Krzywa uziarnienia"}),el("p",{class:"hint",text:"Zielona linia to projektowana mieszanka, pole to granice dla AC 22 P. Duże kropki to sita normowe, na których sprawdza się wymagania."}),projChart(m.curve));
+    const ni=m.curve.sieves.map((d,i)=>i).filter(i=>(m.curve.normative||[]).includes(m.curve.sieves[i]));
+    const t=tableEl({columns:["Sito [mm]","Mieszanka [%]","Wymaganie [%]","Ocena"],rows:ni.map(i=>{const p=m.curve.passing[i],ok=p>=m.curve.min[i]&&p<=m.curve.max[i];return[String(m.curve.sieves[i]).replace(".",","),fmtPL(p,1),fmtPL(m.curve.min[i],0)+"–"+fmtPL(m.curve.max[i],0),ok?"✓ spełnia":"✗ poza"]})});
+    t.querySelectorAll("tbody tr").forEach(tr=>{const c=tr.lastChild;c.className=c.textContent.startsWith("✓")?"ok":"bad"});cs.append(t);w.append(cs)}
+  if(Array.isArray(m.variants)&&m.variants.length){const V=m.variants,cols=["var(--accent)","var(--c-sbs)","var(--amber)"];
+    const vs=el("div",{class:"pj-sec"},el("h3",{text:"Warianty uziarnienia ("+V.length+")"}),el("p",{class:"hint",text:"Ten sam materiał, różne proporcje: wariant bazowy, drobniejszy (krzywa bliżej górnej granicy) i grubszy (bliżej dolnej). Porównanie wyników na próbkach pokaże, który najlepiej spełnia wymagania."}));
+    const lg=el("div",{class:"ag-leg"});V.forEach((v,i)=>lg.append(el("span",{},el("i",{style:`background:${cols[i]}`}),v.code+" – "+v.name)));lg.append(el("span",{},el("i",{class:"env"}),"pole AC 22 P"));vs.append(lg);
+    const c0=V[0].curve,ch=projChart({...c0,passing:V[0].curve.passing});const svg=ch.querySelector("svg");
+    svg.querySelectorAll("text.val").forEach(t=>t.remove());svg.querySelectorAll("circle").forEach(t=>t.remove());svg.querySelectorAll("polyline").forEach(t=>t.remove());
+    const W=720,L=46,R=18,T=18,B=44,H=360,dmin=Math.min(...c0.sieves),dmax=Math.max(...c0.sieves);const lx=d=>L+(Math.log(d)-Math.log(dmin))/(Math.log(dmax)-Math.log(dmin))*(W-L-R),ly=p=>T+(100-p)/100*(H-T-B);
+    V.forEach((v,i)=>{const pl=document.createElementNS("http://www.w3.org/2000/svg","polyline");pl.setAttribute("points",v.curve.sieves.map((d,j)=>lx(d)+","+ly(v.curve.passing[j])).join(" "));pl.setAttribute("fill","none");pl.setAttribute("stroke",cols[i]);pl.setAttribute("stroke-width","2.4");if(i)pl.setAttribute("stroke-dasharray",i===1?"7 4":"2 4");svg.append(pl)});
+    vs.append(ch);
+    const ns=c0.sieves.map((d,i)=>i).filter(i=>(c0.normative||[]).includes(c0.sieves[i]));
+    vs.append(tableEl({columns:["Sito [mm]","Wymaganie [%]",...V.map(v=>v.code+" [%]")],rows:ns.map(i=>[String(c0.sieves[i]).replace(".",","),fmtPL(c0.min[i],0)+"–"+fmtPL(c0.max[i],0),...V.map(v=>fmtPL(v.curve.passing[i],1))])},"Przechodzi przez sito"));
+    vs.append(tableEl({columns:["Materiał",...V.map(v=>v.code+" [%]")],rows:[...V[0].composition.map((c,k)=>[c.code,...V.map(v=>fmtPL(v.composition[k].pct,0))]),["Asfalt 50/70 w MMA",...V.map(v=>fmtPL(v.binderPct,1))]]},"Skład"));
+    w.append(vs);
+    V.forEach(v=>(v.batches||[]).forEach(b=>{const s=el("div",{class:"pj-sec"},el("h3",{text:v.code+" · "+b.label}),el("p",{class:"hint",text:"Tara na pustej misce, potem dosypuj do wartości „waga pokazuje”."}));
+      s.append(tableEl({columns:["Kolejno","Dosypać [g]","Waga pokazuje [g]"],rows:[...b.rows.map(r=>[r[0],fmtPL(r[1],1),fmtPL(r[2],1)]),["Asfalt 50/70 (przy mieszaniu)",fmtPL(b.asphalt,1),"—"]]}));w.append(s)}));
+  }
+  if(!m.variants)(m.batches||[]).forEach(b=>{const s=el("div",{class:"pj-sec"},el("h3",{text:b.label}),el("p",{class:"hint",text:"Postaw miskę na wadze i wytaruj. Dosypuj kolejne składniki, aż waga pokaże wartość z kolumny „waga pokazuje”. Asfalt odważasz dopiero przy mieszaniu."}));
+    s.append(tableEl({columns:["Kolejno","Dosypać [g]","Waga pokazuje [g]"],rows:[...b.rows.map(r=>[r[0],fmtPL(r[1],1),fmtPL(r[2],1)]),["Asfalt 50/70 (przy mieszaniu)",fmtPL(b.asphalt,1),"—"]]}));w.append(s)});
+  if(Array.isArray(m.next)&&m.next.length){const ol=el("ol",{class:"pj-steps"});m.next.forEach(n=>ol.append(el("li",{class:n.done?"done":null,text:n.t})));w.append(el("div",{class:"pj-sec"},el("h3",{text:"Co dalej"}),ol))}
+  box.append(w)}
+
+/* ---------- KRUSZYWA ----------
+   Kolekcja "aggregates": {code, name, order, color (1-6), status:"ok"|"partial"|"todo",
+   density:{value, trials[], date, method}, grading:{date, M1, loss, sieves:[mm], passing:[%]}, fines, flags, todo, entryIds[], photos[]}.
+   Dokument "_pole" (status "envelope"): {name, sieves[], min[], max[]} – krzywe graniczne projektowanej mieszanki. */
+function aggChart(list,env){const W=720,H=330,L=46,R=16,T=14,B=40;const xs=[0.063,0.125,0.25,0.5,1,2,4,5.6,8,11.2,16,22.4,31.5];
+  const lx=d=>L+(Math.log(d)-Math.log(0.063))/(Math.log(31.5)-Math.log(0.063))*(W-L-R),ly=p=>T+(100-p)/100*(H-T-B);
+  const ns="http://www.w3.org/2000/svg",svg=document.createElementNS(ns,"svg");svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.setAttribute("class","ag-chart");svg.setAttribute("role","img");
+  svg.setAttribute("aria-label","Krzywe uziarnienia kruszyw: przechodzi przez sito [%] w funkcji wymiaru oczka [mm]");
+  const add=(t,a,txt)=>{const e=document.createElementNS(ns,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.append(e);return e};
+  for(let p=0;p<=100;p+=20){add("line",{x1:L,x2:W-R,y1:ly(p),y2:ly(p),class:"grid"});add("text",{x:L-8,y:ly(p)+4,"text-anchor":"end"},p)}
+  xs.forEach((d,i)=>{add("line",{x1:lx(d),x2:lx(d),y1:T,y2:H-B,class:"grid"});if(d!==0.25&&d!==1&&d!==5.6||i===xs.length-1)add("text",{x:lx(d),y:H-B+16,"text-anchor":"middle"},String(d).replace(".",","))});
+  add("text",{x:(L+W-R)/2,y:H-6,"text-anchor":"middle"},"wymiar oczka sita [mm] (skala log.)");
+  add("text",{x:12,y:T+(H-T-B)/2,"text-anchor":"middle",transform:`rotate(-90 12 ${T+(H-T-B)/2})`},"przechodzi [%]");
+  if(env&&Array.isArray(env.sieves)){const up=env.sieves.map((d,i)=>[lx(d),ly(env.max[i])]),lo=env.sieves.map((d,i)=>[lx(d),ly(env.min[i])]).reverse();
+    add("polygon",{points:[...up,...lo].map(p=>p.join(",")).join(" "),class:"env"})}
+  list.forEach(a=>{const g=a.grading;if(!g||!Array.isArray(g.sieves))return;const pts=g.sieves.map((d,i)=>[d,g.passing[i]]).filter(([d,p])=>d>=0.063&&d<=31.5&&p!=null).sort((x,y)=>x[0]-y[0]);
+    if(pts.length&&pts[pts.length-1][0]<31.5)pts.push([31.5,100]);
+    const col=`var(--f${a.color||1})`;add("polyline",{points:pts.map(([d,p])=>lx(d)+","+ly(p)).join(" "),fill:"none",stroke:col,"stroke-width":2.4,"stroke-linejoin":"round"});
+    pts.forEach(([d,p])=>{if(d<31.5)add("circle",{cx:lx(d),cy:ly(p),r:3,fill:col})})});
+  return el("div",{class:"tbl",style:"border:0"},svg)}
+const AG_ST={ok:["badania zakończone","ok"],partial:["częściowo zbadane","unknown"],todo:["brak danych","fail"]};
+function renderAggs(){const box=$("#aggs");if(!box)return;box.replaceChildren();
+  const all=[...LIVE.aggregates].sort((a,b)=>(a.order??99)-(b.order??99));const env=all.find(a=>a.status==="envelope");const list=all.filter(a=>a.status!=="envelope");
+  if(!list.length){box.append(emptyEl(S.loaded?"Brak danych o kruszywach.":"Wczytywanie…","Tu będą zebrane wszystkie frakcje: gęstość ziaren, analiza sitowa z krzywą uziarnienia i zdjęcia — w jednym miejscu, gotowe do projektu mieszanki."));return}
+  box.append(el("p",{class:"ag-intro",text:"Każda frakcja w jednym miejscu: gęstość ziaren, analiza sitowa i uwagi. To są dane wejściowe do projektu mieszanki w kalkulatorze MASA. Szczegóły pomiarów (masy, zdjęcia) są we wpisach dziennika — link pod każdą kartą."}));
+  const done=list.filter(a=>a.status!=="todo");
+  const ov=el("div",{class:"ag-over"},el("h2",{text:"Zestawienie"}));
+  ov.append(tableEl({columns:["Frakcja","Gęstość ziaren [Mg/m³]","Przechodzi przez 0,063 mm [%]","Analiza sitowa","Stan"],rows:list.map(a=>[a.code,a.density&&a.density.value!=null?fmtPL(a.density.value,3):"—",a.fines!=null?fmtPL(a.fines,2):"—",a.grading&&a.grading.date?fmtDate(a.grading.date).full:"—",(AG_ST[a.status]||AG_ST.todo)[0]])}));
+  if(done.some(a=>a.grading)){ov.append(el("span",{class:"label",text:"Krzywe uziarnienia"}),aggChart(done,env));
+    const lg=el("div",{class:"ag-leg"});done.filter(a=>a.grading).forEach(a=>lg.append(el("span",{},el("i",{style:`background:var(--f${a.color||1})`}),a.code)));if(env)lg.append(el("span",{},el("i",{class:"env"}),env.name||"pole dobrego uziarnienia"));ov.append(lg)}
+  box.append(ov);
+  const wrap=el("div",{class:"ag-list"});
+  for(const a of list){const st=AG_ST[a.status]||AG_ST.todo;
+    const c=el("article",{class:"agcard"+(a.status==="todo"?" todo":""),id:"ag-"+a._id},el("div",{class:"ag-top"},el("span",{class:"code"},a.status!=="todo"?el("i",{style:`background:var(--f${a.color||1})`}):null,a.code||"—"),el("h3",{text:a.name||""}),el("span",{class:"bstat "+st[1],text:st[0]})));
+    const k=el("div",{class:"ag-kpis"});const kv=(l,v,u)=>k.append(el("div",{class:"kv"},el("span",{class:"label",text:l}),el("span",{class:"v"},v,u?el("small",{text:" "+u}):null)));
+    if(a.density&&a.density.value!=null)kv("Gęstość ziaren",fmtPL(a.density.value,3),"Mg/m³");
+    if(a.density&&Array.isArray(a.density.trials)&&a.density.trials.length)kv("Próby",a.density.trials.map(x=>fmtPL(x,3)).join(" / "),"");
+    if(a.fines!=null)kv("Przechodzi przez 0,063",fmtPL(a.fines,2),"%");
+    if(a.grading&&a.grading.loss!=null)kv("Strata przy przesiewie",fmtPL(a.grading.loss,2),"%");
+    if(k.childNodes.length)c.append(k);
+    if(a.grading&&Array.isArray(a.grading.sieves)){const det=el("details",{class:"more"},el("summary",{text:"Analiza sitowa — tabela"}),el("div",{},tableEl({columns:["Sito [mm]",...a.grading.sieves.map(d=>String(d).replace(".",","))],rows:[["Przechodzi [%]",...a.grading.passing.map(p=>p==null?"—":fmtPL(p,1))]]},a.grading.M1?"Masa próbki M1 = "+fmtPL(a.grading.M1,1)+" g · "+fmtDate(a.grading.date).full:null)));c.append(det)}
+    if(a.flags)c.append(el("p",{class:"ag-flag"},el("b",{text:"Do sprawdzenia: "}),a.flags));
+    if(a.todo)c.append(el("p",{class:"bnote",text:a.todo}));
+    const ph=photosEl(a.photos,a.code);if(ph)c.append(ph);
+    const ids=(a.entryIds||[]).filter(id=>LIVE.entries.some(e=>e._id===id));
+    if(ids.length){const ln=el("div",{class:"ag-links"});ids.forEach(id=>{const e=LIVE.entries.find(x=>x._id===id);ln.append(el("a",{href:"#dziennik",text:"→ "+e.title,onclick:ev=>{ev.preventDefault();jump(id)}}))});c.append(ln)}
+    wrap.append(c)}
+  box.append(wrap)}
+
 /* ---------- PLAN DZIAŁANIA ----------
    Kroki w kolekcji "plan": {order, phase, phaseTitle, title, time, items[], tip, norms[], ask, status:"todo"|"done"}.
    Właściciel może odhaczać kroki (zapis do bazy); treść planu uzupełnia Claude. */
@@ -635,7 +888,7 @@ async function calcSync(){if(calcBusy)return;const snap=calcSnap();if(snap===cal
 /* ---------- dane ---------- */
 async function startPliki(){
   try{const r=await fetch("dane/dziennik.json",{cache:"no-cache"});if(!r.ok)throw new Error(r.status);const j=await r.json();
-    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];LIVE.plan=Array.isArray(j.plan)?j.plan:[];LIVE.binders=Array.isArray(j.binders)?j.binders:[];S.loaded=true}
+    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];LIVE.plan=Array.isArray(j.plan)?j.plan:[];LIVE.binders=Array.isArray(j.binders)?j.binders:[];LIVE.aggregates=Array.isArray(j.aggregates)?j.aggregates:[];LIVE.files=Array.isArray(j.files)?j.files:[];S.loaded=true}
   catch(e){S.err="Nie znaleziono pliku dane/dziennik.json obok strony."}
   show()}
 async function start(){route();show();
@@ -651,10 +904,12 @@ async function start(){route();show();
     e=>{clearTimeout(tmo);S.err="Błąd bazy danych ("+e.code+").";show()});
   db.collection("mixes").onSnapshot(snap=>{LIVE.mixes=snap.docs.map(d=>({...d.data(),_id:d.id}));show()},()=>{});
   db.collection("binders").onSnapshot(snap=>{LIVE.binders=snap.docs.map(d=>({...d.data(),_id:d.id}));renderBinders()},()=>{});
+  db.collection("aggregates").onSnapshot(snap=>{LIVE.aggregates=snap.docs.map(d=>({...d.data(),_id:d.id}));renderAggs()},()=>{});
+  db.collection("files").onSnapshot(snap=>{LIVE.files=snap.docs.map(d=>({...d.data(),_id:d.id}));renderPodglad()},()=>{});
+  assets=await claude.use("assets");renderPodglad();
   db.collection("plan").onSnapshot(snap=>{LIVE.plan=snap.docs.map(d=>({...d.data(),_id:d.id}));renderPlan()},()=>{});
 }
 start();
 </script>
 
-</body>
-</html>
+</body></html>

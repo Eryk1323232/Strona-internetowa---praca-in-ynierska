@@ -2,6 +2,448 @@
  "app": "Dziennik MMA",
  "entries": [
   {
+   "conclusions": "Wszystkie trzy frakcje mają praktycznie tę samą gęstość ziaren, ok. 2,68 Mg/m³ — typowo dla kruszywa polodowcowego (jeden materiał macierzysty). Do projektu MMA można przyjąć średnie z tabeli.\nKontrolna powtórka 11/16 z 10.11 na wadze Radwag bez tarowania dała 2,687 Mg/m³ — zgodnie z próbami z 09.11, co potwierdza poprawność przeliczenia.\nPoczątkowo wyniki wychodziły ok. 0,7–1,0 Mg/m³, bo odczyty z wytarowanej wagi potraktowano jako masy z piknometrem. Objętości piknometrów od nauczyciela były zawyżone tylko o 3–4 cm³.\nRóżnica między próbami dla 5/11 (0,039) jest większa niż dla pozostałych frakcji — do ewentualnej oceny z promotorem.",
+   "createdAt": "2026-11-10T07:00:00Z",
+   "date": "2026-11-09",
+   "description": "Oznaczenie gęstości ziaren kruszyw polodowcowych 11/16, 5/11 i 2/5 metodą piknometryczną, po 2 próby na frakcję (piknometry 6, 3, 2), woda 23,5 °C.\nPrzy ważeniu m2 i m3 waga HG Vibra była wytarowana na pustym piknometrze, więc odczyty to masa samego kruszywa (m2) oraz kruszywa z wodą (m3), bez piknometru. Objętości piknometrów z kalibracji 10.11 (woda destylowana do kreski, waga Radwag).\nρ = mk / [Vp − (m3 − m2) / ρw].",
+   "norm": "PN-EN 1097-6",
+   "photos": [
+    {
+     "caption": "Kruszywo 5/11, próba 1: kruszywo w piknometrze nr 3 na wytarowanej wadze HG Vibra (mk) — 1110,64 g",
+     "id": "ae9e4dd1300bbf7f2bda3733298dd741"
+    },
+    {
+     "caption": "Kruszywo 5/11, próba 1: kruszywo z wodą destylowaną po wstrząśnięciu, waga wytarowana na piknometrze — 2028,04 g",
+     "id": "f6ee3d15176ad758f280de0e6cc76729"
+    }
+   ],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "11/16 — ρ średnia",
+     "unit": "Mg/m³",
+     "value": "2,683"
+    },
+    {
+     "label": "5/11 — ρ średnia",
+     "unit": "Mg/m³",
+     "value": "2,682"
+    },
+    {
+     "label": "2/5 — ρ średnia",
+     "unit": "Mg/m³",
+     "value": "2,683"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Gęstość ziaren — pomiary 09.11.2026 (odczyty po wytarowaniu piknometru)",
+     "columns": [
+      "Frakcja / próba",
+      "Piknometr",
+      "Kruszywo mk [g]",
+      "Kruszywo + woda [g]",
+      "Vp [cm³]",
+      "ρ [Mg/m³]"
+     ],
+     "rows": [
+      [
+       "11/16 — 1",
+       "6",
+       "1042,36",
+       "1985,24",
+       "1332,50",
+       "2,692"
+      ],
+      [
+       "11/16 — 2",
+       "6",
+       "1069,40",
+       "1999,46",
+       "1332,50",
+       "2,673"
+      ],
+      [
+       "5/11 — 1",
+       "3",
+       "1110,64",
+       "2028,04",
+       "1330,97",
+       "2,701"
+      ],
+      [
+       "5/11 — 2",
+       "3",
+       "1122,94",
+       "2029,78",
+       "1330,97",
+       "2,662"
+      ],
+      [
+       "2/5 — 1",
+       "2",
+       "1094,54",
+       "1992,54",
+       "1306,66",
+       "2,694"
+      ],
+      [
+       "2/5 — 2",
+       "2",
+       "1030,96",
+       "1949,50",
+       "1306,66",
+       "2,672"
+      ]
+     ]
+    },
+    {
+     "caption": "Średnie",
+     "columns": [
+      "Frakcja",
+      "ρ średnia [Mg/m³]",
+      "Różnica prób [Mg/m³]"
+     ],
+     "rows": [
+      [
+       "11/16",
+       "2,683",
+       "0,019"
+      ],
+      [
+       "5/11",
+       "2,682",
+       "0,039"
+      ],
+      [
+       "2/5",
+       "2,683",
+       "0,021"
+      ]
+     ]
+    }
+   ],
+   "test": "Gęstość ziaren kruszywa",
+   "title": "Gęstość ziaren kruszyw polodowcowych (piknometr)",
+   "type": "badanie",
+   "_id": "2026-11-09-gestosc-ziaren"
+  },
+  {
+   "conclusions": "Masa całkowita po przesianiu (5003,5 g) jest większa od sumy mas z sit (4968,6 g) o 34,9 g — możliwe, że nie zapisano masy z któregoś sita lub z dna; do sprawdzenia.\nSito 4,2 mm — w tabeli tak zapisano; sprawdzić, czy chodziło o 4 mm. Przez sito D = 16 mm przechodzi tylko ok. 80,5 % (duży udział nadziarna).",
+   "createdAt": "2026-11-10T09:20:00Z",
+   "date": "2026-11-09",
+   "description": "Przesiew kruszywa Kruszywo 11/16 polodowcowe na zestawie sit. Masa próbki suchej przed przesianiem M1 = 5012,6 g. Dane z arkusza „Analiza sitowa” (Excel Projektowanie MMA – wyniki).",
+   "mix": "Kruszywo 11/16",
+   "norm": "PN-EN 933-1",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "M1",
+     "unit": "g",
+     "value": "5012,6"
+    },
+    {
+     "label": "Suma z sit",
+     "unit": "g",
+     "value": "4968,6"
+    },
+    {
+     "label": "Strata materiału",
+     "unit": "%",
+     "value": "0,88"
+    },
+    {
+     "label": "Przechodzi przez 0,063 mm",
+     "unit": "%",
+     "value": "0,92"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Analiza sitowa — Kruszywo 11/16 polodowcowe",
+     "columns": [
+      "Sito [mm]",
+      "Masa pozostała [g]",
+      "Pozostało [%]",
+      "Pozostało narastająco [%]",
+      "Przechodzi [%]"
+     ],
+     "rows": [
+      [
+       "22,4",
+       "0,0",
+       "0,00",
+       "0,00",
+       "100,00"
+      ],
+      [
+       "16",
+       "979,0",
+       "19,53",
+       "19,53",
+       "80,47"
+      ],
+      [
+       "11,2",
+       "3359,4",
+       "67,02",
+       "86,55",
+       "13,45"
+      ],
+      [
+       "8",
+       "599,5",
+       "11,96",
+       "98,51",
+       "1,49"
+      ],
+      [
+       "4,2",
+       "7,0",
+       "0,14",
+       "98,65",
+       "1,35"
+      ],
+      [
+       "0,5",
+       "8,0",
+       "0,16",
+       "98,81",
+       "1,19"
+      ],
+      [
+       "0,063",
+       "13,7",
+       "0,27",
+       "99,08",
+       "0,92"
+      ],
+      [
+       "Dno",
+       "2,0",
+       "0,04",
+       "–",
+       "–"
+      ]
+     ]
+    }
+   ],
+   "test": "Analiza sitowa",
+   "title": "Analiza sitowa — Kruszywo 11/16 polodowcowe",
+   "type": "badanie",
+   "_id": "2026-11-09-sitowa-11-16"
+  },
+  {
+   "conclusions": "Strata materiału 1,07 % — powyżej 1 % (PN-EN 933-1 dopuszcza do 1 %); do sprawdzenia.\nMasa całkowita po przesianiu (2008,8 g) jest większa od sumy mas z sit (1981,1 g) o 27,7 g — możliwe, że nie zapisano masy z któregoś sita lub z dna; do sprawdzenia.\nBrak masy z dna (miski dolnej).",
+   "createdAt": "2026-11-10T09:20:00Z",
+   "date": "2026-11-09",
+   "description": "Przesiew kruszywa Kruszywo 2/5 polodowcowe na zestawie sit. Masa próbki suchej przed przesianiem M1 = 2002,5 g. Dane z arkusza „Analiza sitowa” (Excel Projektowanie MMA – wyniki).",
+   "mix": "Kruszywo 2/5",
+   "norm": "PN-EN 933-1",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "M1",
+     "unit": "g",
+     "value": "2002,5"
+    },
+    {
+     "label": "Suma z sit",
+     "unit": "g",
+     "value": "1981,1"
+    },
+    {
+     "label": "Strata materiału",
+     "unit": "%",
+     "value": "1,07"
+    },
+    {
+     "label": "Przechodzi przez 0,063 mm",
+     "unit": "%",
+     "value": "1,07"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Analiza sitowa — Kruszywo 2/5 polodowcowe",
+     "columns": [
+      "Sito [mm]",
+      "Masa pozostała [g]",
+      "Pozostało [%]",
+      "Pozostało narastająco [%]",
+      "Przechodzi [%]"
+     ],
+     "rows": [
+      [
+       "8",
+       "0,0",
+       "0,00",
+       "0,00",
+       "100,00"
+      ],
+      [
+       "5,6",
+       "152,4",
+       "7,61",
+       "7,61",
+       "92,39"
+      ],
+      [
+       "4",
+       "772,1",
+       "38,56",
+       "46,17",
+       "53,83"
+      ],
+      [
+       "2",
+       "946,9",
+       "47,29",
+       "93,45",
+       "6,55"
+      ],
+      [
+       "0,5",
+       "108,4",
+       "5,41",
+       "98,87",
+       "1,13"
+      ],
+      [
+       "0,063",
+       "1,3",
+       "0,06",
+       "98,93",
+       "1,07"
+      ],
+      [
+       "Dno",
+       "brak",
+       "–",
+       "–",
+       "–"
+      ]
+     ]
+    }
+   ],
+   "test": "Analiza sitowa",
+   "title": "Analiza sitowa — Kruszywo 2/5 polodowcowe",
+   "type": "badanie",
+   "_id": "2026-11-09-sitowa-2-5"
+  },
+  {
+   "conclusions": "Masa całkowita po przesianiu (3016,6 g) jest większa od sumy mas z sit (2988,6 g) o 28,0 g — możliwe, że nie zapisano masy z któregoś sita lub z dna; do sprawdzenia.",
+   "createdAt": "2026-11-10T09:20:00Z",
+   "date": "2026-11-09",
+   "description": "Przesiew kruszywa Kruszywo 5/11 polodowcowe na zestawie sit. Masa próbki suchej przed przesianiem M1 = 3000,2 g. Dane z arkusza „Analiza sitowa” (Excel Projektowanie MMA – wyniki).",
+   "mix": "Kruszywo 5/11",
+   "norm": "PN-EN 933-1",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "M1",
+     "unit": "g",
+     "value": "3000,2"
+    },
+    {
+     "label": "Suma z sit",
+     "unit": "g",
+     "value": "2988,6"
+    },
+    {
+     "label": "Strata materiału",
+     "unit": "%",
+     "value": "0,39"
+    },
+    {
+     "label": "Przechodzi przez 0,063 mm",
+     "unit": "%",
+     "value": "0,39"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Analiza sitowa — Kruszywo 5/11 polodowcowe",
+     "columns": [
+      "Sito [mm]",
+      "Masa pozostała [g]",
+      "Pozostało [%]",
+      "Pozostało narastająco [%]",
+      "Przechodzi [%]"
+     ],
+     "rows": [
+      [
+       "16",
+       "0,0",
+       "0,00",
+       "0,00",
+       "100,00"
+      ],
+      [
+       "11,2",
+       "300,6",
+       "10,02",
+       "10,02",
+       "89,98"
+      ],
+      [
+       "8",
+       "1690,2",
+       "56,34",
+       "66,36",
+       "33,64"
+      ],
+      [
+       "5,6",
+       "903,0",
+       "30,10",
+       "96,45",
+       "3,55"
+      ],
+      [
+       "4",
+       "90,0",
+       "3,00",
+       "99,45",
+       "0,55"
+      ],
+      [
+       "2",
+       "3,3",
+       "0,11",
+       "99,56",
+       "0,44"
+      ],
+      [
+       "0,063",
+       "1,5",
+       "0,05",
+       "99,61",
+       "0,39"
+      ],
+      [
+       "Dno",
+       "0,0",
+       "0,00",
+       "–",
+       "–"
+      ]
+     ]
+    }
+   ],
+   "test": "Analiza sitowa",
+   "title": "Analiza sitowa — Kruszywo 5/11 polodowcowe",
+   "type": "badanie",
+   "_id": "2026-11-09-sitowa-5-11"
+  },
+  {
    "conclusions": "Do ustalenia z promotorem przed rozpoczęciem badań: typ MMA, rodzaj dodatku pochodzenia roślinnego i jego dozowania, lista badań wraz z normami.",
    "createdAt": "2026-11-09T21:30:00Z",
    "date": "2026-11-09",
@@ -18,6 +460,287 @@
    "title": "Start: zatwierdzony temat i zakres pracy",
    "type": "notatka",
    "_id": "2026-11-09-start"
+  },
+  {
+   "conclusions": "Wynik niepewny: różnica między próbami 0,066 Mg/m³ (w grubych frakcjach 0,02–0,04), a średnia jest wyraźnie niższa niż dla frakcji grubych z tego samego złoża (ok. 2,68). Możliwe przyczyny: powietrze w piasku, objętość piknometru przyjęta sprzed kalibracji 10.11 albo tarowanie wagi.\nDo uzupełnienia: surowe masy m1, m2, m3 i numer piknometru — wtedy przeliczenie z objętością z kalibracji.",
+   "createdAt": "2026-11-10T11:26:00Z",
+   "date": "2026-11-10",
+   "description": "Oznaczenie gęstości ziaren piasku 0/2 łamanego polodowcowego w piknometrze, woda 21,7 °C. Przekazane gotowe wyniki: próba 1 = 2,473, próba 2 = 2,539 g/cm³. Brak surowych mas (m1, m2, m3) i numeru piknometru.",
+   "mix": "Piasek 0/2",
+   "norm": "PN-EN 1097-6",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "0/2 — ρ średnia",
+     "unit": "Mg/m³",
+     "value": "2,506"
+    },
+    {
+     "label": "Różnica prób",
+     "unit": "Mg/m³",
+     "value": "0,066"
+    }
+   ],
+   "tables": [],
+   "test": "Gęstość ziaren kruszywa",
+   "title": "Gęstość ziaren — piasek 0/2 (wynik wstępny)",
+   "type": "badanie",
+   "_id": "2026-11-10-gestosc-0-2"
+  },
+  {
+   "conclusions": "Wynik 2,687 Mg/m³ jest zgodny z próbami z 09.11 (2,692 i 2,673) — potwierdza, że przeliczenie odczytów z wytarowanej wagi HG jest poprawne.\nPusty piknometr ważył 705,16 g, czyli 2,7 g więcej niż przy kalibracji — prawdopodobnie był lekko wilgotny; użyto 705,16 g w mk i w Vp, więc wynik jest spójny.\nTemperatura wody przyjęta 23,5 °C (do potwierdzenia).",
+   "createdAt": "2026-11-10T10:50:00Z",
+   "date": "2026-11-10",
+   "description": "Powtórzenie oznaczenia gęstości ziaren kruszywa 11/16 polodowcowego w piknometrze nr 6, wszystkie ważenia na wadze Radwag APP 10.R2 (d = 0,01 g), woda destylowana do kreski na nasadce. Objętość piknometru z kalibracji 10.11 (m4 = 2031,45 g w 23,8 °C).",
+   "mix": "Kruszywo 11/16",
+   "norm": "PN-EN 1097-6",
+   "photos": [
+    {
+     "caption": "Piknometr nr 6 pusty z nasadką (m1) — 705,16 g",
+     "id": "703e54f2482384fdf92017989f5a0e7c"
+    },
+    {
+     "caption": "Piknometr nr 6 z suchym kruszywem 11/16 (m2) — 1822,03 g",
+     "id": "c4bbe0964ecfe7f4bddf5647a7158e75"
+    },
+    {
+     "caption": "Piknometr nr 6 z kruszywem 11/16 i wodą destylowaną do kreski (m3) — 2733,87 g",
+     "id": "e5df1e1bdcfcaaa24166fc1d39fe2641"
+    }
+   ],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "ρ ziaren 11/16 (próba 1)",
+     "unit": "Mg/m³",
+     "value": "2,687"
+    },
+    {
+     "label": "Masa kruszywa",
+     "unit": "g",
+     "value": "1116,87"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Ważenia — piknometr 6, 10.11.2026",
+     "columns": [
+      "Wielkość",
+      "Oznaczenie",
+      "Wartość"
+     ],
+     "rows": [
+      [
+       "Pusty piknometr z nasadką",
+       "m1",
+       "705,16 g"
+      ],
+      [
+       "Z suchym kruszywem",
+       "m2",
+       "1822,03 g"
+      ],
+      [
+       "Z kruszywem i wodą do kreski",
+       "m3",
+       "2733,87 g"
+      ],
+      [
+       "Z samą wodą do kreski (kalibracja)",
+       "m4",
+       "2031,45 g"
+      ],
+      [
+       "Masa kruszywa",
+       "mk = m2 − m1",
+       "1116,87 g"
+      ],
+      [
+       "Objętość ziaren",
+       "V",
+       "415,61 cm³"
+      ],
+      [
+       "Gęstość ziaren",
+       "ρ",
+       "2,687 Mg/m³"
+      ]
+     ]
+    }
+   ],
+   "test": "Gęstość ziaren kruszywa",
+   "title": "Gęstość ziaren 11/16 — próba kontrolna na wadze Radwag",
+   "type": "badanie",
+   "_id": "2026-11-10-gestosc-11-16-powtorka"
+  },
+  {
+   "conclusions": "Kalibracja zakończona dla piknometrów 2, 3, 6. Objętości od nauczyciela (3 i 6) były zawyżone tylko o 3–4 cm³ (0,2–0,3 %), czyli w przybliżeniu poprawne. Piknometr 2 (inna butla) ma 1306,66 cm³.\nMimo poprawnych objętości gęstości ziaren z 09.11 nadal są nierealne — szczegóły we wpisie „Gęstość ziaren kruszyw — wynik niewiarygodny”.\nW Excelu (arkusz „Piknometr”, I9) masa pustego piknometru 2 w próbie 2 zapisana jako 762,62 g, a w próbie 1 i dziś ok. 769,5 g — prawdopodobnie literówka; do potwierdzenia.",
+   "createdAt": "2026-11-10T08:56:00Z",
+   "date": "2026-11-10",
+   "description": "Po rozmowie z prowadzącym: dotychczas przyjmowane objętości piknometrów mogą być błędne, dlatego objętość każdego piknometru zostanie wyznaczona na nowo z ważenia pustego i napełnionego wodą do kreski.\nV = (m z wodą − m pustego) / ρ wody w temperaturze pomiaru.\n\nPiknometry: butle SCHOTT DURAN 1000 ml z nasadką (kreska na szyjce), ważone razem z nasadką. Waga Radwag APP 10.R2 (d = 0,01 g).\nWoda do kalibracji: destylowana (zamiast z kranu — była już w temperaturze pokojowej, więc nie trzeba było czekać na jej schłodzenie). Różnica gęstości względem wody z kranu daje ok. 0,02–0,05 % objętości — pomijalna.",
+   "norm": "PN-EN 12697-5 / PN-EN 1097-6",
+   "photos": [
+    {
+     "caption": "Piknometr nr 2 (pusty, z nasadką) — 769,54 g",
+     "id": "0fee36f9513d0e89865871a298119a84"
+    },
+    {
+     "caption": "Piknometr nr 2 napełniony wodą destylowaną do kreski (23,1 °C) — 2072,99 g",
+     "id": "eed435d3dd6312d15b24af665ff7f3ab"
+    },
+    {
+     "caption": "Piknometr nr 3 (pusty, z nasadką) — 702,87 g",
+     "id": "dbeaa8aac1a8d31c731cded5b767fe2b"
+    },
+    {
+     "caption": "Piknometr nr 3 napełniony wodą destylowaną do kreski (23,7 °C) — 2030,38 g",
+     "id": "f3d13ba4a996bc96541d9a39fad24993"
+    },
+    {
+     "caption": "Piknometr nr 6 (pusty, z nasadką) — 702,45 g",
+     "id": "38ced76e4140a27d587abeedaf53e647"
+    },
+    {
+     "caption": "Piknometr nr 6 napełniony wodą destylowaną do kreski (23,8 °C) — 2031,45 g",
+     "id": "e65f032da86b95b82c3918f8fef6bfa3"
+    }
+   ],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "Piknometr 2 — objętość Vp",
+     "unit": "cm³",
+     "value": "1306,66"
+    },
+    {
+     "label": "Piknometr 3 — objętość Vp",
+     "unit": "cm³",
+     "value": "1330,97"
+    },
+    {
+     "label": "Piknometr 6 — objętość Vp",
+     "unit": "cm³",
+     "value": "1332,50"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Ważenie piknometrów (woda destylowana, do kreski na nasadce)",
+     "columns": [
+      "Piknometr",
+      "Masa pustego [g]",
+      "Masa z wodą [g]",
+      "Temp. wody [°C]",
+      "ρw [g/cm³]",
+      "Objętość Vp [cm³]",
+      "Vp wg nauczyciela [cm³]"
+     ],
+     "rows": [
+      [
+       "2",
+       "769,54",
+       "2072,99",
+       "23,1",
+       "0,99754",
+       "1306,66",
+       "—"
+      ],
+      [
+       "3",
+       "702,87",
+       "2030,38",
+       "23,7",
+       "0,99740",
+       "1330,97",
+       "1334,11"
+      ],
+      [
+       "6",
+       "702,45",
+       "2031,45",
+       "23,8",
+       "0,99738",
+       "1332,50",
+       "1336,38"
+      ]
+     ]
+    }
+   ],
+   "test": "Kalibracja piknometrów",
+   "title": "Kalibracja piknometrów — sprawdzenie objętości",
+   "type": "badanie",
+   "_id": "2026-11-10-kalibracja-piknometrow"
+  },
+  {
+   "conclusions": "Odchyłki naważki 1200 g od projektu: 11/16 +0,3 g, 2/5 −0,3 g, 0/2 +0,1 g, mączka +0,2 g — pomijalne; po dosypaniu do 5 kg proporcje zgodne z projektem.",
+   "createdAt": "2026-11-10T12:06:00Z",
+   "date": "2026-11-10",
+   "description": "Zważono naważkę na 1200 g (narastająco do jednej miski): 11/16 do 629,9 g, 2/5 do 789,9 g, 0/2 do 1076,2 g, mączka do 1145,1 g. Następnie zarób powiększono do 5000 g MMA (4,6 % asfaltu → 4770 g kruszywa, 230 g asfaltu 50/70 przy mieszaniu w piątek).",
+   "mix": "AC22P",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "Kruszywo razem",
+     "unit": "g",
+     "value": "4770,0"
+    },
+    {
+     "label": "Asfalt 50/70 (piątek)",
+     "unit": "g",
+     "value": "230,0"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Dosypanie do zarobu 5 kg [g]",
+     "columns": [
+      "Składnik",
+      "Było",
+      "Docelowo",
+      "Dosypać",
+      "Waga narastająco"
+     ],
+     "rows": [
+      [
+       "11/16",
+       "629,9",
+       "2623,5",
+       "1993,6",
+       "3138,7"
+      ],
+      [
+       "2/5",
+       "160,0",
+       "667,8",
+       "507,8",
+       "3646,5"
+      ],
+      [
+       "0/2",
+       "286,3",
+       "1192,5",
+       "906,2",
+       "4552,7"
+      ],
+      [
+       "Mączka wapienna",
+       "68,9",
+       "286,2",
+       "217,3",
+       "4770,0"
+      ]
+     ]
+    }
+   ],
+   "title": "Naważka kruszywa AC 22 P (4,6 % asfaltu) — zarób 5 kg",
+   "type": "przygotowanie próbek",
+   "_id": "2026-11-10-nawazka-5kg"
   },
   {
    "conclusions": "L2 nieudane: w temperaturze pokojowej próbka była płynna, badania niemożliwe.\nDo uzupełnienia: daty wykonania, wyniki badań L1 i pozostałych lepiszczy, które z L3–L6 się udały oraz rodzaj SBS i upłynniacza.",
@@ -102,6 +825,502 @@
    "_id": "2026-11-10-proby-lepiszczy"
   },
   {
+   "conclusions": "Frakcja 5/11 nie weszła do składu. Krzywa leży blisko granic na sitach 16 mm (89,3 przy limicie 90) i 8 mm (45,8 przy min. 42) — przy naważkach brać reprezentatywną próbkę 11/16. Na sicie pośrednim 11,2 mm krzywa (52,4) jest nieco poniżej interpolowanej granicy (53,2) — to nie jest sito normowe.\nDo ustalenia z promotorem: masa próbki, liczba próbek, porcja luźnej mieszanki do gęstości maksymalnej.",
+   "createdAt": "2026-11-10T11:45:00Z",
+   "date": "2026-11-10",
+   "description": "Skład mieszanki mineralnej dobrany w polu uziarnienia AC 22 P (sita normowe 0,063; 0,125; 2; 8; 16; 22,4 mm). Ilość lepiszcza metodą Duriez, K = 3,0 (podbudowa), asfalt 50/70 (1,03 Mg/m³). Seria 5 zawartości asfaltu co 0,3 %, po 3 próbki Marshalla o masie 1200 g. Naważki w Excelu, arkusz „Naważki”.",
+   "mix": "AC22P",
+   "norm": "WT-2 / PN-EN 13108-1",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "11/16",
+     "unit": "%",
+     "value": "55"
+    },
+    {
+     "label": "2/5",
+     "unit": "%",
+     "value": "14"
+    },
+    {
+     "label": "0/2",
+     "unit": "%",
+     "value": "25"
+    },
+    {
+     "label": "Mączka",
+     "unit": "%",
+     "value": "6"
+    },
+    {
+     "label": "Asfalt (Duriez)",
+     "unit": "%",
+     "value": "4,6"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Uziarnienie mieszanki mineralnej vs pole AC 22 P",
+     "columns": [
+      "Sito [mm]",
+      "0,063",
+      "0,125",
+      "2",
+      "8",
+      "16",
+      "22,4"
+     ],
+     "rows": [
+      [
+       "Mieszanka [%]",
+       "5,9",
+       "7,3",
+       "31,1",
+       "45,8",
+       "89,3",
+       "100"
+      ],
+      [
+       "Wymaganie [%]",
+       "4–8",
+       "4–12",
+       "15–45",
+       "42–68",
+       "65–90",
+       "90–100"
+      ]
+     ]
+    },
+    {
+     "caption": "Naważki na jedną próbkę 1200 g [g]",
+     "columns": [
+      "Składnik",
+      "4,0 %",
+      "4,3 %",
+      "4,6 %",
+      "4,9 %",
+      "5,2 %"
+     ],
+     "rows": [
+      [
+       "11/16",
+       "633,6",
+       "631,6",
+       "629,6",
+       "627,7",
+       "625,7"
+      ],
+      [
+       "2/5",
+       "161,3",
+       "160,8",
+       "160,3",
+       "159,8",
+       "159,3"
+      ],
+      [
+       "0/2",
+       "288,0",
+       "287,1",
+       "286,2",
+       "285,3",
+       "284,4"
+      ],
+      [
+       "Mączka wapienna",
+       "69,1",
+       "68,9",
+       "68,7",
+       "68,5",
+       "68,3"
+      ],
+      [
+       "Kruszywo razem",
+       "1152,0",
+       "1148,4",
+       "1144,8",
+       "1141,2",
+       "1137,6"
+      ],
+      [
+       "Asfalt 50/70",
+       "48,0",
+       "51,6",
+       "55,2",
+       "58,8",
+       "62,4"
+      ]
+     ]
+    }
+   ],
+   "test": "Projekt składu MMA",
+   "title": "Wstępny skład AC 22 P i naważki do próbek Marshalla",
+   "type": "receptura",
+   "_id": "2026-11-10-projekt-skladu-nawazki"
+  },
+  {
+   "conclusions": "Krzywa przebiega blisko wzorcowej i daleko od granic na wszystkich sitach (również na 8 i 16 mm, które wcześniej były na granicy). Gęstość mieszanki mineralnej 2,628 Mg/m³; Bmin·α ≈ 4,0 %.",
+   "createdAt": "2026-11-10T14:52:00Z",
+   "date": "2026-11-10",
+   "description": "Po dodaniu frakcji 16/22 skład dobrany do krzywej wzorcowej AC 22 P w granicach na sitach normowych. Lepiszcze metodą Duriez, K = 3,0, asfalt 50/70. Zastępuje wstępny skład bez 16/22. Naważki w Excelu, arkusz „Naważki”.",
+   "mix": "AC22P",
+   "norm": "WT-2 / PN-EN 13108-1",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "16/22",
+     "unit": "%",
+     "value": "28"
+    },
+    {
+     "label": "11/16",
+     "unit": "%",
+     "value": "6"
+    },
+    {
+     "label": "5/11",
+     "unit": "%",
+     "value": "17"
+    },
+    {
+     "label": "2/5",
+     "unit": "%",
+     "value": "17"
+    },
+    {
+     "label": "0/2",
+     "unit": "%",
+     "value": "26"
+    },
+    {
+     "label": "Mączka",
+     "unit": "%",
+     "value": "6"
+    },
+    {
+     "label": "Asfalt",
+     "unit": "%",
+     "value": "4,6"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Uziarnienie mieszanki mineralnej vs pole AC 22 P",
+     "columns": [
+      "Sito [mm]",
+      "0,063",
+      "0,125",
+      "2",
+      "8",
+      "16",
+      "22,4"
+     ],
+     "rows": [
+      [
+       "Mieszanka [%]",
+       "5,6",
+       "7,0",
+       "31,7",
+       "54,8",
+       "76,8",
+       "97,8"
+      ],
+      [
+       "Wymaganie [%]",
+       "4–8",
+       "4–12",
+       "15–45",
+       "42–68",
+       "65–90",
+       "90–100"
+      ]
+     ]
+    },
+    {
+     "caption": "Naważki przy 4,6 % asfaltu [g]",
+     "columns": [
+      "Składnik",
+      "1 próbka 1200 g",
+      "narastająco",
+      "zarób 5000 g",
+      "narastająco"
+     ],
+     "rows": [
+      [
+       "16/22",
+       "320,5",
+       "320,5",
+       "1335,6",
+       "1335,6"
+      ],
+      [
+       "11/16",
+       "68,7",
+       "389,2",
+       "286,2",
+       "1621,8"
+      ],
+      [
+       "5/11",
+       "194,6",
+       "583,8",
+       "810,9",
+       "2432,7"
+      ],
+      [
+       "2/5",
+       "194,6",
+       "778,5",
+       "810,9",
+       "3243,6"
+      ],
+      [
+       "0/2",
+       "297,6",
+       "1076,1",
+       "1240,2",
+       "4483,8"
+      ],
+      [
+       "Mączka wapienna",
+       "68,7",
+       "1144,8",
+       "286,2",
+       "4770,0"
+      ],
+      [
+       "Asfalt 50/70",
+       "55,2",
+       "–",
+       "230,0",
+       "–"
+      ]
+     ]
+    }
+   ],
+   "test": "Projekt składu MMA",
+   "title": "Skład AC 22 P z frakcją 16/22 i naważki (wersja 2)",
+   "type": "receptura",
+   "_id": "2026-11-10-projekt-skladu-v2"
+  },
+  {
+   "conclusions": "Suma mas z sit (2323,5 g) jest o 20 g większa od zapisanej masy próbki (2303,5 g) — prawdopodobnie pomyłka w zapisie M1; do potwierdzenia.\nBardzo mało pyłów (0,62 % przez 0,063 mm) — do mieszanki AC 22 P potrzebny wypełniacz.",
+   "createdAt": "2026-11-10T11:25:00Z",
+   "date": "2026-11-10",
+   "description": "Przesiew piasku 0/2 łamanego polodowcowego. Zapisana masa próbki M1 = 2303,5 g, suma mas z sit = 2323,5 g. Procenty liczone od sumy z sit (jak w kalkulatorze MASA). Dane przekazane w czacie 10.11.",
+   "mix": "Piasek 0/2",
+   "norm": "PN-EN 933-1",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "M1 (zapisana)",
+     "unit": "g",
+     "value": "2303,5"
+    },
+    {
+     "label": "Suma z sit",
+     "unit": "g",
+     "value": "2323,5"
+    },
+    {
+     "label": "Przechodzi przez 0,063 mm",
+     "unit": "%",
+     "value": "0,62"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Analiza sitowa — piasek 0/2",
+     "columns": [
+      "Sito [mm]",
+      "Masa pozostała [g]",
+      "Pozostało [%]",
+      "Pozostało narastająco [%]",
+      "Przechodzi [%]"
+     ],
+     "rows": [
+      [
+       "4",
+       "0,0",
+       "0,00",
+       "0,00",
+       "100,00"
+      ],
+      [
+       "2",
+       "146,0",
+       "6,28",
+       "6,28",
+       "93,72"
+      ],
+      [
+       "1",
+       "842,1",
+       "36,24",
+       "42,53",
+       "57,47"
+      ],
+      [
+       "0,5",
+       "485,1",
+       "20,88",
+       "63,40",
+       "36,60"
+      ],
+      [
+       "0,25",
+       "514,1",
+       "22,13",
+       "85,53",
+       "14,47"
+      ],
+      [
+       "0,125",
+       "250,6",
+       "10,79",
+       "96,32",
+       "3,68"
+      ],
+      [
+       "0,063",
+       "71,3",
+       "3,07",
+       "99,38",
+       "0,62"
+      ],
+      [
+       "Dno",
+       "14,3",
+       "0,62",
+       "–",
+       "–"
+      ]
+     ]
+    }
+   ],
+   "test": "Analiza sitowa",
+   "title": "Analiza sitowa — piasek 0/2 łamany polodowcowy",
+   "type": "badanie",
+   "_id": "2026-11-10-sitowa-0-2"
+  },
+  {
+   "conclusions": "Suma mas z sit o 33,2 g większa od M1. Podobna nadwyżka (20–35 g) występuje we wszystkich frakcjach — prawdopodobnie przy ważeniu pozostałości wliczana jest tara jakiegoś naczynia; do sprawdzenia.\nPodziarno (przechodzi przez 16 mm) 21,3 % — duże, ale nie przeszkadza w projekcie.",
+   "createdAt": "2026-11-10T14:50:00Z",
+   "date": "2026-11-10",
+   "description": "Przesiew kruszywa 16/22, masa próbki M1 = 6000,5 g. Sita: 31,5; 22,4; 16; 11,2; 8; 4; 2; 0,5; 0,063 mm + dno. Procenty liczone od sumy z sit (6033,7 g).",
+   "mix": "Kruszywo 16/22",
+   "norm": "PN-EN 933-1",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "M1",
+     "unit": "g",
+     "value": "6000,5"
+    },
+    {
+     "label": "Suma z sit",
+     "unit": "g",
+     "value": "6033,7"
+    },
+    {
+     "label": "Przechodzi przez 16 mm",
+     "unit": "%",
+     "value": "21,3"
+    },
+    {
+     "label": "Przechodzi przez 0,063 mm",
+     "unit": "%",
+     "value": "0,04"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Analiza sitowa — 16/22",
+     "columns": [
+      "Sito [mm]",
+      "Masa pozostała [g]",
+      "Pozostało [%]",
+      "Przechodzi [%]"
+     ],
+     "rows": [
+      [
+       "31,5",
+       "0,0",
+       "0,00",
+       "100,00"
+      ],
+      [
+       "22,4",
+       "475,1",
+       "7,87",
+       "92,13"
+      ],
+      [
+       "16",
+       "4273,8",
+       "70,83",
+       "21,29"
+      ],
+      [
+       "11,2",
+       "1265,3",
+       "20,97",
+       "0,32"
+      ],
+      [
+       "8",
+       "14,5",
+       "0,24",
+       "0,08"
+      ],
+      [
+       "4",
+       "0,0",
+       "0,00",
+       "0,08"
+      ],
+      [
+       "2",
+       "0,7",
+       "0,01",
+       "0,07"
+      ],
+      [
+       "0,5",
+       "0,5",
+       "0,01",
+       "0,06"
+      ],
+      [
+       "0,063",
+       "1,1",
+       "0,02",
+       "0,04"
+      ],
+      [
+       "Dno",
+       "2,7",
+       "0,04",
+       "–"
+      ]
+     ]
+    }
+   ],
+   "test": "Analiza sitowa",
+   "title": "Analiza sitowa — kruszywo 16/22",
+   "type": "badanie",
+   "_id": "2026-11-10-sitowa-16-22"
+  },
+  {
    "conclusions": "Do sprawdzenia w WT-2 2014: Bmin (3,8 % wg WT-2 2010, 4,0 % w kalkulatorze MASA i w wytycznych PZDW) oraz graniczna wartość WTS_AIR dla KR3–KR4.\nW kalkulatorze MASA nie ma wpisu „AC 22 P KR 3-4” wg WT-2 — krzywe graniczne takie jak w WT-2 ma wpis „AC 22 P KR 5-7” (Bmin 4,0 %); wpis „KR 3-4 ZDW Olsztyn” to wymagania regionalne z dodatkowymi ograniczeniami na sitach 4, 5,6 i 11,2 mm.",
    "createdAt": "2026-11-10T08:05:00Z",
    "date": "2026-11-10",
@@ -167,68 +1386,1441 @@
    "title": "Wybór typu mieszanki: AC 22 P dla KR3–KR4",
    "type": "receptura",
    "_id": "2026-11-10-wybor-ac22p"
+  },
+  {
+   "conclusions": "Wszystkie trzy warianty mieszczą się w polu AC 22 P z zapasem na sitach normowych. W2 (więcej piasku i mączki) wymaga więcej asfaltu, W3 (więcej 16/22) ma krzywą bardziej „szkieletową”. Porównanie Vm na próbkach wskaże najlepszy wariant.",
+   "createdAt": "2026-11-12T07:50:00Z",
+   "date": "2026-11-12",
+   "description": "Obok składu bazowego W1 (zaakceptowanego) zaprojektowano dwa warianty z tych samych materiałów: W2 z krzywą bliżej górnej granicy pola AC 22 P i W3 bliżej dolnej. Asfalt 50/70 metodą Duriez, K = 3,0. Naważki w Excelu, arkusz „Naważki” (od wiersza 59).",
+   "mix": "AC22P",
+   "norm": "WT-2 / PN-EN 13108-1",
+   "photos": [],
+   "source": "claude",
+   "stage": 2,
+   "summary": [
+    {
+     "label": "W2 — asfalt",
+     "unit": "%",
+     "value": "4,8"
+    },
+    {
+     "label": "W3 — asfalt",
+     "unit": "%",
+     "value": "4,6"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Skład [%]",
+     "columns": [
+      "Materiał",
+      "W1",
+      "W2",
+      "W3"
+     ],
+     "rows": [
+      [
+       "16/22",
+       "28",
+       "21",
+       "35"
+      ],
+      [
+       "11/16",
+       "6",
+       "8",
+       "3"
+      ],
+      [
+       "5/11",
+       "17",
+       "17",
+       "18"
+      ],
+      [
+       "2/5",
+       "17",
+       "15",
+       "18"
+      ],
+      [
+       "Piasek 0/2",
+       "26",
+       "31",
+       "19"
+      ],
+      [
+       "Mączka wapienna",
+       "6",
+       "8",
+       "7"
+      ],
+      [
+       "Asfalt 50/70 w MMA",
+       "4,6",
+       "4,8",
+       "4,6"
+      ]
+     ]
+    },
+    {
+     "caption": "Przechodzi przez sito [%]",
+     "columns": [
+      "Sito [mm]",
+      "Wymaganie",
+      "W1",
+      "W2",
+      "W3"
+     ],
+     "rows": [
+      [
+       "0,063",
+       "4–8",
+       "5,6",
+       "7,3",
+       "6,4"
+      ],
+      [
+       "0,125",
+       "4–12",
+       "7,0",
+       "9,1",
+       "7,7"
+      ],
+      [
+       "2",
+       "15–45",
+       "31,7",
+       "38,2",
+       "26,1"
+      ],
+      [
+       "8",
+       "42–68",
+       "54,8",
+       "59,9",
+       "50,1"
+      ],
+      [
+       "16",
+       "65–90",
+       "76,8",
+       "81,9",
+       "71,9"
+      ],
+      [
+       "22,4",
+       "90–100",
+       "97,8",
+       "98,3",
+       "97,2"
+      ]
+     ]
+    }
+   ],
+   "test": "Projekt składu MMA",
+   "title": "Dwa dodatkowe warianty uziarnienia AC 22 P (W2 drobniejszy, W3 grubszy)",
+   "type": "receptura",
+   "_id": "2026-11-12-warianty-uziarnienia"
   }
  ],
  "mixes": [
   {
-   "aggregate": "do ustalenia: frakcje np. 0/2, 2/8, 8/16, 16/22 + wypełniacz",
-   "binder": "do ustalenia: referencyjnie asfalt drogowy (35/50 lub 50/70), warianty z lepiszczem roślinnym (L3–L6)",
-   "binderContent": "do obliczenia; Bmin 3,8 % (WT-2 2010) / 4,0 % (MASA, PZDW) — sprawdź w WT-2 2014",
+   "aggregate": "16/22 — 28 % · 11/16 — 6 % · 5/11 — 17 % · 2/5 — 17 % · piasek 0/2 — 26 % · mączka wapienna — 6 %. Gęstość mieszanki mineralnej 2,628 Mg/m³ (wersja 2, z 16/22).",
+   "batches": [
+    {
+     "asphalt": 55.2,
+     "label": "Naważka na 1 próbkę Marshalla (1200 g, 4,6 % asfaltu)",
+     "rows": [
+      [
+       "16/22",
+       320.5,
+       320.5
+      ],
+      [
+       "11/16",
+       68.7,
+       389.2
+      ],
+      [
+       "5/11",
+       194.6,
+       583.8
+      ],
+      [
+       "2/5",
+       194.6,
+       778.5
+      ],
+      [
+       "Piasek 0/2",
+       297.6,
+       1076.1
+      ],
+      [
+       "Mączka wapienna",
+       68.7,
+       1144.8
+      ]
+     ]
+    },
+    {
+     "asphalt": 230,
+     "label": "Zarób 5 kg (4,6 % asfaltu)",
+     "rows": [
+      [
+       "16/22",
+       1335.6,
+       1335.6
+      ],
+      [
+       "11/16",
+       286.2,
+       1621.8
+      ],
+      [
+       "5/11",
+       810.9,
+       2432.7
+      ],
+      [
+       "2/5",
+       810.9,
+       3243.6
+      ],
+      [
+       "Piasek 0/2",
+       1240.2,
+       4483.8
+      ],
+      [
+       "Mączka wapienna",
+       286.2,
+       4770
+      ]
+     ]
+    }
+   ],
+   "binder": "asfalt 50/70 (mieszanka referencyjna); warianty z lepiszczem roślinnym później",
+   "binderContent": "4,6 % (Duriez, K = 3,0) — seria 4,0 / 4,3 / 4,6 / 4,9 / 5,2 %; Bmin·α ≈ 4,0 %",
+   "binderPct": 4.6,
    "code": "AC22P",
+   "composition": [
+    {
+     "code": "16/22",
+     "color": 6,
+     "density": 2.65,
+     "pct": 28
+    },
+    {
+     "code": "11/16",
+     "color": 1,
+     "density": 2.683,
+     "pct": 6
+    },
+    {
+     "code": "5/11",
+     "color": 2,
+     "density": 2.682,
+     "pct": 17
+    },
+    {
+     "code": "2/5",
+     "color": 3,
+     "density": 2.683,
+     "pct": 17
+    },
+    {
+     "code": "Piasek 0/2",
+     "color": 4,
+     "density": 2.51,
+     "pct": 26
+    },
+    {
+     "code": "Mączka wapienna",
+     "color": 5,
+     "density": 2.71,
+     "pct": 6
+    }
+   ],
+   "curve": {
+    "max": [
+     8,
+     12,
+     null,
+     null,
+     null,
+     45,
+     null,
+     null,
+     68,
+     null,
+     90,
+     100,
+     100
+    ],
+    "min": [
+     4,
+     4,
+     null,
+     null,
+     null,
+     15,
+     null,
+     null,
+     42,
+     null,
+     65,
+     90,
+     100
+    ],
+    "normative": [
+     0.063,
+     0.125,
+     2,
+     8,
+     16,
+     22.4,
+     31.5
+    ],
+    "passing": [
+     5.6,
+     7,
+     10.1,
+     15.9,
+     21.8,
+     31.7,
+     41.3,
+     48.4,
+     54.8,
+     65.2,
+     76.8,
+     97.8,
+     100
+    ],
+    "sieves": [
+     0.063,
+     0.125,
+     0.25,
+     0.5,
+     1,
+     2,
+     4,
+     5.6,
+     8,
+     11.2,
+     16,
+     22.4,
+     31.5
+    ]
+   },
    "grading": {
     "columns": [
      "Sito [mm]",
      "min [%]",
-     "max [%]"
+     "max [%]",
+     "Projekt [%]"
     ],
     "rows": [
      [
       "31,5",
       "100",
-      "–"
+      "–",
+      "100"
      ],
      [
       "22,4",
       "90",
-      "100"
+      "100",
+      "97,8"
      ],
      [
       "16",
       "65",
-      "90"
+      "90",
+      "76,8"
      ],
      [
       "8",
       "42",
-      "68"
+      "68",
+      "54,8"
      ],
      [
       "2",
       "15",
-      "45"
+      "45",
+      "31,7"
      ],
      [
       "0,125",
       "4",
-      "12"
+      "12",
+      "7,0"
      ],
      [
       "0,063",
       "4",
-      "8"
+      "8",
+      "5,6"
      ]
     ]
    },
    "mixType": "AC 22 P, beton asfaltowy do warstwy podbudowy, KR3–KR4",
-   "name": "AC 22 P dla KR3–KR4 — mieszanka projektowana",
-   "notes": "Wymagania dla mieszanki: Vm 4,0–7,0 % (próbki 2×75 uderzeń), ITSR ≥ 70 %, koleinowanie na płytach 60 mm (60 °C, 10 000 cykli). Tabela poniżej to krzywe graniczne uziarnienia, a nie projekt — projekt powstanie w zakładce Liczenie.",
+   "name": "AC 22 P KR3–KR4 z asfaltem 50/70",
+   "next": [
+    {
+     "done": true,
+     "t": "Analizy sitowe i gęstości wszystkich frakcji"
+    },
+    {
+     "done": true,
+     "t": "Skład mieszanki i naważki"
+    },
+    {
+     "done": false,
+     "t": "Piątek: mieszanie i zagęszczanie próbek Marshalla (2×75 uderzeń)"
+    },
+    {
+     "done": false,
+     "t": "Gęstość objętościowa próbek i gęstość maksymalna luźnej mieszanki"
+    },
+    {
+     "done": false,
+     "t": "Wolna przestrzeń Vm (4–7 %), VMA, VFB"
+    },
+    {
+     "done": false,
+     "t": "Seria zawartości asfaltu (4,0–5,2 %) i wybór optimum, gdy sprzęt pozwoli"
+    },
+    {
+     "done": false,
+     "t": "Do ustalenia z prowadzącym: czy gęstość 16/22 (2,65) przyjąć bez badania"
+    }
+   ],
+   "notes": "Wymagania dla mieszanki: Vm 4,0–7,0 % (próbki 2×75 uderzeń), ITSR ≥ 70 %, koleinowanie na płytach 60 mm (60 °C, 10 000 cykli). Tabela poniżej to krzywe graniczne uziarnienia, a nie projekt — projekt powstanie w zakładce Liczenie.\nWstępny dobór (10.11, mączka z typowym uziarnieniem): 11/16 ok. 51 %, 2/5 ok. 19 %, 0/2 ok. 24 %, mączka ok. 6 % — krzywa mieści się tylko na granicy sita 16 mm (90 %).",
    "order": 1,
+   "rhoAgg": 2.628,
+   "summary": "Beton asfaltowy do warstwy podbudowy, trzy warianty uziarnienia z tych samych materiałów. Asfalt metodą Duriez (K = 3,0). To składy obliczeniowe — potwierdzi je wolna przestrzeń Vm na próbkach Marshalla (wymaganie 4–7 %).",
+   "updated": "2026-11-12",
+   "variants": [
+    {
+     "batches": [
+      {
+       "asphalt": 55.2,
+       "label": "1 próbka 1200 g (4,6 % asfaltu)",
+       "rows": [
+        [
+         "16/22",
+         320.5,
+         320.5
+        ],
+        [
+         "11/16",
+         68.7,
+         389.2
+        ],
+        [
+         "5/11",
+         194.6,
+         583.8
+        ],
+        [
+         "2/5",
+         194.6,
+         778.5
+        ],
+        [
+         "Piasek 0/2",
+         297.6,
+         1076.1
+        ],
+        [
+         "Mączka wapienna",
+         68.7,
+         1144.8
+        ]
+       ]
+      },
+      {
+       "asphalt": 230,
+       "label": "zarób 5 kg (4,6 % asfaltu)",
+       "rows": [
+        [
+         "16/22",
+         1335.6,
+         1335.6
+        ],
+        [
+         "11/16",
+         286.2,
+         1621.8
+        ],
+        [
+         "5/11",
+         810.9,
+         2432.7
+        ],
+        [
+         "2/5",
+         810.9,
+         3243.6
+        ],
+        [
+         "Piasek 0/2",
+         1240.2,
+         4483.8
+        ],
+        [
+         "Mączka wapienna",
+         286.2,
+         4770
+        ]
+       ]
+      }
+     ],
+     "binderPct": 4.6,
+     "code": "W1",
+     "composition": [
+      {
+       "code": "16/22",
+       "color": 6,
+       "density": 2.65,
+       "pct": 28
+      },
+      {
+       "code": "11/16",
+       "color": 1,
+       "density": 2.683,
+       "pct": 6
+      },
+      {
+       "code": "5/11",
+       "color": 2,
+       "density": 2.682,
+       "pct": 17
+      },
+      {
+       "code": "2/5",
+       "color": 3,
+       "density": 2.683,
+       "pct": 17
+      },
+      {
+       "code": "Piasek 0/2",
+       "color": 4,
+       "density": 2.51,
+       "pct": 26
+      },
+      {
+       "code": "Mączka wapienna",
+       "color": 5,
+       "density": 2.71,
+       "pct": 6
+      }
+     ],
+     "curve": {
+      "max": [
+       8,
+       12,
+       null,
+       null,
+       null,
+       45,
+       null,
+       null,
+       68,
+       null,
+       90,
+       100,
+       100
+      ],
+      "min": [
+       4,
+       4,
+       null,
+       null,
+       null,
+       15,
+       null,
+       null,
+       42,
+       null,
+       65,
+       90,
+       100
+      ],
+      "normative": [
+       0.063,
+       0.125,
+       2,
+       8,
+       16,
+       22.4,
+       31.5
+      ],
+      "passing": [
+       5.6,
+       7,
+       10.1,
+       15.9,
+       21.8,
+       31.7,
+       41.3,
+       48.4,
+       54.8,
+       65.2,
+       76.8,
+       97.8,
+       100
+      ],
+      "sieves": [
+       0.063,
+       0.125,
+       0.25,
+       0.5,
+       1,
+       2,
+       4,
+       5.6,
+       8,
+       11.2,
+       16,
+       22.4,
+       31.5
+      ]
+     },
+     "name": "bazowy",
+     "rhoAgg": 2.628
+    },
+    {
+     "batches": [
+      {
+       "asphalt": 57.6,
+       "label": "1 próbka 1200 g (4,8 % asfaltu)",
+       "rows": [
+        [
+         "16/22",
+         239.9,
+         239.9
+        ],
+        [
+         "11/16",
+         91.4,
+         331.3
+        ],
+        [
+         "5/11",
+         194.2,
+         525.5
+        ],
+        [
+         "2/5",
+         171.4,
+         696.9
+        ],
+        [
+         "Piasek 0/2",
+         354.1,
+         1051
+        ],
+        [
+         "Mączka wapienna",
+         91.4,
+         1142.4
+        ]
+       ]
+      },
+      {
+       "asphalt": 240,
+       "label": "zarób 5 kg (4,8 % asfaltu)",
+       "rows": [
+        [
+         "16/22",
+         999.6,
+         999.6
+        ],
+        [
+         "11/16",
+         380.8,
+         1380.4
+        ],
+        [
+         "5/11",
+         809.2,
+         2189.6
+        ],
+        [
+         "2/5",
+         714,
+         2903.6
+        ],
+        [
+         "Piasek 0/2",
+         1475.6,
+         4379.2
+        ],
+        [
+         "Mączka wapienna",
+         380.8,
+         4760
+        ]
+       ]
+      }
+     ],
+     "binderPct": 4.8,
+     "code": "W2",
+     "composition": [
+      {
+       "code": "16/22",
+       "color": 6,
+       "density": 2.65,
+       "pct": 21
+      },
+      {
+       "code": "11/16",
+       "color": 1,
+       "density": 2.683,
+       "pct": 8
+      },
+      {
+       "code": "5/11",
+       "color": 2,
+       "density": 2.682,
+       "pct": 17
+      },
+      {
+       "code": "2/5",
+       "color": 3,
+       "density": 2.683,
+       "pct": 15
+      },
+      {
+       "code": "Piasek 0/2",
+       "color": 4,
+       "density": 2.51,
+       "pct": 31
+      },
+      {
+       "code": "Mączka wapienna",
+       "color": 5,
+       "density": 2.71,
+       "pct": 8
+      }
+     ],
+     "curve": {
+      "max": [
+       8,
+       12,
+       null,
+       null,
+       null,
+       45,
+       null,
+       null,
+       68,
+       null,
+       90,
+       100,
+       100
+      ],
+      "min": [
+       4,
+       4,
+       null,
+       null,
+       null,
+       15,
+       null,
+       null,
+       42,
+       null,
+       65,
+       90,
+       100
+      ],
+      "normative": [
+       0.063,
+       0.125,
+       2,
+       8,
+       16,
+       22.4,
+       31.5
+      ],
+      "passing": [
+       7.3,
+       9.1,
+       12.8,
+       19.7,
+       26.6,
+       38.2,
+       47.3,
+       53.6,
+       59.9,
+       70.4,
+       81.9,
+       98.3,
+       100
+      ],
+      "sieves": [
+       0.063,
+       0.125,
+       0.25,
+       0.5,
+       1,
+       2,
+       4,
+       5.6,
+       8,
+       11.2,
+       16,
+       22.4,
+       31.5
+      ]
+     },
+     "name": "drobniejszy",
+     "rhoAgg": 2.622
+    },
+    {
+     "batches": [
+      {
+       "asphalt": 55.2,
+       "label": "1 próbka 1200 g (4,6 % asfaltu)",
+       "rows": [
+        [
+         "16/22",
+         400.7,
+         400.7
+        ],
+        [
+         "11/16",
+         34.3,
+         435
+        ],
+        [
+         "5/11",
+         206.1,
+         641.1
+        ],
+        [
+         "2/5",
+         206.1,
+         847.2
+        ],
+        [
+         "Piasek 0/2",
+         217.5,
+         1064.7
+        ],
+        [
+         "Mączka wapienna",
+         80.1,
+         1144.8
+        ]
+       ]
+      },
+      {
+       "asphalt": 230,
+       "label": "zarób 5 kg (4,6 % asfaltu)",
+       "rows": [
+        [
+         "16/22",
+         1669.5,
+         1669.5
+        ],
+        [
+         "11/16",
+         143.1,
+         1812.6
+        ],
+        [
+         "5/11",
+         858.6,
+         2671.2
+        ],
+        [
+         "2/5",
+         858.6,
+         3529.8
+        ],
+        [
+         "Piasek 0/2",
+         906.3,
+         4436.1
+        ],
+        [
+         "Mączka wapienna",
+         333.9,
+         4770
+        ]
+       ]
+      }
+     ],
+     "binderPct": 4.6,
+     "code": "W3",
+     "composition": [
+      {
+       "code": "16/22",
+       "color": 6,
+       "density": 2.65,
+       "pct": 35
+      },
+      {
+       "code": "11/16",
+       "color": 1,
+       "density": 2.683,
+       "pct": 3
+      },
+      {
+       "code": "5/11",
+       "color": 2,
+       "density": 2.682,
+       "pct": 18
+      },
+      {
+       "code": "2/5",
+       "color": 3,
+       "density": 2.683,
+       "pct": 18
+      },
+      {
+       "code": "Piasek 0/2",
+       "color": 4,
+       "density": 2.51,
+       "pct": 19
+      },
+      {
+       "code": "Mączka wapienna",
+       "color": 5,
+       "density": 2.71,
+       "pct": 7
+      }
+     ],
+     "curve": {
+      "max": [
+       8,
+       12,
+       null,
+       null,
+       null,
+       45,
+       null,
+       null,
+       68,
+       null,
+       90,
+       100,
+       100
+      ],
+      "min": [
+       4,
+       4,
+       null,
+       null,
+       null,
+       15,
+       null,
+       null,
+       42,
+       null,
+       65,
+       90,
+       100
+      ],
+      "normative": [
+       0.063,
+       0.125,
+       2,
+       8,
+       16,
+       22.4,
+       31.5
+      ],
+      "passing": [
+       6.4,
+       7.7,
+       10.1,
+       14.3,
+       18.7,
+       26.1,
+       35.9,
+       43.3,
+       50.1,
+       60.7,
+       71.9,
+       97.2,
+       100
+      ],
+      "sieves": [
+       0.063,
+       0.125,
+       0.25,
+       0.5,
+       1,
+       2,
+       4,
+       5.6,
+       8,
+       11.2,
+       16,
+       22.4,
+       31.5
+      ]
+     },
+     "name": "grubszy",
+     "rhoAgg": 2.639
+    }
+   ],
    "_id": "AC22P-KR34"
+  }
+ ],
+ "aggregates": [
+  {
+   "code": "0/2",
+   "color": 4,
+   "density": {
+    "date": "2026-11-10",
+    "method": "piknometr, PN-EN 1097-6",
+    "trials": [
+     2.473,
+     2.539
+    ],
+    "value": 2.51
+   },
+   "entryIds": [
+    "2026-11-10-sitowa-0-2",
+    "2026-11-10-gestosc-0-2"
+   ],
+   "fines": 0.62,
+   "flags": "Gęstość 2,51 przyjęta do projektu (decyzja 10.11): piasek nie jest czysty, więc niższa gęstość niż grubych frakcji (2,68) jest uznana za wiarygodną.\nZapisana masa próbki M1 = 2303,5 g, a suma z sit 2323,5 g — % liczone od sumy z sit.",
+   "grading": {
+    "M1": 2323.5,
+    "date": "2026-11-10",
+    "loss": null,
+    "passing": [
+     100,
+     93.72,
+     57.47,
+     36.6,
+     14.47,
+     3.68,
+     0.62
+    ],
+    "sieves": [
+     4,
+     2,
+     1,
+     0.5,
+     0.25,
+     0.125,
+     0.063
+    ]
+   },
+   "name": "Piasek 0/2 łamany polodowcowy",
+   "order": 4,
+   "photos": [],
+   "status": "ok",
+   "_id": "0-2"
+  },
+  {
+   "code": "11/16",
+   "color": 1,
+   "density": {
+    "date": "2026-11-09",
+    "method": "piknometr, PN-EN 1097-6",
+    "trials": [
+     2.692,
+     2.673
+    ],
+    "value": 2.683
+   },
+   "entryIds": [
+    "2026-11-09-gestosc-ziaren",
+    "2026-11-09-sitowa-11-16",
+    "2026-11-10-gestosc-11-16-powtorka",
+    "2026-11-10-kalibracja-piknometrow"
+   ],
+   "fines": 0.92,
+   "flags": "Sito „4,2 mm” w protokole – sprawdzić, czy chodziło o 4 mm.\nPrzez sito D = 16 mm przechodzi tylko 80,5 % – duży udział nadziarna.\nMasa po przesianiu większa od sumy z sit o ok. 35 g – możliwy brakujący wpis.",
+   "grading": {
+    "M1": 5012.6,
+    "date": "2026-11-09",
+    "loss": 0.88,
+    "passing": [
+     100,
+     80.47,
+     13.45,
+     1.49,
+     1.35,
+     1.19,
+     0.92
+    ],
+    "sieves": [
+     22.4,
+     16,
+     11.2,
+     8,
+     4.2,
+     0.5,
+     0.063
+    ]
+   },
+   "name": "Kruszywo 11/16 polodowcowe",
+   "order": 1,
+   "photos": [],
+   "status": "ok",
+   "_id": "11-16"
+  },
+  {
+   "code": "16/22",
+   "color": 6,
+   "density": {
+    "date": "2026-11-10",
+    "method": "wartość podana (10.11)",
+    "trials": [],
+    "value": 2.65
+   },
+   "entryIds": [
+    "2026-11-10-sitowa-16-22"
+   ],
+   "fines": 0.04,
+   "flags": "Gęstość 2,65 przyjęta (wartość podana, nie z piknometru).\nSuma z sit 6033,7 g o 33,2 g większa od M1 = 6000,5 g — % liczone od sumy z sit.",
+   "grading": {
+    "M1": 6000.5,
+    "date": "2026-11-10",
+    "loss": null,
+    "passing": [
+     100,
+     92.13,
+     21.29,
+     0.32,
+     0.08,
+     0.08,
+     0.07,
+     0.06,
+     0.04
+    ],
+    "sieves": [
+     31.5,
+     22.4,
+     16,
+     11.2,
+     8,
+     4,
+     2,
+     0.5,
+     0.063
+    ]
+   },
+   "name": "Kruszywo 16/22",
+   "order": 0,
+   "status": "ok",
+   "_id": "16-22"
+  },
+  {
+   "code": "2/5",
+   "color": 3,
+   "density": {
+    "date": "2026-11-09",
+    "method": "piknometr, PN-EN 1097-6",
+    "trials": [
+     2.694,
+     2.672
+    ],
+    "value": 2.683
+   },
+   "entryIds": [
+    "2026-11-09-gestosc-ziaren",
+    "2026-11-09-sitowa-2-5",
+    "2026-11-10-kalibracja-piknometrow"
+   ],
+   "fines": 1.07,
+   "flags": "Strata przy przesiewie 1,07 % (powyżej 1 %) i brak masy z dna.\nMasa po przesianiu większa od sumy z sit o ok. 28 g.",
+   "grading": {
+    "M1": 2002.5,
+    "date": "2026-11-09",
+    "loss": 1.07,
+    "passing": [
+     100,
+     92.39,
+     53.83,
+     6.55,
+     1.13,
+     1.07
+    ],
+    "sieves": [
+     8,
+     5.6,
+     4,
+     2,
+     0.5,
+     0.063
+    ]
+   },
+   "name": "Kruszywo 2/5 polodowcowe",
+   "order": 3,
+   "photos": [],
+   "status": "ok",
+   "_id": "2-5"
+  },
+  {
+   "code": "5/11",
+   "color": 2,
+   "density": {
+    "date": "2026-11-09",
+    "method": "piknometr, PN-EN 1097-6",
+    "trials": [
+     2.701,
+     2.662
+    ],
+    "value": 2.682
+   },
+   "entryIds": [
+    "2026-11-09-gestosc-ziaren",
+    "2026-11-09-sitowa-5-11",
+    "2026-11-10-kalibracja-piknometrow"
+   ],
+   "fines": 0.39,
+   "flags": "Różnica między próbami gęstości 0,039 Mg/m³ – większa niż w pozostałych frakcjach.\nMasa po przesianiu większa od sumy z sit o ok. 28 g.",
+   "grading": {
+    "M1": 3000.2,
+    "date": "2026-11-09",
+    "loss": 0.39,
+    "passing": [
+     100,
+     89.98,
+     33.64,
+     3.55,
+     0.55,
+     0.44,
+     0.39
+    ],
+    "sieves": [
+     16,
+     11.2,
+     8,
+     5.6,
+     4,
+     2,
+     0.063
+    ]
+   },
+   "name": "Kruszywo 5/11 polodowcowe",
+   "order": 2,
+   "photos": [],
+   "status": "ok",
+   "_id": "5-11"
+  },
+  {
+   "max": [
+    8,
+    12,
+    45,
+    68,
+    90,
+    100,
+    100
+   ],
+   "min": [
+    4,
+    4,
+    15,
+    42,
+    65,
+    90,
+    100
+   ],
+   "name": "Pole uziarnienia AC 22 P (WT-2, KR3–KR4)",
+   "order": 0,
+   "sieves": [
+    0.063,
+    0.125,
+    2,
+    8,
+    16,
+    22.4,
+    31.5
+   ],
+   "status": "envelope",
+   "_id": "_pole"
+  },
+  {
+   "code": "Wypełniacz",
+   "color": 5,
+   "density": {
+    "date": "2026-11-10",
+    "method": "dane z biblioteki kalkulatora MASA (CEMEX)",
+    "trials": [],
+    "value": 2.71
+   },
+   "fines": 85,
+   "flags": "Dane przyjęte z biblioteki materiałów kalkulatora MASA (mączka wapienna CEMEX), nie z badania. Jeśli laboratorium ma kartę producenta używanej mączki — warto porównać.",
+   "grading": {
+    "M1": null,
+    "date": "2026-11-10",
+    "loss": null,
+    "passing": [
+     85,
+     95,
+     100,
+     100,
+     100
+    ],
+    "sieves": [
+     0.063,
+     0.125,
+     0.25,
+     0.5,
+     2
+    ]
+   },
+   "name": "Mączka wapienna",
+   "order": 5,
+   "status": "ok",
+   "_id": "wypelniacz"
+  }
+ ],
+ "binders": [
+  {
+   "code": "L1",
+   "components": [
+    {
+     "g": 1000,
+     "kind": "asf",
+     "name": "Asfalt 50/70"
+    }
+   ],
+   "name": "Asfalt 50/70 (referencyjny)",
+   "noMass": true,
+   "note": "Podstawowe badania asfaltu bazowego — punkt odniesienia dla pozostałych lepiszczy. Wyniki (penetracja, PiK, Fraass…) do uzupełnienia.",
+   "order": 1,
+   "status": "ok",
+   "statusNote": "zbadany",
+   "_id": "L1-5070"
+  },
+  {
+   "code": "L2",
+   "components": [
+    {
+     "g": 500,
+     "kind": "asf",
+     "name": "Asfalt 50/70"
+    },
+    {
+     "g": 500,
+     "kind": "og",
+     "name": "Olej gęsty"
+    }
+   ],
+   "name": "Asfalt 50/70 + olej gęsty 50/50",
+   "note": "W temperaturze pokojowej próbka była płynna, więc nie dało się wykonać badań. Wniosek: 50 % pozostałości gęstej za bardzo upłynnia asfalt.",
+   "order": 2,
+   "status": "fail",
+   "statusNote": "nieudane — płynne w temp. pokojowej",
+   "_id": "L2-5070-og"
+  },
+  {
+   "code": "L3",
+   "components": [
+    {
+     "g": 400,
+     "kind": "asf",
+     "name": "Asfalt 50/70"
+    },
+    {
+     "g": 250,
+     "kind": "og",
+     "name": "Olej gęsty"
+    },
+    {
+     "g": 200,
+     "kind": "sbs",
+     "name": "SBS"
+    },
+    {
+     "g": 250,
+     "kind": "up",
+     "name": "Upłynniacz roślinny"
+    }
+   ],
+   "name": "50/70 + olej gęsty + SBS + upłynniacz roślinny",
+   "note": "Kolejność dodawania: 500 g mieszaniny 50/70 + olej gęsty (50/50) → 200 g SBS → 150 g upłynniacza → dodatkowe 150 g asfaltu 50/70 → dodatkowe 100 g upłynniacza. Razem ok. 1100 g (lekko ponad litr).",
+   "order": 3,
+   "status": "unknown",
+   "_id": "L3-5070-og-sbs-up"
+  },
+  {
+   "code": "L4",
+   "components": [
+    {
+     "g": 700,
+     "kind": "or",
+     "name": "Olej rzadki"
+    },
+    {
+     "g": 300,
+     "kind": "sbs",
+     "name": "SBS"
+    }
+   ],
+   "name": "Olej rzadki + SBS 30 % (bez asfaltu)",
+   "note": "Lepiszcze w całości bezasfaltowe: pozostałość rzadka modyfikowana SBS (70/30).",
+   "order": 4,
+   "status": "unknown",
+   "_id": "L4-or-sbs30"
+  },
+  {
+   "assumption": "przyjęto, że SBS to 20 % całości (200 g na 1000 g), a oleje 800 g w proporcji 70/30. Jeśli oleje miały razem 1000 g (700 + 300) i do tego 200 g SBS, udział SBS wynosi 16,7 %.",
+   "code": "L5",
+   "components": [
+    {
+     "g": 560,
+     "kind": "or",
+     "name": "Olej rzadki"
+    },
+    {
+     "g": 240,
+     "kind": "og",
+     "name": "Olej gęsty"
+    },
+    {
+     "g": 200,
+     "kind": "sbs",
+     "name": "SBS"
+    }
+   ],
+   "name": "Olej rzadki + olej gęsty (70/30) + SBS 20 % (bez asfaltu)",
+   "note": "Lepiszcze bezasfaltowe.",
+   "order": 5,
+   "status": "unknown",
+   "_id": "L5-or-og-sbs20"
+  },
+  {
+   "code": "L6",
+   "components": [
+    {
+     "g": 600,
+     "kind": "or",
+     "name": "Olej rzadki"
+    },
+    {
+     "g": 400,
+     "kind": "sbs",
+     "name": "SBS"
+    }
+   ],
+   "name": "Olej rzadki + SBS 40 % (bez asfaltu)",
+   "note": "Lepiszcze bezasfaltowe, najwyższy udział SBS w serii.",
+   "order": 6,
+   "status": "unknown",
+   "_id": "L6-or-sbs40"
   }
  ],
  "plan": [
   {
    "ask": true,
+   "doneAt": "2026-11-10",
    "items": [
     "Ustalone: mieszanka AC 22 P (podbudowa) dla KR3–KR4.",
     "Które lepiszcze (L1–L6, karta Wyniki → Lepiszcza) idzie do mieszanek — i czy mieszanką referencyjną jest AC 22 P z czystym asfaltem (35/50 czy 50/70?).",
@@ -242,7 +2834,7 @@
    "phase": 1,
    "phaseTime": "1–2 dni",
    "phaseTitle": "Ustalenia przed startem",
-   "status": "todo",
+   "status": "done",
    "time": "ok. 1 h + notatka",
    "tip": "Zrób zdjęcie notatki z konsultacji i wyślij w czacie — wpiszę ustalenia do planu i dziennika.",
    "title": "Konsultacja z promotorem: zakres badań",
@@ -643,140 +3235,15 @@
    "_id": "p21-praca"
   }
  ],
- "binders": [
+ "files": [
   {
-   "code": "L1",
-   "components": [
-    {
-     "g": 1000,
-     "kind": "asf",
-     "name": "Asfalt 50/70"
-    }
-   ],
-   "name": "Asfalt 50/70 (referencyjny)",
-   "noMass": true,
-   "note": "Podstawowe badania asfaltu bazowego — punkt odniesienia dla pozostałych lepiszczy. Wyniki (penetracja, PiK, Fraass…) do uzupełnienia.",
-   "order": 1,
-   "status": "ok",
-   "statusNote": "zbadany",
-   "_id": "L1-5070"
-  },
-  {
-   "code": "L2",
-   "components": [
-    {
-     "g": 500,
-     "kind": "asf",
-     "name": "Asfalt 50/70"
-    },
-    {
-     "g": 500,
-     "kind": "og",
-     "name": "Olej gęsty"
-    }
-   ],
-   "name": "Asfalt 50/70 + olej gęsty 50/50",
-   "note": "W temperaturze pokojowej próbka była płynna, więc nie dało się wykonać badań. Wniosek: 50 % pozostałości gęstej za bardzo upłynnia asfalt.",
-   "order": 2,
-   "status": "fail",
-   "statusNote": "nieudane — płynne w temp. pokojowej",
-   "_id": "L2-5070-og"
-  },
-  {
-   "code": "L3",
-   "components": [
-    {
-     "g": 400,
-     "kind": "asf",
-     "name": "Asfalt 50/70"
-    },
-    {
-     "g": 250,
-     "kind": "og",
-     "name": "Olej gęsty"
-    },
-    {
-     "g": 200,
-     "kind": "sbs",
-     "name": "SBS"
-    },
-    {
-     "g": 250,
-     "kind": "up",
-     "name": "Upłynniacz roślinny"
-    }
-   ],
-   "name": "50/70 + olej gęsty + SBS + upłynniacz roślinny",
-   "note": "Kolejność dodawania: 500 g mieszaniny 50/70 + olej gęsty (50/50) → 200 g SBS → 150 g upłynniacza → dodatkowe 150 g asfaltu 50/70 → dodatkowe 100 g upłynniacza. Razem ok. 1100 g (lekko ponad litr).",
-   "order": 3,
-   "status": "unknown",
-   "_id": "L3-5070-og-sbs-up"
-  },
-  {
-   "code": "L4",
-   "components": [
-    {
-     "g": 700,
-     "kind": "or",
-     "name": "Olej rzadki"
-    },
-    {
-     "g": 300,
-     "kind": "sbs",
-     "name": "SBS"
-    }
-   ],
-   "name": "Olej rzadki + SBS 30 % (bez asfaltu)",
-   "note": "Lepiszcze w całości bezasfaltowe: pozostałość rzadka modyfikowana SBS (70/30).",
-   "order": 4,
-   "status": "unknown",
-   "_id": "L4-or-sbs30"
-  },
-  {
-   "assumption": "przyjęto, że SBS to 20 % całości (200 g na 1000 g), a oleje 800 g w proporcji 70/30. Jeśli oleje miały razem 1000 g (700 + 300) i do tego 200 g SBS, udział SBS wynosi 16,7 %.",
-   "code": "L5",
-   "components": [
-    {
-     "g": 560,
-     "kind": "or",
-     "name": "Olej rzadki"
-    },
-    {
-     "g": 240,
-     "kind": "og",
-     "name": "Olej gęsty"
-    },
-    {
-     "g": 200,
-     "kind": "sbs",
-     "name": "SBS"
-    }
-   ],
-   "name": "Olej rzadki + olej gęsty (70/30) + SBS 20 % (bez asfaltu)",
-   "note": "Lepiszcze bezasfaltowe.",
-   "order": 5,
-   "status": "unknown",
-   "_id": "L5-or-og-sbs20"
-  },
-  {
-   "code": "L6",
-   "components": [
-    {
-     "g": 600,
-     "kind": "or",
-     "name": "Olej rzadki"
-    },
-    {
-     "g": 400,
-     "kind": "sbs",
-     "name": "SBS"
-    }
-   ],
-   "name": "Olej rzadki + SBS 40 % (bez asfaltu)",
-   "note": "Lepiszcze bezasfaltowe, najwyższy udział SBS w serii.",
-   "order": 6,
-   "status": "unknown",
-   "_id": "L6-or-sbs40"
+   "addedAt": "2026-11-12T09:35:00Z",
+   "assetId": "c3bd685ddc53bfdef9167eaf41dd8495",
+   "folder": "pdf",
+   "name": "AC22P_warianty_nawazki.pdf",
+   "size": 226228,
+   "type": "application/pdf",
+   "_id": "ac22p-warianty-nawazki"
   }
  ]
 }
