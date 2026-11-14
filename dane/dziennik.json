@@ -2,7 +2,7 @@
  "app": "Dziennik MMA",
  "entries": [
   {
-   "conclusions": "Wszystkie trzy frakcje mają praktycznie tę samą gęstość ziaren, ok. 2,68 Mg/m³ — typowo dla kruszywa polodowcowego (jeden materiał macierzysty). Do projektu MMA można przyjąć średnie z tabeli.\nKontrolna powtórka 11/16 z 10.11 na wadze Radwag bez tarowania dała 2,687 Mg/m³ — zgodnie z próbami z 09.11, co potwierdza poprawność przeliczenia.\nPoczątkowo wyniki wychodziły ok. 0,7–1,0 Mg/m³, bo odczyty z wytarowanej wagi potraktowano jako masy z piknometrem. Objętości piknometrów od nauczyciela były zawyżone tylko o 3–4 cm³.\nRóżnica między próbami dla 5/11 (0,039) jest większa niż dla pozostałych frakcji — do ewentualnej oceny z promotorem.",
+   "conclusions": "Wszystkie trzy frakcje mają praktycznie tę samą gęstość ziaren, ok. 2,68 Mg/m³ — typowo dla kruszywa polodowcowego (jeden materiał macierzysty). Do projektu MMA można przyjąć średnie z tabeli.\nKontrolna powtórka 11/16 z 10.11 na wadze Radwag bez tarowania dała 2,687 Mg/m³ — zgodnie z próbami z 09.11, co potwierdza poprawność przeliczenia.\nPoczątkowo wyniki wychodziły ok. 0,7–1,0 Mg/m³, bo odczyty z wytarowanej wagi potraktowano jako masy z piknometrem. Objętości piknometrów od nauczyciela były zawyżone tylko o 3–4 cm³.\nRóżnica między próbami dla 5/11 (0,039) jest większa niż dla pozostałych frakcji — do ewentualnej oceny z promotorem.\nZdjęcie wagi przy 11/16 próba 2 (m3) pokazuje 1999,26 g, a w protokole zapisano 1999,46 g – do potwierdzenia (różnica ok. 0,002 Mg/m³).",
    "createdAt": "2026-11-10T07:00:00Z",
    "date": "2026-11-09",
    "description": "Oznaczenie gęstości ziaren kruszyw polodowcowych 11/16, 5/11 i 2/5 metodą piknometryczną, po 2 próby na frakcję (piknometry 6, 3, 2), woda 23,5 °C.\nPrzy ważeniu m2 i m3 waga HG Vibra była wytarowana na pustym piknometrze, więc odczyty to masa samego kruszywa (m2) oraz kruszywa z wodą (m3), bez piknometru. Objętości piknometrów z kalibracji 10.11 (woda destylowana do kreski, waga Radwag).\nρ = mk / [Vp − (m3 − m2) / ρw].",
@@ -15,6 +15,22 @@
     {
      "caption": "Kruszywo 5/11, próba 1: kruszywo z wodą destylowaną po wstrząśnięciu, waga wytarowana na piknometrze — 2028,04 g",
      "id": "f6ee3d15176ad758f280de0e6cc76729"
+    },
+    {
+     "id": "1116-pik-m2",
+     "caption": "Kruszywo 11/16, próba 2: kruszywo w piknometrze nr 6 (waga wytarowana) – 1069,40 g"
+    },
+    {
+     "id": "1116-pik-m3",
+     "caption": "Kruszywo 11/16, próba 2: kruszywo + woda w piknometrze nr 6 (waga wytarowana) – 1999,26 g"
+    },
+    {
+     "id": "25-pik-m2",
+     "caption": "Kruszywo 2/5, próba 1: kruszywo w piknometrze nr 2 (waga wytarowana) – 1094,54 g"
+    },
+    {
+     "id": "25-pik-m3",
+     "caption": "Kruszywo 2/5, próba 1: kruszywo + woda w piknometrze nr 2 (waga wytarowana) – 1992,54 g"
     }
    ],
    "source": "claude",
@@ -130,13 +146,22 @@
    "_id": "2026-11-09-gestosc-ziaren"
   },
   {
-   "conclusions": "Masa całkowita po przesianiu (5003,5 g) jest większa od sumy mas z sit (4968,6 g) o 34,9 g — możliwe, że nie zapisano masy z któregoś sita lub z dna; do sprawdzenia.\nSito 4,2 mm — w tabeli tak zapisano; sprawdzić, czy chodziło o 4 mm. Przez sito D = 16 mm przechodzi tylko ok. 80,5 % (duży udział nadziarna).",
+   "conclusions": "Masa całkowita po przesianiu (5003,5 g) jest większa od sumy mas z sit (4968,6 g) o 34,9 g — możliwe, że nie zapisano masy z któregoś sita lub z dna; do sprawdzenia.\nSito 4,2 mm — w tabeli tak zapisano; sprawdzić, czy chodziło o 4 mm. Przez sito D = 16 mm przechodzi tylko ok. 80,5 % (duży udział nadziarna).\nWg zapisków Eryka (14.11): masa po przesianiu (ostatnie ważenie) 5003,5 g, suma z sit 4968,6 g.",
    "createdAt": "2026-11-10T09:20:00Z",
    "date": "2026-11-09",
    "description": "Przesiew kruszywa Kruszywo 11/16 polodowcowe na zestawie sit. Masa próbki suchej przed przesianiem M1 = 5012,6 g. Dane z arkusza „Analiza sitowa” (Excel Projektowanie MMA – wyniki).",
    "mix": "Kruszywo 11/16",
    "norm": "PN-EN 933-1",
-   "photos": [],
+   "photos": [
+    {
+     "id": "1116-probka",
+     "caption": "Kruszywo 11/16 – próbka do analizy sitowej (waga pokazuje 5012,4 g; zapisano 5012,6 g)"
+    },
+    {
+     "id": "1116-wstrzasarka",
+     "caption": "Kruszywo 11/16 – przesiew na wstrząsarce"
+    }
+   ],
    "source": "claude",
    "stage": 2,
    "summary": [
@@ -243,7 +268,12 @@
    "description": "Przesiew kruszywa Kruszywo 2/5 polodowcowe na zestawie sit. Masa próbki suchej przed przesianiem M1 = 2002,5 g. Dane z arkusza „Analiza sitowa” (Excel Projektowanie MMA – wyniki).",
    "mix": "Kruszywo 2/5",
    "norm": "PN-EN 933-1",
-   "photos": [],
+   "photos": [
+    {
+     "id": "25-wstrzasarka",
+     "caption": "Kruszywo 2/5 – przesiew na wstrząsarce"
+    }
+   ],
    "source": "claude",
    "stage": 2,
    "summary": [
@@ -343,7 +373,12 @@
    "description": "Przesiew kruszywa Kruszywo 5/11 polodowcowe na zestawie sit. Masa próbki suchej przed przesianiem M1 = 3000,2 g. Dane z arkusza „Analiza sitowa” (Excel Projektowanie MMA – wyniki).",
    "mix": "Kruszywo 5/11",
    "norm": "PN-EN 933-1",
-   "photos": [],
+   "photos": [
+    {
+     "id": "511-sito",
+     "caption": "Kruszywo 5/11 – ważenie pozostałości na sicie"
+    }
+   ],
    "source": "claude",
    "stage": 2,
    "summary": [
@@ -1217,7 +1252,16 @@
    "description": "Przesiew kruszywa 16/22, masa próbki M1 = 6000,5 g. Sita: 31,5; 22,4; 16; 11,2; 8; 4; 2; 0,5; 0,063 mm + dno. Procenty liczone od sumy z sit (6033,7 g).",
    "mix": "Kruszywo 16/22",
    "norm": "PN-EN 933-1",
-   "photos": [],
+   "photos": [
+    {
+     "id": "1622-probka",
+     "caption": "Kruszywo 16/22 – próbka do analizy sitowej, M1 = 6000,5 g"
+    },
+    {
+     "id": "1622-sita",
+     "caption": "Zestaw sit do analizy sitowej kruszywa 16/22"
+    }
+   ],
    "source": "claude",
    "stage": 2,
    "summary": [
@@ -2393,7 +2437,7 @@
     "2026-11-10-gestosc-0-2"
    ],
    "fines": 0.62,
-   "flags": "Gęstość 2,51 przyjęta do projektu (decyzja 10.11): piasek nie jest czysty, więc niższa gęstość niż grubych frakcji (2,68) jest uznana za wiarygodną.\nZapisana masa próbki M1 = 2303,5 g, a suma z sit 2323,5 g — % liczone od sumy z sit.",
+   "flags": "Gęstość 2,51 przyjęta do projektu (decyzja 10.11): piasek nie jest czysty, więc niższa gęstość niż grubych frakcji (2,68) jest uznana za wiarygodną.\nZapisana masa próbki M1 = 2303,5 g, a suma z sit 2323,5 g — % liczone od sumy z sit.\nW zapiskach Eryka (14.11) gęstość średnia 2,53 g/cm³, a z prób 2,473 i 2,539 wychodzi 2,506 – do wyjaśnienia, która wartość jest właściwa.",
    "grading": {
     "M1": 2323.5,
     "date": "2026-11-10",
@@ -2468,7 +2512,24 @@
    },
    "name": "Kruszywo 11/16 polodowcowe",
    "order": 1,
-   "photos": [],
+   "photos": [
+    {
+     "id": "1116-probka",
+     "caption": "Kruszywo 11/16 – próbka do analizy sitowej (waga pokazuje 5012,4 g; zapisano 5012,6 g)"
+    },
+    {
+     "id": "1116-wstrzasarka",
+     "caption": "Kruszywo 11/16 – przesiew na wstrząsarce"
+    },
+    {
+     "id": "1116-pik-m2",
+     "caption": "Kruszywo 11/16, próba 2: kruszywo w piknometrze nr 6 (waga wytarowana) – 1069,40 g"
+    },
+    {
+     "id": "1116-pik-m3",
+     "caption": "Kruszywo 11/16, próba 2: kruszywo + woda w piknometrze nr 6 (waga wytarowana) – 1999,26 g"
+    }
+   ],
    "status": "ok",
    "_id": "11-16"
   },
@@ -2516,7 +2577,17 @@
    "name": "Kruszywo 16/22",
    "order": 0,
    "status": "ok",
-   "_id": "16-22"
+   "_id": "16-22",
+   "photos": [
+    {
+     "id": "1622-probka",
+     "caption": "Kruszywo 16/22 – próbka do analizy sitowej, M1 = 6000,5 g"
+    },
+    {
+     "id": "1622-sita",
+     "caption": "Zestaw sit do analizy sitowej kruszywa 16/22"
+    }
+   ]
   },
   {
    "code": "2/5",
@@ -2536,7 +2607,7 @@
     "2026-11-10-kalibracja-piknometrow"
    ],
    "fines": 1.07,
-   "flags": "Strata przy przesiewie 1,07 % (powyżej 1 %) i brak masy z dna.\nMasa po przesianiu większa od sumy z sit o ok. 28 g.",
+   "flags": "Strata przy przesiewie 1,07 % (powyżej 1 %) ; masa na dnie zapisana jako 0,00 g.\nMasa po przesianiu większa od sumy z sit o ok. 28 g.",
    "grading": {
     "M1": 2002.5,
     "date": "2026-11-09",
@@ -2560,7 +2631,20 @@
    },
    "name": "Kruszywo 2/5 polodowcowe",
    "order": 3,
-   "photos": [],
+   "photos": [
+    {
+     "id": "25-wstrzasarka",
+     "caption": "Kruszywo 2/5 – przesiew na wstrząsarce"
+    },
+    {
+     "id": "25-pik-m2",
+     "caption": "Kruszywo 2/5, próba 1: kruszywo w piknometrze nr 2 (waga wytarowana) – 1094,54 g"
+    },
+    {
+     "id": "25-pik-m3",
+     "caption": "Kruszywo 2/5, próba 1: kruszywo + woda w piknometrze nr 2 (waga wytarowana) – 1992,54 g"
+    }
+   ],
    "status": "ok",
    "_id": "2-5"
   },
@@ -2608,7 +2692,12 @@
    },
    "name": "Kruszywo 5/11 polodowcowe",
    "order": 2,
-   "photos": [],
+   "photos": [
+    {
+     "id": "511-sito",
+     "caption": "Kruszywo 5/11 – ważenie pozostałości na sicie"
+    }
+   ],
    "status": "ok",
    "_id": "5-11"
   },
