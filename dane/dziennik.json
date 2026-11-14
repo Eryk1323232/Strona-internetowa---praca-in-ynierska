@@ -2,7 +2,7 @@
  "app": "Dziennik MMA",
  "entries": [
   {
-   "conclusions": "Wszystkie trzy frakcje mają praktycznie tę samą gęstość ziaren, ok. 2,68 Mg/m³ — typowo dla kruszywa polodowcowego (jeden materiał macierzysty). Do projektu MMA można przyjąć średnie z tabeli.\nKontrolna powtórka 11/16 z 10.11 na wadze Radwag bez tarowania dała 2,687 Mg/m³ — zgodnie z próbami z 09.11, co potwierdza poprawność przeliczenia.\nPoczątkowo wyniki wychodziły ok. 0,7–1,0 Mg/m³, bo odczyty z wytarowanej wagi potraktowano jako masy z piknometrem. Objętości piknometrów od nauczyciela były zawyżone tylko o 3–4 cm³.\nRóżnica między próbami dla 5/11 (0,039) jest większa niż dla pozostałych frakcji — do ewentualnej oceny z promotorem.\nZdjęcie wagi przy 11/16 próba 2 (m3) pokazuje 1999,26 g, a w protokole zapisano 1999,46 g – do potwierdzenia (różnica ok. 0,002 Mg/m³).",
+   "conclusions": "Wszystkie trzy frakcje mają praktycznie tę samą gęstość ziaren, ok. 2,68 Mg/m³ — typowo dla kruszywa polodowcowego (jeden materiał macierzysty). Do projektu MMA można przyjąć średnie z tabeli.\nKontrolna powtórka 11/16 z 10.11 na wadze Radwag bez tarowania dała 2,687 Mg/m³ — zgodnie z próbami z 09.11, co potwierdza poprawność przeliczenia.\nPoczątkowo wyniki wychodziły ok. 0,7–1,0 Mg/m³, bo odczyty z wytarowanej wagi potraktowano jako masy z piknometrem. Objętości piknometrów od nauczyciela były zawyżone tylko o 3–4 cm³.\nRóżnica między próbami dla 5/11 (0,039) jest większa niż dla pozostałych frakcji — do ewentualnej oceny z promotorem.\n11/16 próba 2: odczyt m3 poprawiony 14.11 na 1999,26 g – zgodnie ze zdjęciem wagi (w protokole było 1999,46 g).",
    "createdAt": "2026-11-10T07:00:00Z",
    "date": "2026-11-09",
    "description": "Oznaczenie gęstości ziaren kruszyw polodowcowych 11/16, 5/11 i 2/5 metodą piknometryczną, po 2 próby na frakcję (piknometry 6, 3, 2), woda 23,5 °C.\nPrzy ważeniu m2 i m3 waga HG Vibra była wytarowana na pustym piknometrze, więc odczyty to masa samego kruszywa (m2) oraz kruszywa z wodą (m3), bez piknometru. Objętości piknometrów z kalibracji 10.11 (woda destylowana do kreski, waga Radwag).\nρ = mk / [Vp − (m3 − m2) / ρw].",
@@ -39,7 +39,7 @@
     {
      "label": "11/16 — ρ średnia",
      "unit": "Mg/m³",
-     "value": "2,683"
+     "value": "2,682"
     },
     {
      "label": "5/11 — ρ średnia",
@@ -76,9 +76,9 @@
        "11/16 — 2",
        "6",
        "1069,40",
-       "1999,46",
+       "1999,26",
        "1332,50",
-       "2,673"
+       "2,672"
       ],
       [
        "5/11 — 1",
@@ -124,8 +124,8 @@
      "rows": [
       [
        "11/16",
-       "2,683",
-       "0,019"
+       "2,682",
+       "0,020"
       ],
       [
        "5/11",
@@ -1659,7 +1659,7 @@
     {
      "code": "11/16",
      "color": 1,
-     "density": 2.683,
+     "density": 2.682,
      "pct": 6
     },
     {
@@ -1935,7 +1935,7 @@
       {
        "code": "11/16",
        "color": 1,
-       "density": 2.683,
+       "density": 2.682,
        "pct": 6
       },
       {
@@ -2124,7 +2124,7 @@
       {
        "code": "11/16",
        "color": 1,
-       "density": 2.683,
+       "density": 2.682,
        "pct": 8
       },
       {
@@ -2313,7 +2313,7 @@
       {
        "code": "11/16",
        "color": 1,
-       "density": 2.683,
+       "density": 2.682,
        "pct": 3
       },
       {
@@ -2413,7 +2413,7 @@
       ]
      },
      "name": "grubszy",
-     "rhoAgg": 2.639
+     "rhoAgg": 2.638
     }
    ],
    "_id": "AC22P-KR34"
@@ -2437,7 +2437,7 @@
     "2026-11-10-gestosc-0-2"
    ],
    "fines": 0.62,
-   "flags": "Gęstość 2,51 przyjęta do projektu (decyzja 10.11): piasek nie jest czysty, więc niższa gęstość niż grubych frakcji (2,68) jest uznana za wiarygodną.\nZapisana masa próbki M1 = 2303,5 g, a suma z sit 2323,5 g — % liczone od sumy z sit.\nW zapiskach Eryka (14.11) gęstość średnia 2,53 g/cm³, a z prób 2,473 i 2,539 wychodzi 2,506 – do wyjaśnienia, która wartość jest właściwa.",
+   "flags": "Gęstość 2,51 przyjęta do projektu (decyzja 10.11): piasek nie jest czysty, więc niższa gęstość niż grubych frakcji (2,68) jest uznana za wiarygodną.\nZapisana masa próbki M1 = 2303,5 g, a suma z sit 2323,5 g — % liczone od sumy z sit.\nPotwierdzono 14.11: do projektu przyjęta średnia 2,51.",
    "grading": {
     "M1": 2323.5,
     "date": "2026-11-10",
@@ -2475,9 +2475,9 @@
     "method": "piknometr, PN-EN 1097-6",
     "trials": [
      2.692,
-     2.673
+     2.672
     ],
-    "value": 2.683
+    "value": 2.682
    },
    "entryIds": [
     "2026-11-09-gestosc-ziaren",
