@@ -126,6 +126,8 @@ table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:ta
 th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
 th{background:var(--sunk);font:600 13px/1.3 var(--f-body);color:var(--ink)}
 td.num{text-align:right;font-family:var(--f-mono)}
+th.num{text-align:right}
+td,th{vertical-align:middle}
 tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--sunk) 40%,transparent)}
 tr:last-child td{border-bottom:0}
 .tcap{display:grid;gap:6px}
@@ -503,8 +505,10 @@ function renderStages(){const box=$("#stages");box.replaceChildren();const max=M
       el("span",{class:"top"},el("span",{class:"n",text:"ETAP "+s.n}),el("span",{class:"c",text:c+" "+plural(c,"wpis","wpisy","wpisów")})),
       el("span",{class:"t",text:s.t}),el("span",{class:"bar"},el("i",{style:`width:${c?Math.max(8,c/max*100):0}%`}))))}}
 function tableEl(t,cap){if(!t||!Array.isArray(t.columns)||!Array.isArray(t.rows)||!t.rows.length)return null;
-  const tb=el("table");const hr=el("tr");t.columns.forEach(c=>hr.append(el("th",{text:c})));tb.append(el("thead",{},hr));
-  const body=el("tbody");for(const r of t.rows){const tr=el("tr");r.forEach(v=>tr.append(el("td",{class:isNum(v)?"num":null,text:v==null?"":String(v)})));body.append(tr)}tb.append(body);
+  const numish=v=>{if(v==null||v==="")return true;const x=String(v).trim();return isNum(x)||/^[—–-]$/.test(x)||/^[-−]?\d+([.,]\d+)?\s*(%|g|kB|MB|cm³|Mg\/m³)?$/.test(x)||/^\d+([.,]\d+)?\s*[–-]\s*\d+([.,]\d+)?$/.test(x)};
+  const ncol=t.columns.map((c,i)=>i>0&&t.rows.every(r=>numish(r[i])));
+  const tb=el("table");const hr=el("tr");t.columns.forEach((c,i)=>hr.append(el("th",{class:ncol[i]?"num":null,text:c})));tb.append(el("thead",{},hr));
+  const body=el("tbody");for(const r of t.rows){const tr=el("tr");r.forEach((v,i)=>tr.append(el("td",{class:ncol[i]?"num":null,text:v==null?"":String(v)})));body.append(tr)}tb.append(body);
   const w=el("div",{class:"tbl"},tb);const c=cap||t.caption;return c?el("div",{class:"tcap"},el("span",{class:"label",text:c}),w):w}
 function photosEl(ph,title,sub){if(!Array.isArray(ph)||!ph.length)return null;const g=el("div",{class:"photos"+(ph.length===1?" one":"")});
   for(const p of ph){const src=photoSrc(p.id);const cap=p.caption||title||"";const img=el("img",{src,alt:cap||"Zdjęcie",loading:"lazy"});
