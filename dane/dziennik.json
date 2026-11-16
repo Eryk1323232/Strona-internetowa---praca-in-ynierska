@@ -1568,7 +1568,6 @@
    "_id": "2026-11-12-warianty-uziarnienia"
   },
   {
-   "id": "2026-11-16-marshall-w1",
    "createdAt": "2026-11-16T07:56:00Z",
    "date": "2026-11-16",
    "mix": "AC22P",
@@ -1617,7 +1616,8 @@
     }
    ],
    "conclusions": "Odchyłka +0,08 pp asfaltu jest pomijalna; zarób przyjęty. Do obliczeń V przyjmuje się rzeczywistą zawartość 4,68 %.",
-   "photos": []
+   "photos": [],
+   "_id": "2026-11-16-marshall-w1"
   },
   {
    "_id": "2026-11-16-kalibracja-piknometrow",
@@ -1744,6 +1744,125 @@
     {
      "id": "1611-p6-woda",
      "caption": "Piknometr nr 6 z wodą destylowaną do kreski (22,3–22,4 °C) — 2032,59 g"
+    }
+   ]
+  },
+  {
+   "_id": "2026-11-16-gestosc-maksymalna-w1",
+   "createdAt": "2026-11-16T12:05:00Z",
+   "date": "2026-11-16",
+   "stage": 3,
+   "source": "claude",
+   "type": "badanie",
+   "mix": "AC22P",
+   "test": "Gęstość maksymalna MMA",
+   "norm": "PN-EN 12697-5 (metoda A, objętościowa)",
+   "title": "Gęstość maksymalna ρmv — AC 22 P wariant W1 (4,68 % asfaltu)",
+   "description": "Trzy naważki luźnej mieszanki W1 z zarobu 16.11 (asfalt 50/70, 4,68 %) w piknometrach 2, 3 i 6. Waga Radwag APP 10.R2 bez tarowania (odczyty z piknometrem). Po zalaniu wodą destylowaną do kreski odpowietrzanie w wytrząsarce próżniowej przez 1 h, następnie dopełnienie do kreski i ważenie. Objętości piknometrów: średnie z kalibracji 10.11 i 16.11.\nρmv = (m2 − m1) / [Vp − (m3 − m2) / ρw].",
+   "summary": [
+    {
+     "label": "ρmv średnia",
+     "unit": "Mg/m³",
+     "value": "2,480"
+    },
+    {
+     "label": "Rozstęp",
+     "unit": "Mg/m³",
+     "value": "0,026"
+    },
+    {
+     "label": "ρmv obliczona (z gęstości składników)",
+     "unit": "Mg/m³",
+     "value": "2,448"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Gęstość maksymalna — pomiary 16.11.2026",
+     "columns": [
+      "Naważka",
+      "Piknometr",
+      "m1 [g]",
+      "m2 [g]",
+      "m3 [g]",
+      "Mieszanka [g]",
+      "t wody [°C]",
+      "Vp [cm³]",
+      "ρmv [Mg/m³]"
+     ],
+     "rows": [
+      [
+       "#1",
+       "2",
+       "768,67",
+       "1632,52",
+       "2587,37",
+       "863,85",
+       "21,3",
+       "1306,89",
+       "2,468"
+      ],
+      [
+       "#2",
+       "3",
+       "702,76",
+       "1637,97",
+       "2590,08",
+       "935,21",
+       "21,9",
+       "1331,58",
+       "2,478"
+      ],
+      [
+       "#3",
+       "6",
+       "702,46",
+       "1615,45",
+       "2580,09",
+       "912,99",
+       "21,9",
+       "1332,83",
+       "2,494"
+      ],
+      [
+       "Średnia",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "2,480"
+      ]
+     ]
+    }
+   ],
+   "conclusions": "WT-2 nie stawia wymagania dla samej ρmv — służy ona do obliczenia wolnej przestrzeni Vm próbek Marshalla (wymaganie dla AC 22 P KR3–KR4: 4,0–7,0 %). Do obliczeń Vm przyjąć 2,480 Mg/m³.\nWynik jest o 0,032 Mg/m³ (1,3 %) wyższy od obliczonego z gęstości składników. Obliczona wartość opiera się na gęstości piasku 0/2 = 2,51 (wynik niepewny); zgodność daje gęstość 0/2 ok. 2,62 — kolejny sygnał, by powtórzyć oznaczenie 0/2. Efektywna gęstość kruszywa wyliczona z ρmv: ok. 2,664 Mg/m³.\nRozrzut naważek 0,026 Mg/m³ (najwyższa #3) — do oceny z prowadzącym; naważki ok. 860–935 g, sprawdzić wymaganą minimalną masę próbki dla D = 22 mm wg PN-EN 12697-5.",
+   "photos": [
+    {
+     "id": "1611-rmv1-m2",
+     "caption": "Naważka #1 w piknometrze nr 2 (m2) — 1632,52 g"
+    },
+    {
+     "id": "1611-rmv1-m3",
+     "caption": "Naważka #1, piknometr nr 2 z wodą do kreski po odpowietrzeniu (m3, 21,3 °C) — 2587,37 g"
+    },
+    {
+     "id": "1611-rmv2-m2",
+     "caption": "Naważka #2 w piknometrze nr 3 (m2) — 1637,97 g"
+    },
+    {
+     "id": "1611-rmv2-m3",
+     "caption": "Naważka #2, piknometr nr 3 z wodą do kreski po odpowietrzeniu (m3, 21,9 °C) — 2590,08 g"
+    },
+    {
+     "id": "1611-rmv3-m2",
+     "caption": "Naważka #3 w piknometrze nr 6 (m2) — 1615,45 g"
+    },
+    {
+     "id": "1611-rmv3-m3",
+     "caption": "Naważka #3, piknometr nr 6 z wodą do kreski po odpowietrzeniu (m3, 21,9 °C) — 2580,09 g"
     }
    ]
   }
