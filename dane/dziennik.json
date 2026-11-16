@@ -2074,8 +2074,8 @@
    "mix": "AC22P",
    "test": "Projekt składu MMA",
    "norm": "WT-2 / PN-EN 13108-1",
-   "title": "Przeprojektowanie: W1 z asfaltem 4,3 % i 4,0 % (zaroby 5 kg)",
-   "description": "Po wynikach Vm z 16.11 (wszystkie warianty poniżej 4,0 %) do dalszych badań wybrano W1 (najbliżej wymagania). Uziarnienie W1 bez zmian, obniżona zawartość asfaltu 50/70: 4,3 % i 4,0 %. Z każdego zarobu 3 próbki Marshalla 1200 g + naważka do ρmv.",
+   "title": "Przeprojektowanie: zaroby A (W1 4,3 %), B (W4 4,3 %), opcja C (W1 4,0 %)",
+   "description": "Po wynikach Vm z 16.11 (wszystkie warianty poniżej 4,0 %) do dalszych badań wybrano W1 (najbliżej wymagania). Uziarnienie W1 bez zmian, obniżona zawartość asfaltu 50/70: 4,3 % i 4,0 %. Z każdego zarobu 3 próbki Marshalla 1200 g + naważka do ρmv.\nDodano wariant W4 ze zmienionym kruszywem (16/22 30 · 11/16 8 · 5/11 19 · 2/5 16 · 0/2 22 · mączka 5 %), asfalt 4,3 %: zarób 5 kg narastająco 1435,5 / 1818,3 / 2727,4 / 3493,0 / 4545,7 / 4785,0 g + 215,0 g asfaltu. Uziarnienie W4: 0,063: 4,7 · 0,125: 5,9 · 2: 26,9 · 8: 49,5 · 16: 74,8 · 22,4: 97,6 %.",
    "summary": [
     {
      "label": "W1-4,3 — Vm szacowane",
@@ -2151,7 +2151,7 @@
      ]
     }
    ],
-   "conclusions": "Vm szacowane przy stałym VMA 14,4 % (z W1) i efektywnej gęstości kruszywa 2,650 Mg/m³. 4,0 % = dolna granica Bmin (4,0 % MASA / 3,8 % WT-2 2010) — niżej nie schodzić. Strona 6 w pdf/Nawazki_W1_W2_W3.pdf.",
+   "conclusions": "Vm szacowane przy stałym VMA 14,4 % (z W1) i efektywnej gęstości kruszywa 2,650 Mg/m³. 4,0 % = dolna granica Bmin (4,0 % MASA / 3,8 % WT-2 2010) — niżej nie schodzić. Strona 6 w pdf/Nawazki_W1_W2_W3.pdf. Plan i pytania do promotora (konsultacja 17.11): pdf/Plan_nawazek_pytania_17-11.pdf. Wybór zarobów do potwierdzenia po konsultacji.",
    "photos": []
   }
  ],
@@ -3927,6 +3927,13 @@
    "size": 54496,
    "type": "application/pdf",
    "addedAt": "2026-11-16T13:05:00Z"
+  },
+  {
+   "name": "Plan_nawazek_pytania_17-11.pdf",
+   "folder": "pdf",
+   "size": 72256,
+   "type": "application/pdf",
+   "addedAt": "2026-11-16T17:30:00Z"
   }
  ]
 }
