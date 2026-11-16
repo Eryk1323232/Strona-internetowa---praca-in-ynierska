@@ -1887,6 +1887,182 @@
      "caption": "Naważka #3 (W3) z wodą do kreski po odpowietrzeniu (m3, 21,9 °C) — 2580,09 g"
     }
    ]
+  },
+  {
+   "_id": "2026-11-16-marshall-vm",
+   "createdAt": "2026-11-16T13:30:00Z",
+   "date": "2026-11-16",
+   "stage": 3,
+   "source": "claude",
+   "type": "badanie",
+   "mix": "AC22P",
+   "test": "Wolna przestrzeń Vm",
+   "norm": "PN-EN 12697-6 (metoda B), PN-EN 12697-8",
+   "title": "Próbki Marshalla W1, W2, W3 — gęstość objętościowa i wolna przestrzeń",
+   "description": "Próbki Marshalla 2×75 uderzeń z zarobów W1 (4,68 % asfaltu), W2 (4,8 %), W3 (4,6 %), asfalt 50/70. Po 3 próbki na wariant; z W3 tylko W3-1 w normie wysokości (W3-2 nie wyszła, W3-3 74,35 mm). Ważenie suche, w wodzie i po osuszeniu powierzchni (SSD). Temperatura wody przyjęta 22 °C (do potwierdzenia). ρmv z oznaczenia 16.11 dla każdego wariantu.",
+   "summary": [
+    {
+     "label": "W1 — Vm",
+     "unit": "%",
+     "value": "3,6"
+    },
+    {
+     "label": "W2 — Vm",
+     "unit": "%",
+     "value": "3,2"
+    },
+    {
+     "label": "W3 — Vm (1 próbka)",
+     "unit": "%",
+     "value": "3,1"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Próbki Marshalla 16.11.2026",
+     "columns": [
+      "Próbka",
+      "m sucha [g]",
+      "m w wodzie [g]",
+      "m SSD [g]",
+      "Nasiąkliwość [%]",
+      "h śr. [mm]",
+      "ρbssd [Mg/m³]",
+      "Vm [%]",
+      "VMA [%]",
+      "VFB [%]"
+     ],
+     "rows": [
+      [
+       "W1-1",
+       "1197,00",
+       "703,50",
+       "1202,10",
+       "1,02",
+       "64,28",
+       "2,395",
+       "2,9",
+       "13,8",
+       "78,7"
+      ],
+      [
+       "W1-2",
+       "1209,70",
+       "712,00",
+       "1220,00",
+       "2,03",
+       "66,09",
+       "2,376",
+       "3,7",
+       "14,5",
+       "74,3"
+      ],
+      [
+       "W1-3",
+       "1186,80",
+       "693,90",
+       "1194,00",
+       "1,44",
+       "64,92",
+       "2,368",
+       "4,1",
+       "14,8",
+       "72,6"
+      ],
+      [
+       "W2-1",
+       "1198,70",
+       "708,80",
+       "1202,40",
+       "0,75",
+       "62,40",
+       "2,423",
+       "2,2",
+       "13,5",
+       "83,6"
+      ],
+      [
+       "W2-2",
+       "1205,50",
+       "705,80",
+       "1209,60",
+       "0,81",
+       "65,12",
+       "2,388",
+       "3,7",
+       "14,8",
+       "75,3"
+      ],
+      [
+       "W2-3",
+       "1209,00",
+       "709,60",
+       "1215,80",
+       "1,34",
+       "65,34",
+       "2,383",
+       "3,8",
+       "14,9",
+       "74,4"
+      ],
+      [
+       "W3-1",
+       "1197,50",
+       "707,70",
+       "1202,30",
+       "0,97",
+       "64,78",
+       "2,416",
+       "3,1",
+       "13,9",
+       "77,5"
+      ]
+     ]
+    },
+    {
+     "caption": "Średnie",
+     "columns": [
+      "Wariant",
+      "Asfalt [%]",
+      "ρbssd [Mg/m³]",
+      "Vm [%]",
+      "VMA [%]",
+      "VFB [%]",
+      "WT-2 (Vm 4,0–7,0)"
+     ],
+     "rows": [
+      [
+       "W1",
+       "4,68",
+       "2,380",
+       "3,6",
+       "14,4",
+       "75,2",
+       "nie"
+      ],
+      [
+       "W2",
+       "4,8",
+       "2,398",
+       "3,2",
+       "14,4",
+       "77,8",
+       "nie"
+      ],
+      [
+       "W3",
+       "4,6",
+       "2,416",
+       "3,1",
+       "13,9",
+       "77,5",
+       "nie"
+      ]
+     ]
+    }
+   ],
+   "conclusions": "Żaden wariant nie spełnia Vm 4,0–7,0 % — mieszanki za szczelne, za dużo asfaltu (tylko W1-3 4,1 %). Obniżenie asfaltu o 0,5 pp podnosi Vm o ok. 1,1–1,2 pp; dla W1 ok. 4,2–4,3 % asfaltu. Proponowana seria 4,0 / 4,3 / 4,6 % z ρmv dla każdej zawartości. W3 — wynik orientacyjny (1 próbka). W2-1 odstaje (h 62,4 mm, Vm 2,2 %). W1-1: h3 przyjęte 64,19 (zapis „94,19”). Zestawienie w PDF pdf/Nawazki_W1_W2_W3.pdf (wysłane prowadzącemu 16.11).",
+   "photos": []
   }
  ],
  "mixes": [
@@ -3658,7 +3834,7 @@
   {
    "name": "Nawazki_W1_W2_W3.pdf",
    "folder": "pdf",
-   "size": 43144,
+   "size": 51594,
    "type": "application/pdf",
    "addedAt": "2026-11-16T13:05:00Z"
   }
