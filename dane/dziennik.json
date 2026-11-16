@@ -1566,6 +1566,58 @@
    "title": "Dwa dodatkowe warianty uziarnienia AC 22 P (W2 drobniejszy, W3 grubszy)",
    "type": "receptura",
    "_id": "2026-11-12-warianty-uziarnienia"
+  },
+  {
+   "id": "2026-11-16-marshall-w1",
+   "createdAt": "2026-11-16T07:56:00Z",
+   "date": "2026-11-16",
+   "mix": "AC22P",
+   "stage": 3,
+   "source": "claude",
+   "test": "Zarób W1 do próbek Marshalla",
+   "norm": "PN-EN 12697-30 / WT-2 2014",
+   "description": "Zarób 5 kg wariantu W1 do próbek Marshalla (2×75 uderzeń, zagęszczanie 135 ± 5 °C). Do 4770 g kruszywa dodano 234 g asfaltu 50/70 zamiast planowanych 230 g (przelanie 4 g).",
+   "summary": [
+    {
+     "label": "Asfalt rzeczywisty",
+     "unit": "%",
+     "value": "4,68"
+    },
+    {
+     "label": "ρmv obliczona",
+     "unit": "Mg/m³",
+     "value": "2,448"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Zarób W1",
+     "columns": [
+      "Parametr",
+      "Plan",
+      "Wykonanie"
+     ],
+     "rows": [
+      [
+       "Kruszywo [g]",
+       "4770",
+       "4770"
+      ],
+      [
+       "Asfalt 50/70 [g]",
+       "230",
+       "234"
+      ],
+      [
+       "Asfalt w MMA [%]",
+       "4,60",
+       "4,68"
+      ]
+     ]
+    }
+   ],
+   "conclusions": "Odchyłka +0,08 pp asfaltu jest pomijalna; zarób przyjęty. Do obliczeń V przyjmuje się rzeczywistą zawartość 4,68 %.",
+   "photos": []
   }
  ],
  "mixes": [
