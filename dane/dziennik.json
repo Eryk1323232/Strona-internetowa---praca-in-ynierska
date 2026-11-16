@@ -1748,7 +1748,7 @@
    ]
   },
   {
-   "_id": "2026-11-16-gestosc-maksymalna-w1",
+   "_id": "2026-11-16-gestosc-maksymalna",
    "createdAt": "2026-11-16T12:05:00Z",
    "date": "2026-11-16",
    "stage": 3,
@@ -1757,30 +1757,30 @@
    "mix": "AC22P",
    "test": "Gęstość maksymalna MMA",
    "norm": "PN-EN 12697-5 (metoda A, objętościowa)",
-   "title": "Gęstość maksymalna ρmv — AC 22 P wariant W1 (4,68 % asfaltu)",
-   "description": "Trzy naważki luźnej mieszanki W1 z zarobu 16.11 (asfalt 50/70, 4,68 %) w piknometrach 2, 3 i 6. Waga Radwag APP 10.R2 bez tarowania (odczyty z piknometrem). Po zalaniu wodą destylowaną do kreski odpowietrzanie w wytrząsarce próżniowej przez 1 h, następnie dopełnienie do kreski i ważenie. Objętości piknometrów: średnie z kalibracji 10.11 i 16.11.\nρmv = (m2 − m1) / [Vp − (m3 − m2) / ρw].",
+   "title": "Gęstość maksymalna ρmv — AC 22 P, warianty W1, W2, W3",
+   "description": "Po jednej naważce luźnej mieszanki z każdego wariantu (asfalt 50/70): #1 = W1 (4,68 % asfaltu, piknometr 2), #2 = W2 (4,8 %, piknometr 3), #3 = W3 (4,6 %, piknometr 6). Waga Radwag APP 10.R2 bez tarowania (odczyty z piknometrem). Po zalaniu wodą destylowaną do kreski odpowietrzanie w wytrząsarce próżniowej przez 1 h, następnie dopełnienie do kreski i ważenie. Objętości piknometrów: średnie z kalibracji 10.11 i 16.11.\nρmv = (m2 − m1) / [Vp − (m3 − m2) / ρw].",
    "summary": [
     {
-     "label": "ρmv średnia",
+     "label": "W1 — ρmv",
      "unit": "Mg/m³",
-     "value": "2,480"
+     "value": "2,468"
     },
     {
-     "label": "Rozstęp",
+     "label": "W2 — ρmv",
      "unit": "Mg/m³",
-     "value": "0,026"
+     "value": "2,478"
     },
     {
-     "label": "ρmv obliczona (z gęstości składników)",
+     "label": "W3 — ρmv",
      "unit": "Mg/m³",
-     "value": "2,448"
+     "value": "2,494"
     }
    ],
    "tables": [
     {
      "caption": "Gęstość maksymalna — pomiary 16.11.2026",
      "columns": [
-      "Naważka",
+      "Naważka / wariant",
       "Piknometr",
       "m1 [g]",
       "m2 [g]",
@@ -1792,7 +1792,7 @@
      ],
      "rows": [
       [
-       "#1",
+       "#1 — W1",
        "2",
        "768,67",
        "1632,52",
@@ -1803,7 +1803,7 @@
        "2,468"
       ],
       [
-       "#2",
+       "#2 — W2",
        "3",
        "702,76",
        "1637,97",
@@ -1814,7 +1814,7 @@
        "2,478"
       ],
       [
-       "#3",
+       "#3 — W3",
        "6",
        "702,46",
        "1615,45",
@@ -1823,46 +1823,68 @@
        "21,9",
        "1332,83",
        "2,494"
+      ]
+     ]
+    },
+    {
+     "caption": "Porównanie z gęstością obliczoną ze składników [Mg/m³]",
+     "columns": [
+      "Wariant",
+      "Asfalt [%]",
+      "ρmv zmierzona",
+      "ρmv obliczona",
+      "Różnica"
+     ],
+     "rows": [
+      [
+       "W1",
+       "4,68",
+       "2,468",
+       "2,450",
+       "+0,018"
       ],
       [
-       "Średnia",
-       "",
-       "",
-       "",
-       "",
-       "",
-       "",
-       "",
-       "2,480"
+       "W2",
+       "4,8",
+       "2,478",
+       "2,441",
+       "+0,037"
+      ],
+      [
+       "W3",
+       "4,6",
+       "2,494",
+       "2,462",
+       "+0,032"
       ]
      ]
     }
    ],
-   "conclusions": "WT-2 nie stawia wymagania dla samej ρmv — służy ona do obliczenia wolnej przestrzeni Vm próbek Marshalla (wymaganie dla AC 22 P KR3–KR4: 4,0–7,0 %). Do obliczeń Vm przyjąć 2,480 Mg/m³.\nWynik jest o 0,032 Mg/m³ (1,3 %) wyższy od obliczonego z gęstości składników. Obliczona wartość opiera się na gęstości piasku 0/2 = 2,51 (wynik niepewny); zgodność daje gęstość 0/2 ok. 2,62 — kolejny sygnał, by powtórzyć oznaczenie 0/2. Efektywna gęstość kruszywa wyliczona z ρmv: ok. 2,664 Mg/m³.\nRozrzut naważek 0,026 Mg/m³ (najwyższa #3) — do oceny z prowadzącym; naważki ok. 860–935 g, sprawdzić wymaganą minimalną masę próbki dla D = 22 mm wg PN-EN 12697-5.",
+   "conclusions": "WT-2 nie stawia wymagania dla samej ρmv — służy ona do obliczenia wolnej przestrzeni Vm próbek Marshalla każdego wariantu (wymaganie AC 22 P KR3–KR4: 4,0–7,0 %).\nWe wszystkich wariantach zmierzona ρmv jest wyższa od obliczonej o 0,7–1,5 %. Obliczenia opierają się na gęstości piasku 0/2 = 2,51 (wynik niepewny) — do powtórzenia oznaczenie 0/2.\nKażdy wariant ma jedno oznaczenie ρmv (jedna naważka); naważki ok. 860–935 g — sprawdzić wymaganą minimalną masę próbki dla D = 22 mm wg PN-EN 12697-5. Zawartość asfaltu W2 i W3 przyjęta projektowa (do potwierdzenia rzeczywistych mas asfaltu).",
    "photos": [
     {
      "id": "1611-rmv1-m2",
-     "caption": "Naważka #1 w piknometrze nr 2 (m2) — 1632,52 g"
+     "caption": "Naważka #1 (W1) w piknometrze (m2) — 1632,52 g"
     },
     {
      "id": "1611-rmv1-m3",
-     "caption": "Naważka #1, piknometr nr 2 z wodą do kreski po odpowietrzeniu (m3, 21,3 °C) — 2587,37 g"
+     "caption": "Naważka #1 (W1) z wodą do kreski po odpowietrzeniu (m3, 21,3 °C) — 2587,37 g"
     },
     {
      "id": "1611-rmv2-m2",
-     "caption": "Naważka #2 w piknometrze nr 3 (m2) — 1637,97 g"
+     "caption": "Naważka #2 (W2) w piknometrze (m2) — 1637,97 g"
     },
     {
      "id": "1611-rmv2-m3",
-     "caption": "Naważka #2, piknometr nr 3 z wodą do kreski po odpowietrzeniu (m3, 21,9 °C) — 2590,08 g"
+     "caption": "Naważka #2 (W2) z wodą do kreski po odpowietrzeniu (m3, 21,9 °C) — 2590,08 g"
     },
     {
      "id": "1611-rmv3-m2",
-     "caption": "Naważka #3 w piknometrze nr 6 (m2) — 1615,45 g"
+     "caption": "Naważka #3 (W3) w piknometrze (m2) — 1615,45 g"
     },
     {
      "id": "1611-rmv3-m3",
-     "caption": "Naważka #3, piknometr nr 6 z wodą do kreski po odpowietrzeniu (m3, 21,9 °C) — 2580,09 g"
+     "caption": "Naważka #3 (W3) z wodą do kreski po odpowietrzeniu (m3, 21,9 °C) — 2580,09 g"
     }
    ]
   }
