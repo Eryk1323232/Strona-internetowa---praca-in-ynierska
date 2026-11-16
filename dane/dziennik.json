@@ -1618,6 +1618,134 @@
    ],
    "conclusions": "Odchyłka +0,08 pp asfaltu jest pomijalna; zarób przyjęty. Do obliczeń V przyjmuje się rzeczywistą zawartość 4,68 %.",
    "photos": []
+  },
+  {
+   "_id": "2026-11-16-kalibracja-piknometrow",
+   "createdAt": "2026-11-16T09:05:00Z",
+   "date": "2026-11-16",
+   "stage": 2,
+   "source": "claude",
+   "type": "badanie",
+   "test": "Kalibracja piknometrów",
+   "norm": "PN-EN 1097-6",
+   "title": "Kalibracja piknometrów — powtórzenie 16.11",
+   "description": "Ponowne wyznaczenie objętości piknometrów 2, 3 i 6 (pary butla + nasadka/lejek z tym samym numerem). Ważenie pustych piknometrów z nasadkami oraz napełnionych wodą destylowaną do kreski na nasadce, waga Radwag APP 10.R2 (d = 0,01 g). Temperatura wody 22,3–22,4 °C (do obliczeń 22,35 °C, ρw = 0,99772 g/cm³).\nV = (m z wodą − m pustego) / ρw.",
+   "summary": [
+    {
+     "label": "Piknometr 2 — Vp (16.11)",
+     "unit": "cm³",
+     "value": "1307,13"
+    },
+    {
+     "label": "Piknometr 3 — Vp (16.11)",
+     "unit": "cm³",
+     "value": "1332,19"
+    },
+    {
+     "label": "Piknometr 6 — Vp (16.11)",
+     "unit": "cm³",
+     "value": "1333,17"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Ważenie piknometrów 16.11.2026 (woda destylowana, do kreski na nasadce)",
+     "columns": [
+      "Piknometr",
+      "Masa pustego [g]",
+      "Masa z wodą [g]",
+      "Temp. wody [°C]",
+      "ρw [g/cm³]",
+      "Objętość Vp [cm³]"
+     ],
+     "rows": [
+      [
+       "2",
+       "768,67",
+       "2072,82",
+       "22,3–22,4",
+       "0,99772",
+       "1307,13"
+      ],
+      [
+       "3",
+       "702,76",
+       "2031,91",
+       "22,3–22,4",
+       "0,99772",
+       "1332,19"
+      ],
+      [
+       "6",
+       "702,46",
+       "2032,59",
+       "22,3–22,4",
+       "0,99772",
+       "1333,17"
+      ]
+     ]
+    },
+    {
+     "caption": "Porównanie z kalibracją 10.11 [cm³]",
+     "columns": [
+      "Piknometr",
+      "Vp 10.11",
+      "Vp 16.11",
+      "Różnica",
+      "Średnia z 2 kalibracji"
+     ],
+     "rows": [
+      [
+       "2",
+       "1306,66",
+       "1307,13",
+       "0,47",
+       "1306,89"
+      ],
+      [
+       "3",
+       "1330,97",
+       "1332,19",
+       "1,22",
+       "1331,58"
+      ],
+      [
+       "6",
+       "1332,50",
+       "1333,17",
+       "0,67",
+       "1332,83"
+      ]
+     ]
+    }
+   ],
+   "conclusions": "Objętości z 16.11 są większe niż z 10.11 o 0,47 cm³ (piknometr 2), 1,22 cm³ (3) i 0,67 cm³ (6), czyli o 0,04–0,09 %. Różnicy nie tłumaczy temperatura (została uwzględniona w ρw), więc wynika głównie z napełnienia do kreski (menisk, pęcherzyki, woda na szlifie).\nPuste piknometry 3 i 6 ważyły tyle samo co 10.11 (−0,11 i +0,01 g); nr 2 o 0,87 g mniej — 10.11 był prawdopodobnie jeszcze wilgotny.\nWpływ na gęstość ziaren: różnica 1,2 cm³ zmienia ρ o ok. 0,008 Mg/m³ — mniej niż rozrzut między próbami (0,02–0,04). Proponowana objętość do dalszych obliczeń: średnia z dwóch kalibracji; dotychczasowe gęstości bez przeliczania (do decyzji).",
+   "photos": [
+    {
+     "id": "1611-p2-pusty",
+     "caption": "Piknometr nr 2 (pusty, z nasadką) — 768,67 g"
+    },
+    {
+     "id": "1611-p2-woda",
+     "caption": "Piknometr nr 2 z wodą destylowaną do kreski (22,3–22,4 °C) — 2072,82 g"
+    },
+    {
+     "id": "1611-p3-pusty",
+     "caption": "Piknometr nr 3 (pusty, z nasadką) — 702,76 g"
+    },
+    {
+     "id": "1611-p3-woda",
+     "caption": "Piknometr nr 3 z wodą destylowaną do kreski (22,3–22,4 °C) — 2031,91 g"
+    },
+    {
+     "id": "1611-p6-pusty",
+     "caption": "Piknometr nr 6 (pusty, z nasadką) — 702,46 g"
+    },
+    {
+     "id": "1611-p6-woda",
+     "caption": "Piknometr nr 6 z wodą destylowaną do kreski (22,3–22,4 °C) — 2032,59 g"
+    }
+   ]
   }
  ],
  "mixes": [

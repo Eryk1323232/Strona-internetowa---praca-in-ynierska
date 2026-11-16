@@ -725,6 +725,8 @@ function renderPodglad(){const box=$("#pgBody");if(!box)return;box.replaceChildr
     const cal=LIVE.entries.find(e=>e._id==="2026-11-10-kalibracja-piknometrow");
     if(cal&&cal.tables&&cal.tables[0]){const t=cal.tables[0];const ix=["Piknometr","Masa pustego [g]","Masa z wodą [g]","Temp. wody [°C]","Objętość Vp [cm³]"].map(c=>t.columns.indexOf(c));
       g.append(el("div",{class:"pg-card"},el("h3",{text:"Kalibracja piknometrów"}),tableEl({columns:["Piknometr","Pusty [g]","Z wodą [g]","t [°C]","Vp [cm³]"],rows:t.rows.map(r=>ix.map(i=>i<0?"—":r[i]))}),el("p",{style:"font-size:13px;color:var(--muted)",text:"Woda destylowana do kreski na nasadce, waga Radwag APP 10.R2, 10.11.2026."})))}
+    const cal2=LIVE.entries.find(e=>e._id==="2026-11-16-kalibracja-piknometrow");
+    if(cal2&&cal2.tables&&cal2.tables[1]){g.append(el("div",{class:"pg-card"},el("h3",{text:"Kalibracja powtórzona 16.11 — porównanie Vp"}),tableEl(cal2.tables[1]),el("p",{style:"font-size:13px;color:var(--muted)",text:"Woda 22,3–22,4 °C. Różnice 0,04–0,09 % objętości; do dalszych obliczeń proponowana średnia z dwóch kalibracji."})))}
     sec.append(g);w.append(sec)}
   box.append(w)}
 
