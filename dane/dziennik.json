@@ -3654,6 +3654,13 @@
    "size": 226228,
    "type": "application/pdf",
    "_id": "ac22p-warianty-nawazki"
+  },
+  {
+   "name": "Nawazki_W1_W2_W3.pdf",
+   "folder": "pdf",
+   "size": 43144,
+   "type": "application/pdf",
+   "addedAt": "2026-11-16T13:05:00Z"
   }
  ]
 }
