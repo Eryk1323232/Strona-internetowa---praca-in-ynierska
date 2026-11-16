@@ -2063,6 +2063,96 @@
    ],
    "conclusions": "Żaden wariant nie spełnia Vm 4,0–7,0 % — mieszanki za szczelne, za dużo asfaltu (tylko W1-3 4,1 %). Obniżenie asfaltu o 0,5 pp podnosi Vm o ok. 1,1–1,2 pp; dla W1 ok. 4,2–4,3 % asfaltu. Proponowana seria 4,0 / 4,3 / 4,6 % z ρmv dla każdej zawartości. W3 — wynik orientacyjny (1 próbka). W2-1 odstaje (h 62,4 mm, Vm 2,2 %). W1-1: h3 przyjęte 64,19 (zapis „94,19”). Zestawienie w PDF pdf/Nawazki_W1_W2_W3.pdf (wysłane prowadzącemu 16.11).",
    "photos": []
+  },
+  {
+   "_id": "2026-11-16-nowe-nawazki-w1",
+   "createdAt": "2026-11-16T13:40:00Z",
+   "date": "2026-11-16",
+   "stage": 2,
+   "source": "claude",
+   "type": "receptura",
+   "mix": "AC22P",
+   "test": "Projekt składu MMA",
+   "norm": "WT-2 / PN-EN 13108-1",
+   "title": "Przeprojektowanie: W1 z asfaltem 4,3 % i 4,0 % (zaroby 5 kg)",
+   "description": "Po wynikach Vm z 16.11 (wszystkie warianty poniżej 4,0 %) do dalszych badań wybrano W1 (najbliżej wymagania). Uziarnienie W1 bez zmian, obniżona zawartość asfaltu 50/70: 4,3 % i 4,0 %. Z każdego zarobu 3 próbki Marshalla 1200 g + naważka do ρmv.",
+   "summary": [
+    {
+     "label": "W1-4,3 — Vm szacowane",
+     "unit": "%",
+     "value": "4,5"
+    },
+    {
+     "label": "W1-4,0 — Vm szacowane",
+     "unit": "%",
+     "value": "5,2"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Zarób 5 kg — ważenie narastająco [g]",
+     "columns": [
+      "Składnik",
+      "W1-4,3",
+      "narastająco",
+      "W1-4,0",
+      "narastająco"
+     ],
+     "rows": [
+      [
+       "16/22",
+       "1339,8",
+       "1339,8",
+       "1344,0",
+       "1344,0"
+      ],
+      [
+       "11/16",
+       "287,1",
+       "1626,9",
+       "288,0",
+       "1632,0"
+      ],
+      [
+       "5/11",
+       "813,5",
+       "2440,4",
+       "816,0",
+       "2448,0"
+      ],
+      [
+       "2/5",
+       "813,5",
+       "3253,9",
+       "816,0",
+       "3264,0"
+      ],
+      [
+       "Piasek 0/2",
+       "1244,1",
+       "4498,0",
+       "1248,0",
+       "4512,0"
+      ],
+      [
+       "Mączka wapienna",
+       "287,0",
+       "4785,0",
+       "288,0",
+       "4800,0"
+      ],
+      [
+       "Asfalt 50/70",
+       "215,0",
+       "–",
+       "200,0",
+       "–"
+      ]
+     ]
+    }
+   ],
+   "conclusions": "Vm szacowane przy stałym VMA 14,4 % (z W1) i efektywnej gęstości kruszywa 2,650 Mg/m³. 4,0 % = dolna granica Bmin (4,0 % MASA / 3,8 % WT-2 2010) — niżej nie schodzić. Strona 6 w pdf/Nawazki_W1_W2_W3.pdf.",
+   "photos": []
   }
  ],
  "mixes": [
@@ -3834,7 +3924,7 @@
   {
    "name": "Nawazki_W1_W2_W3.pdf",
    "folder": "pdf",
-   "size": 51594,
+   "size": 54496,
    "type": "application/pdf",
    "addedAt": "2026-11-16T13:05:00Z"
   }
