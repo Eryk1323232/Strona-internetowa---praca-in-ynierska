@@ -2153,6 +2153,63 @@
    ],
    "conclusions": "Vm szacowane przy stałym VMA 14,4 % (z W1) i efektywnej gęstości kruszywa 2,650 Mg/m³. 4,0 % = dolna granica Bmin (4,0 % MASA / 3,8 % WT-2 2010) — niżej nie schodzić. Strona 6 w pdf/Nawazki_W1_W2_W3.pdf. Plan i pytania do promotora (konsultacja 17.11): pdf/Plan_nawazek_pytania_17-11.pdf. Wybór zarobów do potwierdzenia po konsultacji.",
    "photos": []
+  },
+  {
+   "_id": "2026-11-17-asfalt-4-ponad-100",
+   "createdAt": "2026-11-17T07:40:00Z",
+   "date": "2026-11-17",
+   "stage": 2,
+   "source": "claude",
+   "type": "receptura",
+   "mix": "AC22P",
+   "test": "Projekt składu MMA",
+   "title": "Ustalenie promotora: asfalt 4 % ponad 100 % mieszanki mineralnej",
+   "description": "Promotor zaproponował 4 % asfaltu 50/70 liczone ponad 100 % mieszanki mineralnej (4 części asfaltu na 100 części kruszywa), tj. 3,85 % w MMA wg WT-2. Do naważek kruszywa z 16.11: 4785,0 g → 191,4 g asfaltu; 4800,0 g → 192,0 g.",
+   "summary": [
+    {
+     "label": "Asfalt ponad 100 % MM",
+     "unit": "%",
+     "value": "4,0"
+    },
+    {
+     "label": "Asfalt w MMA",
+     "unit": "%",
+     "value": "3,85"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "Asfalt do naważek z 16.11 [g]",
+     "columns": [
+      "Zarób",
+      "Kruszywo",
+      "Asfalt 50/70",
+      "Razem"
+     ],
+     "rows": [
+      [
+       "A — W1",
+       "4785,0",
+       "191,4",
+       "4976,4"
+      ],
+      [
+       "B — W4",
+       "4785,0",
+       "191,4",
+       "4976,4"
+      ],
+      [
+       "C — W1",
+       "4800,0",
+       "192,0",
+       "4992,0"
+      ]
+     ]
+    }
+   ],
+   "conclusions": "Do uzupełnienia: które zaroby wykonano, rzeczywiste masy asfaltu, temperatury. 3,85 % w MMA jest poniżej Bmin 4,0 % (MASA), powyżej 3,8 % (WT-2 2010) — do potwierdzenia z promotorem. PDF: pdf/Nawazki_asfalt_4proc_17-11.pdf.",
+   "photos": []
   }
  ],
  "mixes": [
@@ -3934,6 +3991,13 @@
    "size": 72256,
    "type": "application/pdf",
    "addedAt": "2026-11-16T17:30:00Z"
+  },
+  {
+   "name": "Nawazki_asfalt_4proc_17-11.pdf",
+   "folder": "pdf",
+   "size": 32538,
+   "type": "application/pdf",
+   "addedAt": "2026-11-17T07:40:00Z"
   }
  ]
 }
