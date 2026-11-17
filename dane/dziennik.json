@@ -2164,7 +2164,7 @@
    "mix": "AC22P",
    "test": "Projekt składu MMA",
    "title": "Ustalenie promotora: asfalt 4 % ponad 100 % mieszanki mineralnej",
-   "description": "Promotor zaproponował 4 % asfaltu 50/70 liczone ponad 100 % mieszanki mineralnej (4 części asfaltu na 100 części kruszywa), tj. 3,85 % w MMA wg WT-2. Do naważek kruszywa z 16.11: 4785,0 g → 191,4 g asfaltu; 4800,0 g → 192,0 g.",
+   "description": "Promotor zaproponował 4 % asfaltu 50/70 liczone ponad 100 % mieszanki mineralnej (4 części asfaltu na 100 części kruszywa), tj. 3,85 % w MMA wg WT-2. W suszarce od 16.11 są dwie naważki kruszywa o uziarnieniu W1: 4785,0 g → 191,4 g asfaltu; 4800,0 g → 192,0 g. Wariant W4 (nowe kruszywo) nie był odważony.",
    "summary": [
     {
      "label": "Asfalt ponad 100 % MM",
@@ -2188,19 +2188,13 @@
      ],
      "rows": [
       [
-       "A — W1",
+       "Naważka 1 — W1",
        "4785,0",
        "191,4",
        "4976,4"
       ],
       [
-       "B — W4",
-       "4785,0",
-       "191,4",
-       "4976,4"
-      ],
-      [
-       "C — W1",
+       "Naważka 2 — W1",
        "4800,0",
        "192,0",
        "4992,0"
@@ -2208,7 +2202,7 @@
      ]
     }
    ],
-   "conclusions": "Do uzupełnienia: które zaroby wykonano, rzeczywiste masy asfaltu, temperatury. 3,85 % w MMA jest poniżej Bmin 4,0 % (MASA), powyżej 3,8 % (WT-2 2010) — do potwierdzenia z promotorem. PDF: pdf/Nawazki_asfalt_4proc_17-11.pdf.",
+   "conclusions": "Do uzupełnienia: rzeczywiste masy asfaltu, temperatury. 3,85 % w MMA jest poniżej Bmin 4,0 % (MASA), powyżej 3,8 % (WT-2 2010) — do potwierdzenia z promotorem. PDF: pdf/Nawazki_asfalt_4proc_17-11.pdf.",
    "photos": []
   }
  ],
@@ -3995,7 +3989,7 @@
   {
    "name": "Nawazki_asfalt_4proc_17-11.pdf",
    "folder": "pdf",
-   "size": 32538,
+   "size": 30714,
    "type": "application/pdf",
    "addedAt": "2026-11-17T07:40:00Z"
   }
