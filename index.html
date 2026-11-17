@@ -48,7 +48,7 @@ body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);padding-b
   .side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 16px;border-right:0;border-bottom:1px solid var(--line);
     padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
   .side-brand{flex:1 1 auto;padding:0}.side-brand small{display:none}
-  .side-nav{grid-auto-flow:column;gap:4px;background:var(--sunk);padding:3px;border-radius:calc(var(--r) + 3px)}
+  .side-nav{grid-auto-flow:column;gap:4px;background:var(--sunk);padding:3px;border-radius:calc(var(--r) + 3px);max-width:100%;overflow-x:auto;scrollbar-width:none}.side-nav a span{white-space:nowrap}
   .side-nav a{grid-template-columns:18px auto;column-gap:8px;padding:7px 12px}
   .side-nav a svg{width:18px;height:18px;grid-row:auto}
   .side-nav a small,.side-foot{display:none}
@@ -332,6 +332,11 @@ details.more>div{display:grid;gap:14px;margin-top:12px}
 .pg-newf{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:14px;color:var(--muted)}
 .pg-newf input{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:7px 10px;min-width:0;flex:0 1 220px}
 .pg-msg{font-size:13.5px;color:var(--accent)}.pg-msg.err{color:var(--bad)}
+.pg-sec>h2{flex-wrap:wrap}.pg-sec h2 .pg-mng{margin-left:auto;font-size:12.5px}.pg-mng.on{border-color:var(--accent);color:var(--accent)}
+.pg-gh{display:grid;gap:8px;padding:12px 14px;border:1px dashed var(--line);border-radius:var(--r);font-size:14px;color:var(--muted)}
+.pg-gh p{margin:0}.pg-gh .ok{color:var(--accent);font-weight:600}.pg-gh>.pg-btn{justify-self:start}
+.pg-gh details summary{cursor:pointer;color:var(--ink)}.pg-gh ol{margin:6px 0 0;padding-left:20px;display:grid;gap:3px}
+.pg-gh input[type=password]{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:7px 10px;min-width:0;flex:1 1 220px;font:inherit}
 .pg-empty{padding:12px 14px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 /* projekt mieszanki */
 .pj{display:grid;gap:18px}
@@ -667,35 +672,88 @@ function renderBinders(){const box=$("#binders");if(!box)return;box.replaceChild
 let pgMsg="",pgErr=false,pgArm="",pgNewFolder="";
 const fileSrc=f=>MODE==="claude"?"/_blob/"+f.assetId:(f.folder||"pdf")+"/"+encodeURIComponent(f.name);
 const fmtSize=b=>b>1048576?fmtPL(b/1048576,1)+" MB":fmtPL(b/1024,0)+" kB";
-async function pgUpload(folder,files){if(!assets||!db)return;pgErr=false;
+/* Tryb GitHub: lista plików czytana na żywo z repozytorium; dodawanie/usuwanie przez API GitHuba (token w tej przeglądarce)
+   albo — bez tokenu — przez stronę github.com (upload/delete). */
+const GH={owner:"Eryk1323232",repo:"Strona-internetowa---praca-in-ynierska",branch:"main",skip:["dane","zdjecia","kalkulatory",".github"]};
+let ghTok=null,ghManage=false,ghBusy=false,ghTokIn="";
+const ghEnc=s=>s.split("/").map(encodeURIComponent).join("/");
+const ghWeb=(act,path)=>"https://github.com/"+GH.owner+"/"+GH.repo+"/"+act+"/"+GH.branch+"/"+ghEnc(path);
+function ghApi(path,opt={}){const q=(opt.method||"GET")==="GET"?"?ref="+GH.branch+"&t="+Date.now():"";
+  return fetch("https://api.github.com/repos/"+GH.owner+"/"+GH.repo+"/contents"+(path?"/"+ghEnc(path):"")+q,{...opt,cache:"no-store",
+    headers:{Accept:"application/vnd.github+json",...(ghTok?{Authorization:"Bearer "+ghTok}:{}),...(opt.body?{"Content-Type":"application/json"}:{})}})}
+async function ghList(quiet){if(ghBusy)return;ghBusy=true;
+  try{const r=await ghApi("");if(r.status===401){ghSetTok(null);throw new Error("token")}if(!r.ok)throw new Error(r.status);
+    const dirs=(await r.json()).filter(x=>x.type==="dir"&&!GH.skip.includes(x.name)).map(x=>x.name);
+    const meta={};(LIVE.filesJson||[]).forEach(f=>meta[(f.folder||"pdf")+"/"+f.name]=f);
+    const out=[];for(const d of dirs){const rr=await ghApi(d);if(!rr.ok)continue;
+      (await rr.json()).filter(x=>x.type==="file").forEach(x=>{const m=meta[d+"/"+x.name]||{};out.push({name:x.name,folder:d,size:x.size,sha:x.sha,addedAt:m.addedAt||"",_id:d+"/"+x.name})})}
+    LIVE.files=out;if(!quiet&&pgMsg==="Odświeżam listę…")pgMsg=""}
+  catch(e){if(!quiet){pgErr=true;pgMsg=e.message==="token"?"Token GitHuba jest nieważny — wklej nowy.":"Nie udało się odczytać listy plików z GitHuba (spróbuj za chwilę)."}}
+  finally{ghBusy=false;renderPodglad()}}
+function ghSetTok(t){ghTok=t||null;lsWrite("mmaGhTok",ghTok)}
+const b64=f=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result).split(",")[1]||"");r.onerror=no;r.readAsDataURL(f)});
+async function ghUpload(folder,files){pgErr=false;
+  for(const f of files){const path=folder+"/"+f.name;pgMsg="Wgrywam „"+f.name+"” na GitHuba…";renderPodglad();
+    try{if(f.size>25*1048576)throw {code:"too_large"};const old=LIVE.files.find(x=>x._id===path);
+      const r=await ghApi(path,{method:"PUT",body:JSON.stringify({message:"Podgląd: dodano "+path,content:await b64(f),branch:GH.branch,...(old&&old.sha?{sha:old.sha}:{})})});
+      if(r.status===401){ghSetTok(null);throw {code:"token"}}if(!r.ok)throw new Error(r.status);const j=await r.json();
+      LIVE.files=LIVE.files.filter(x=>x._id!==path).concat({name:f.name,folder,size:f.size,sha:j.content&&j.content.sha,addedAt:new Date().toISOString(),_id:path});
+      pgMsg=(old?"Podmieniono":"Dodano")+" „"+f.name+"” w katalogu "+folder+". Link „Otwórz” zadziała za ok. minutę (GitHub odświeża stronę)."}
+    catch(e){pgErr=true;pgMsg=e&&e.code==="too_large"?"Plik „"+f.name+"” jest za duży (limit 25 MB).":e&&e.code==="token"?"Token GitHuba jest nieważny lub bez prawa zapisu — wklej nowy.":"Nie udało się dodać „"+f.name+"”."}}
+  pgNewFolder="";renderPodglad()}
+async function pgUpload(folder,files){if(MODE!=="claude")return ghUpload(folder,files);if(!assets||!db)return;pgErr=false;
   for(const f of files){pgMsg="Wgrywam „"+f.name+"”…";renderPodglad();
     try{const r=await assets.upload(f);const id=(Date.now().toString(36)+Math.random().toString(36).slice(2,6));
       await db.doc("files/"+id).set({name:f.name,folder,assetId:r.id,size:r.sizeBytes||f.size,type:r.contentType||f.type,addedAt:new Date().toISOString()});pgMsg="Dodano „"+f.name+"” do katalogu "+folder+"."}
     catch(e){pgErr=true;pgMsg=e&&e.code==="too_large"?"Plik „"+f.name+"” jest za duży (limit 20 MB).":"Nie udało się dodać „"+f.name+"”. Spróbuj ponownie."}}
   pgNewFolder="";renderPodglad()}
 async function pgDelete(f){if(pgArm!==f._id){pgArm=f._id;renderPodglad();setTimeout(()=>{if(pgArm===f._id){pgArm="";renderPodglad()}},4000);return}
-  pgArm="";try{await db.doc("files/"+f._id).delete();try{await assets.delete(f.assetId)}catch(e){}pgMsg="Usunięto „"+f.name+"”.";pgErr=false}catch(e){pgMsg="Nie udało się usunąć pliku.";pgErr=true}renderPodglad()}
+  pgArm="";
+  if(MODE!=="claude"){if(!ghTok){window.open(ghWeb("delete",f._id),"_blank","noopener");pgMsg="Usuń plik na GitHubie (przycisk „Commit changes”), potem wróć i kliknij „Odśwież listę”.";pgErr=false;renderPodglad();return}
+    try{const r=await ghApi(f._id,{method:"DELETE",body:JSON.stringify({message:"Podgląd: usunięto "+f._id,sha:f.sha,branch:GH.branch})});
+      if(r.status===401){ghSetTok(null);throw 0}if(!r.ok)throw 0;LIVE.files=LIVE.files.filter(x=>x._id!==f._id);pgMsg="Usunięto „"+f.name+"”.";pgErr=false}
+    catch(e){pgMsg="Nie udało się usunąć pliku (odśwież listę i spróbuj ponownie).";pgErr=true}renderPodglad();return}
+  try{await db.doc("files/"+f._id).delete();try{await assets.delete(f.assetId)}catch(e){}pgMsg="Usunięto „"+f.name+"”.";pgErr=false}catch(e){pgMsg="Nie udało się usunąć pliku.";pgErr=true}renderPodglad()}
 async function pgSave(f){try{const b=await (await fetch(fileSrc(f))).blob();await saveFile(f.name,b)}catch(e){pgMsg="Nie udało się pobrać pliku.";pgErr=true;renderPodglad()}}
 function pgFolderEl(name,list){const pick=el("input",{type:"file",multiple:"",accept:".pdf,application/pdf,image/*,.csv,.txt,.md,.json",hidden:""});pick.addEventListener("change",()=>{if(pick.files.length)pgUpload(name,[...pick.files]);pick.value=""});
   const ico=document.createElementNS("http://www.w3.org/2000/svg","svg");ico.setAttribute("viewBox","0 0 24 24");ico.innerHTML='<path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H9l2 2.5h8.5A1.5 1.5 0 0 1 21 9v9.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/>';
   const head=el("div",{class:"pg-fhead"},ico,el("span",{text:name}),el("span",{class:"n",text:list.length+" "+plural(list.length,"plik","pliki","plików")}));
   if(assets&&MODE==="claude")head.append(pick,el("button",{type:"button",class:"pg-plus","aria-label":"Dodaj plik do katalogu "+name,title:"Dodaj plik",text:"+",onclick:()=>pick.click()}));
+  if(MODE!=="claude"&&ghManage)head.append(pick,el("button",{type:"button",class:"pg-plus","aria-label":"Dodaj plik do katalogu "+name,title:"Dodaj plik",text:"+",
+    onclick:()=>{if(ghTok)pick.click();else{window.open(ghWeb("upload",name),"_blank","noopener");pgMsg="Przeciągnij plik na stronie GitHuba i kliknij „Commit changes”, potem wróć i kliknij „Odśwież listę”.";pgErr=false;renderPodglad()}}}));
   const box=el("div",{class:"pg-folder"},head);
-  if(!list.length)box.append(el("div",{class:"pg-empty",text:"Katalog jest pusty."+(assets?" Kliknij +, żeby dodać plik.":"")}));
+  if(!list.length)box.append(el("div",{class:"pg-empty",text:"Katalog jest pusty."+(assets||ghManage?" Kliknij +, żeby dodać plik.":"")}));
   list.sort((a,b)=>(b.addedAt||"").localeCompare(a.addedAt||"")).forEach(f=>{const ext=(f.name.split(".").pop()||"").toUpperCase().slice(0,4);const src=fileSrc(f);
     const acts=el("div",{class:"pg-acts"},el("a",{class:"pg-btn pri",href:src,target:"_blank",rel:"noopener",text:"Otwórz w nowej karcie"}));
     if(downloads)acts.append(el("button",{type:"button",class:"pg-btn",text:"Pobierz",onclick:()=>pgSave(f)}));
-    if(assets&&canEdit)acts.append(el("button",{type:"button",class:"pg-btn del"+(pgArm===f._id?" armed":""),text:pgArm===f._id?"Potwierdź usunięcie":"Usuń",onclick:()=>pgDelete(f)}));
+    if((assets&&canEdit)||(MODE!=="claude"&&ghManage))acts.append(el("button",{type:"button",class:"pg-btn del"+(pgArm===f._id?" armed":""),text:pgArm===f._id?"Potwierdź usunięcie":"Usuń",onclick:()=>pgDelete(f)}));
     box.append(el("div",{class:"pg-file"},el("span",{class:"ic",text:ext}),el("div",{class:"nm"},el("b",{text:f.name}),el("small",{text:[f.size?fmtSize(f.size):"",f.addedAt?"dodano "+fmtDate(f.addedAt).full:""].filter(Boolean).join(" · ")})),acts))});
   return box}
 function renderPodglad(){const box=$("#pgBody");if(!box)return;box.replaceChildren();const w=el("div",{class:"pg"});
   const last=[...LIVE.entries.map(e=>e.date),...LIVE.files.map(f=>(f.addedAt||"").slice(0,10))].filter(Boolean).sort().pop();
   w.append(el("div",{class:"pg-head"},el("span",{class:"label",text:"Praca inżynierska · dr inż. Andrzej Plewa"}),el("h1",{text:"Podgląd wyników"}),el("p",{text:"AC 22 P KR3–KR4 z asfaltem 50/70 i lepiszczami pochodzenia roślinnego"+(last?" · stan na "+fmtDate(last).full:"")})));
   /* pliki */
-  const fs=el("section",{class:"pg-sec"},el("h2",{},"Pliki",el("small",{text:"otwierają się w nowej karcie"})));
+  const fs=el("section",{class:"pg-sec"},el("h2",{},"Pliki",el("small",{text:"otwierają się w nowej karcie"}),
+    MODE!=="claude"?el("button",{type:"button",class:"pg-btn pg-mng"+(ghManage?" on":""),text:ghManage?"Zakończ zarządzanie":"Zarządzaj plikami",
+      onclick:()=>{ghManage=!ghManage;lsWrite("mmaGhManage",ghManage?"1":null);pgMsg="";if(ghManage)ghList(true);else renderPodglad()}}):null));
+  if(MODE!=="claude"&&ghManage){const bar=el("div",{class:"pg-gh"});
+    if(ghTok)bar.append(el("span",{class:"ok",text:"✓ Połączono z GitHubem — dodawanie i usuwanie działa od razu na stronie."}),
+      el("button",{type:"button",class:"pg-btn",text:"Odśwież listę",onclick:()=>{pgMsg="Odświeżam listę…";pgErr=false;renderPodglad();ghList()}}),
+      el("button",{type:"button",class:"pg-btn del",text:"Rozłącz",onclick:()=>{ghSetTok(null);pgMsg="Rozłączono. Token usunięty z tej przeglądarki.";pgErr=false;renderPodglad()}}));
+    else{const ti=el("input",{type:"password",placeholder:"github_pat_…",value:ghTokIn,"aria-label":"Token GitHuba",autocomplete:"off"});ti.addEventListener("input",()=>ghTokIn=ti.value.trim());
+      bar.append(el("p",{text:"Bez tokenu + i „Usuń” otwierają GitHuba (trzeba być zalogowanym), a potem klikasz „Odśwież listę”. Żeby robić to jednym kliknięciem tutaj, wklej jednorazowo token — zostaje tylko w tej przeglądarce."}),
+        el("div",{class:"pg-newf"},ti,el("button",{type:"button",class:"pg-btn pri",text:"Połącz",onclick:()=>{if(!ghTokIn)return;ghSetTok(ghTokIn);ghTokIn="";pgMsg="Sprawdzam token…";pgErr=false;renderPodglad();ghList().then(()=>{if(ghTok&&pgMsg==="Sprawdzam token…")pgMsg="Połączono z GitHubem."})}}),
+          el("button",{type:"button",class:"pg-btn",text:"Odśwież listę",onclick:()=>{pgMsg="Odświeżam listę…";pgErr=false;renderPodglad();ghList()}})),
+        el("details",{},el("summary",{text:"Jak zrobić token (2 min)"}),el("ol",{},
+          el("li",{},"Otwórz ",el("a",{href:"https://github.com/settings/personal-access-tokens/new",target:"_blank",rel:"noopener",text:"github.com → nowy token (fine-grained)"}),"."),
+          el("li",{text:"Nazwa np. „strona-pliki”, ważność dowolna (np. 1 rok)."}),
+          el("li",{text:"Repository access: Only select repositories → Strona-internetowa---praca-in-ynierska."}),
+          el("li",{text:"Permissions → Repository permissions → Contents: Read and write."}),
+          el("li",{text:"Generate token, skopiuj i wklej powyżej."}))))}
+    fs.append(bar)}
   const folders={pdf:[]};LIVE.files.forEach(f=>(folders[f.folder||"pdf"]=folders[f.folder||"pdf"]||[]).push(f));
   const fl=el("div",{class:"pg-files"});Object.keys(folders).sort((a,b)=>a==="pdf"?-1:b==="pdf"?1:a.localeCompare(b,"pl")).forEach(k=>fl.append(pgFolderEl(k,folders[k])));fs.append(fl);
-  if(assets&&MODE==="claude"){const inp=el("input",{type:"text",id:"pgNewFolder",placeholder:"nazwa nowego katalogu",value:pgNewFolder,"aria-label":"Nazwa nowego katalogu"});inp.addEventListener("input",()=>pgNewFolder=inp.value);
+  if((assets&&MODE==="claude")||(MODE!=="claude"&&ghManage&&ghTok)){const inp=el("input",{type:"text",id:"pgNewFolder",placeholder:"nazwa nowego katalogu",value:pgNewFolder,"aria-label":"Nazwa nowego katalogu"});inp.addEventListener("input",()=>pgNewFolder=inp.value);
     const pick=el("input",{type:"file",multiple:"",hidden:"",accept:".pdf,application/pdf,image/*,.csv,.txt,.md,.json"});pick.addEventListener("change",()=>{const n=(pgNewFolder||"").trim();if(n&&pick.files.length)pgUpload(n,[...pick.files]);pick.value=""});
     fs.append(el("div",{class:"pg-newf"},el("span",{text:"Nowy katalog:"}),inp,pick,el("button",{type:"button",class:"pg-btn",text:"+ dodaj plik do nowego katalogu",onclick:()=>{if(!(pgNewFolder||"").trim()){pgMsg="Wpisz najpierw nazwę katalogu.";pgErr=true;renderPodglad();return}pick.click()}})))}
   if(pgMsg)fs.append(el("p",{class:"pg-msg"+(pgErr?" err":""),role:"status",text:pgMsg}));
@@ -894,11 +952,11 @@ async function calcSync(){if(calcBusy)return;const snap=calcSnap();if(snap===cal
 /* ---------- dane ---------- */
 async function startPliki(){
   try{const r=await fetch("dane/dziennik.json",{cache:"no-cache"});if(!r.ok)throw new Error(r.status);const j=await r.json();
-    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];LIVE.plan=Array.isArray(j.plan)?j.plan:[];LIVE.binders=Array.isArray(j.binders)?j.binders:[];LIVE.aggregates=Array.isArray(j.aggregates)?j.aggregates:[];LIVE.files=Array.isArray(j.files)?j.files:[];S.loaded=true}
+    LIVE.entries=Array.isArray(j.entries)?j.entries:[];LIVE.mixes=Array.isArray(j.mixes)?j.mixes:[];LIVE.plan=Array.isArray(j.plan)?j.plan:[];LIVE.binders=Array.isArray(j.binders)?j.binders:[];LIVE.aggregates=Array.isArray(j.aggregates)?j.aggregates:[];LIVE.files=Array.isArray(j.files)?j.files:[];LIVE.filesJson=LIVE.files;S.loaded=true}
   catch(e){S.err="Nie znaleziono pliku dane/dziennik.json obok strony."}
   show()}
 async function start(){route();show();
-  if(MODE==="pliki")return startPliki();
+  if(MODE==="pliki"){ghTok=lsRead("mmaGhTok");ghManage=lsRead("mmaGhManage")==="1";await startPliki();return ghList(true)}
   db=await claude.use("db");
   if(!db){S.err="Otwórz stronę zalogowany do claude.ai.";show();return}
   downloads=await claude.use("downloads");
