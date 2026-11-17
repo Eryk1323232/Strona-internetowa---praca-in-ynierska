@@ -2204,6 +2204,32 @@
    ],
    "conclusions": "Szacowane Vm: ok. 5,5 % i 4,9 %. Do uzupełnienia: rzeczywiste masy asfaltu, temperatury. 3,85 % w MMA jest poniżej Bmin 4,0 % (MASA/PZDW), powyżej 3,8 % (WT-2 2010) — do potwierdzenia z promotorem. PDF: pdf/Nawazki_asfalt_17-11.pdf.",
    "photos": []
+  },
+  {
+   "_id": "2026-11-17-plan-z-promotorem",
+   "createdAt": "2026-11-17T11:15:00Z",
+   "date": "2026-11-17",
+   "stage": 1,
+   "source": "claude",
+   "type": "notatka",
+   "mix": "AC22P",
+   "title": "Ustalenia z promotorem: mieszanka referencyjna, potem lepiszcza olejowe i ITSR",
+   "description": "1. Najpierw mieszanka referencyjna AC 22 P z asfaltem 50/70 spełniająca wymagania (Vm).\n2. Potem ta sama naważka kruszywa, a zamiast asfaltu lepiszcza z dodatkiem olejów roślinnych. Dla mieszanek z olejem Vm nie musi spełniać wymagania.\n3. Na każde lepiszcze 10 próbek: 5 bez kondycjonowania i 5 po kondycjonowaniu w wodzie z cyklem zamrażania; następnie badanie niszczące (rozciąganie pośrednie, ITSR).\n4. Łącznie 50 próbek.",
+   "summary": [
+    {
+     "label": "Próbek na lepiszcze",
+     "unit": "szt.",
+     "value": "10 (5 + 5)"
+    },
+    {
+     "label": "Próbek łącznie",
+     "unit": "szt.",
+     "value": "50"
+    }
+   ],
+   "conclusions": "Do potwierdzenia: które 5 lepiszczy (prawdopodobnie L1 50/70 jako referencja + L3–L6; L2 nieudane), zamiana asfaltu na lepiszcze olejowe w tej samej masie czy objętości, zagęszczanie próbek do ITSR 2×35 (WT-2) czy 2×75, temperatury mieszania i zagęszczania lepiszczy olejowych, czy zostało dość każdego lepiszcza (ok. 0,5–0,6 kg na 10 próbek).",
+   "tables": [],
+   "photos": []
   }
  ],
  "mixes": [
