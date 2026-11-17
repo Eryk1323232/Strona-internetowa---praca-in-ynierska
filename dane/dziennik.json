@@ -2163,18 +2163,18 @@
    "type": "receptura",
    "mix": "AC22P",
    "test": "Projekt składu MMA",
-   "title": "Ustalenie promotora: asfalt 4 % ponad 100 % mieszanki mineralnej",
-   "description": "Promotor zaproponował 4 % asfaltu 50/70 liczone ponad 100 % mieszanki mineralnej (4 części asfaltu na 100 części kruszywa), tj. 3,85 % w MMA wg WT-2. W suszarce od 16.11 są dwie naważki kruszywa o uziarnieniu W1: 4785,0 g → 191,4 g asfaltu; 4800,0 g → 192,0 g. Wariant W4 (nowe kruszywo) nie był odważony.",
+   "title": "Zaroby 17.11: W1 z asfaltem 4,0 % i 4,3 % ponad 100 % mieszanki mineralnej",
+   "description": "Promotor zaproponował 4 % asfaltu 50/70 liczone ponad 100 % mieszanki mineralnej (kruszywa + mączka). Dwie naważki kruszywa W1 (w suszarce od 16.11): naważka 1 — 4785,0 g + 191,4 g asfaltu (4,0 % ponad 100 % = 3,85 % w MMA); naważka 2 — 4800,0 g + 206,4 g (4,3 % ponad 100 % = 4,12 % w MMA). Dla porównania zaroby z 16.11 w liczeniu ponad 100 %: W1 4,91 %, W2 5,04 %, W3 4,82 %.",
    "summary": [
     {
-     "label": "Asfalt ponad 100 % MM",
+     "label": "Naważka 1 — asfalt ponad 100 % / w MMA",
      "unit": "%",
-     "value": "4,0"
+     "value": "4,0 / 3,85"
     },
     {
-     "label": "Asfalt w MMA",
+     "label": "Naważka 2 — asfalt ponad 100 % / w MMA",
      "unit": "%",
-     "value": "3,85"
+     "value": "4,3 / 4,12"
     }
    ],
    "tables": [
@@ -2196,13 +2196,13 @@
       [
        "Naważka 2 — W1",
        "4800,0",
-       "192,0",
-       "4992,0"
+       "206,4",
+       "5006,4"
       ]
      ]
     }
    ],
-   "conclusions": "Do uzupełnienia: rzeczywiste masy asfaltu, temperatury. 3,85 % w MMA jest poniżej Bmin 4,0 % (MASA), powyżej 3,8 % (WT-2 2010) — do potwierdzenia z promotorem. PDF: pdf/Nawazki_asfalt_4proc_17-11.pdf.",
+   "conclusions": "Szacowane Vm: ok. 5,5 % i 4,9 %. Do uzupełnienia: rzeczywiste masy asfaltu, temperatury. 3,85 % w MMA jest poniżej Bmin 4,0 % (MASA/PZDW), powyżej 3,8 % (WT-2 2010) — do potwierdzenia z promotorem. PDF: pdf/Nawazki_asfalt_17-11.pdf.",
    "photos": []
   }
  ],
@@ -3987,11 +3987,11 @@
    "addedAt": "2026-11-16T17:30:00Z"
   },
   {
-   "name": "Nawazki_asfalt_4proc_17-11.pdf",
+   "name": "Nawazki_asfalt_17-11.pdf",
    "folder": "pdf",
-   "size": 30714,
+   "size": 30709,
    "type": "application/pdf",
-   "addedAt": "2026-11-17T07:40:00Z"
+   "addedAt": "2026-11-17T07:50:00Z"
   }
  ]
 }
