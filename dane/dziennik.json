@@ -1860,7 +1860,7 @@
      ]
     }
    ],
-   "conclusions": "WT-2 nie stawia wymagania dla samej ρmv — służy ona do obliczenia wolnej przestrzeni Vm próbek Marshalla każdego wariantu (wymaganie AC 22 P KR3–KR4: 4,0–7,0 %).\nWe wszystkich wariantach zmierzona ρmv jest wyższa od obliczonej o 0,7–1,5 %. Obliczenia opierają się na gęstości piasku 0/2 = 2,51 (wynik niepewny) — do powtórzenia oznaczenie 0/2.\nKażdy wariant ma jedno oznaczenie ρmv (jedna naważka); naważki ok. 860–935 g — sprawdzić wymaganą minimalną masę próbki dla D = 22 mm wg PN-EN 12697-5. Zawartość asfaltu W2 i W3 przyjęta projektowa (do potwierdzenia rzeczywistych mas asfaltu).",
+   "conclusions": "WT-2 nie stawia wymagania dla samej ρmv — służy ona do obliczenia wolnej przestrzeni Vm próbek Marshalla każdego wariantu (wymaganie AC 22 P KR3–KR4: 4,0–7,0 %).\nWe wszystkich wariantach zmierzona ρmv jest wyższa od obliczonej o 0,7–1,5 %. Obliczenia opierają się na gęstości piasku 0/2 = 2,51 (wynik niepewny) — do powtórzenia oznaczenie 0/2.\nKażdy wariant ma jedno oznaczenie ρmv (jedna naważka); naważki ok. 860–935 g — sprawdzić wymaganą minimalną masę próbki dla D = 22 mm wg PN-EN 12697-5. Zawartość asfaltu W2 i W3 przyjęta projektowa (do potwierdzenia rzeczywistych mas asfaltu).\n18.11: decyzja Eryka — warianty W1–W3 z 16.11 pominięte w dalszej analizie; do pracy brane tylko naważki A1 i A2 (17.11).",
    "photos": [
     {
      "id": "1611-rmv1-m2",
@@ -2061,7 +2061,7 @@
      ]
     }
    ],
-   "conclusions": "Żaden wariant nie spełnia Vm 4,0–7,0 % — mieszanki za szczelne, za dużo asfaltu (tylko W1-3 4,1 %). Obniżenie asfaltu o 0,5 pp podnosi Vm o ok. 1,1–1,2 pp; dla W1 ok. 4,2–4,3 % asfaltu. Proponowana seria 4,0 / 4,3 / 4,6 % z ρmv dla każdej zawartości. W3 — wynik orientacyjny (1 próbka). W2-1 odstaje (h 62,4 mm, Vm 2,2 %). W1-1: h3 przyjęte 64,19 (zapis „94,19”). Zestawienie w PDF pdf/Nawazki_W1_W2_W3.pdf (wysłane prowadzącemu 16.11).",
+   "conclusions": "Żaden wariant nie spełnia Vm 4,0–7,0 % — mieszanki za szczelne, za dużo asfaltu (tylko W1-3 4,1 %). Obniżenie asfaltu o 0,5 pp podnosi Vm o ok. 1,1–1,2 pp; dla W1 ok. 4,2–4,3 % asfaltu. Proponowana seria 4,0 / 4,3 / 4,6 % z ρmv dla każdej zawartości. W3 — wynik orientacyjny (1 próbka). W2-1 odstaje (h 62,4 mm, Vm 2,2 %). W1-1: h3 przyjęte 64,19 (zapis „94,19”). Zestawienie w PDF pdf/Nawazki_W1_W2_W3.pdf (wysłane prowadzącemu 16.11).\n18.11: decyzja Eryka — warianty W1–W3 z 16.11 pominięte w dalszej analizie; do pracy brane tylko naważki A1 i A2 (17.11).",
    "photos": []
   },
   {
@@ -4192,11 +4192,11 @@
    "addedAt": "2026-11-18T09:20:00Z"
   },
   {
-   "name": "Wolne_przestrzenie_stan_18-11.pdf",
+   "name": "Wolne_przestrzenie_A1_A2_18-11.pdf",
    "folder": "pdf",
-   "size": 40247,
+   "size": 37592,
    "type": "application/pdf",
-   "addedAt": "2026-11-18T13:30:00Z"
+   "addedAt": "2026-11-18T13:35:00Z"
   }
  ]
 }
