@@ -2242,12 +2242,12 @@
    "test": "Wolna przestrzeń Vm",
    "norm": "PN-EN 12697-5, -6 (metoda B), -8",
    "title": "W1 z obniżonym asfaltem: ρmv i Vm (naważki 1 i 2, 17.11)",
-   "description": "Kruszywo W1. Naważka 1: kruszywo 4673 g + asfalt 194 g (4,15 % ponad 100 % MM; 3,99 % w MMA), piknometr 2. Naważka 2: kruszywo 4840 g + asfalt 205 g (4,24 % / 4,06 %), piknometr 3. Waga do asfaltu AXIS B30 (d = 1 g, odczyt skakał ±2 g). Puste piknometry przyjęte z 16.11. Próbki Marshalla 2×75, A1.1 zagęszczana w 145 °C (pozostałe temperatury nie zapisane). Woda przy ważeniu próbek 20,2 °C.",
+   "description": "Kruszywo W1. Naważka 1: kruszywo 4673 g + asfalt 194 g (4,15 % ponad 100 % MM; 3,99 % w MMA), piknometr 2. Naważka 2: kruszywo 4840 g + asfalt 205 g (4,24 % / 4,06 %), piknometr 3. Waga do asfaltu AXIS B30 (d = 1 g, odczyt skakał ±2 g). Puste piknometry wg notatek Eryka: 769,54 g (2) i 702,87 g (3). Próbki Marshalla 2×75, A1.1 zagęszczana w 145 °C (pozostałe temperatury nie zapisane). Woda przy ważeniu próbek 20,2 °C.",
    "summary": [
     {
      "label": "Naważka 1 — ρmv (niewiarygodna)",
      "unit": "Mg/m³",
-     "value": "2,414"
+     "value": "2,411"
     },
     {
      "label": "Naważka 2 — ρmv",
@@ -2277,21 +2277,21 @@
       [
        "1",
        "2",
-       "768,67",
+       "769,54",
        "1705,56",
        "2622,22",
-       "22,2",
-       "936,89",
-       "2,414"
+       "22,22",
+       "936,02",
+       "2,411"
       ],
       [
        "2",
        "3",
-       "702,76",
+       "702,87",
        "1591,52",
        "2560,19",
        "22,6",
-       "888,76",
+       "888,65",
        "2,464"
       ]
      ]
@@ -2321,7 +2321,7 @@
        "1168,4",
        "1,20",
        "2,401",
-       "0,5*",
+       "0,4*",
        "9,8*",
        "95*"
       ],
@@ -2334,7 +2334,7 @@
        "1174,9",
        "2,21",
        "2,374",
-       "1,7*",
+       "1,6*",
        "10,8*",
        "85*"
       ],
@@ -2347,7 +2347,7 @@
        "1175,3",
        "0,64",
        "2,430",
-       "−0,7*",
+       "−0,8*",
        "8,7*",
        "—"
       ],
@@ -2393,7 +2393,7 @@
      ]
     }
    ],
-   "conclusions": "* Naważka 1: ρmv 2,414 niemożliwa — niższa od obliczonej (2,475) i od naważki 2 mimo mniejszej zawartości asfaltu (powinna być wyższa, ok. 2,49). Prawdopodobnie powietrze w piknometrze lub błąd m3. Vm A1.x nie do oceny; przy ρmv ok. 2,49 wyszłoby ok. 3,5 %.\nA1.3: masa w wodzie 693,7 g nie pasuje (gęstość z wymiarów najniższa w serii, z ważenia najwyższa) — możliwa pomyłka zapisu (np. 683,7 → ρbssd 2,380).\nNaważka 2: Vm średnio 4,1 % (3,8–4,3) — na dolnej granicy wymagania; ρmv 2,464 też raczej zaniżona (oczekiwana ok. 2,49–2,50), więc rzeczywiste Vm prawdopodobnie wyższe.\nA2.1 h = 66,71 mm — poza 61,0–66,0.\nDo ustalenia: czy masy suche ważone przed moczeniem, czy po suszeniu w 40 °C.",
+   "conclusions": "* Naważka 1: ρmv 2,411 niemożliwa — niższa od obliczonej (2,475) i od naważki 2 mimo mniejszej zawartości asfaltu (powinna być wyższa, ok. 2,49). Prawdopodobnie powietrze w piknometrze lub błąd m3. Vm A1.x nie do oceny; przy ρmv obliczonej 2,475 wychodzi ok. 3,0 %; brakuje ok. 10 g w m3 względem obliczonej.\nA1.3: masa w wodzie 693,7 g nie pasuje (gęstość z wymiarów najniższa w serii, z ważenia najwyższa) — możliwa pomyłka zapisu (np. 683,7 → ρbssd 2,380).\nNaważka 2: Vm średnio 4,1 % (3,7–4,3); ρmv 2,464 zgodna z obliczoną 2,472 — wynik wiarygodny.\nA2.1 h = 66,71 mm — poza 61,0–66,0.\nDo ustalenia: czy masy suche ważone przed moczeniem, czy po suszeniu w 40 °C.\n18.11: dane sprawdzone z notatkami Eryka (PDF) — wszystkie wartości zgodne poza masami pustych piknometrów; korekta zmienia ρmv o −0,002.",
    "photos": []
   }
  ],
