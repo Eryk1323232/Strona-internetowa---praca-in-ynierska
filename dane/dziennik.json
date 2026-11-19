@@ -2467,6 +2467,60 @@
    ],
    "conclusions": "Do uzupełnienia: rzeczywiste masy kruszywa i asfaltu w zarobach, przeznaczenie próbek (Vm / ITSR), liczba uderzeń.",
    "photos": []
+  },
+  {
+   "_id": "2026-11-19-gestosc-maksymalna-powtorka",
+   "createdAt": "2026-11-19T15:45:00Z",
+   "date": "2026-11-19",
+   "stage": 3,
+   "source": "claude",
+   "type": "badanie",
+   "mix": "AC22P",
+   "test": "Gęstość maksymalna MMA",
+   "norm": "PN-EN 12697-5 (metoda A)",
+   "title": "Powtórzenie ρmv z rozbitych próbek A1.3 i A2.1",
+   "description": "Próbki Marshalla A1.3 (naważka 1) i A2.1 (naważka 2) podgrzane i rozdrobnione. Zapis: A1.3 — piknometr 2, pusty 702,80 g, z mieszanką 1782,40 g, z wodą 2678,77 g, woda 23,6 °C; A2.1 — piknometr 3, pusty 768,62 g, z mieszanką 1761,41 g, z wodą 2678,66 g, woda 23,9 °C. Masy pustych wskazują na zamianę: 702,80 g to masa butli SCHOTT (3), 768,62 g to butla 2. Według Eryka piknometr 2 był składany ze złą szyjką (nasadką), zostało powietrze.",
+   "summary": [
+    {
+     "label": "A1.3 — ρmv (prawdopodobna)",
+     "unit": "Mg/m³",
+     "value": "2,484–2,494"
+    },
+    {
+     "label": "A2.1 — ρmv (odrzucona)",
+     "unit": "Mg/m³",
+     "value": "2,56–2,57"
+    }
+   ],
+   "tables": [
+    {
+     "caption": "ρmv w zależności od przypisania butli [Mg/m³]",
+     "columns": [
+      "Wariant przypisania",
+      "A1.3",
+      "A2.1"
+     ],
+     "rows": [
+      [
+       "Jak w notatkach",
+       "2,645",
+       "2,410"
+      ],
+      [
+       "Wg masy butli (A1.3 w butli 3, A2.1 w butli 2)",
+       "2,494",
+       "2,564"
+      ],
+      [
+       "Puste masy zamienione w notatkach",
+       "2,484",
+       "2,570"
+      ]
+     ]
+    }
+   ],
+   "conclusions": "Tylko A1.3 daje wartość realną (2,48–2,49, zgodną z oczekiwaną). A2.1 niemożliwa (> 2,55) — pomiar w butli 2 ze złą nasadką odrzucony. Szacunkowo: Vm A1 ok. 3,3–3,7 % (poniżej 4,0); Vm A2 (ρmv A1 − 0,003) ok. 4,7–5,1 % — w wymaganiu. Do potwierdzenia: która butla i nasadka były przy której próbce.",
+   "photos": []
   }
  ],
  "mixes": [
