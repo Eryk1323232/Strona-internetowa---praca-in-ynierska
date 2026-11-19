@@ -2479,47 +2479,114 @@
    "test": "Gęstość maksymalna MMA",
    "norm": "PN-EN 12697-5 (metoda A)",
    "title": "Powtórzenie ρmv z rozbitych próbek A1.3 i A2.1",
-   "description": "Próbki Marshalla A1.3 (naważka 1) i A2.1 (naważka 2) podgrzane i rozdrobnione. Zapis: A1.3 — piknometr 2, pusty 702,80 g, z mieszanką 1782,40 g, z wodą 2678,77 g, woda 23,6 °C; A2.1 — piknometr 3, pusty 768,62 g, z mieszanką 1761,41 g, z wodą 2678,66 g, woda 23,9 °C. Masy pustych wskazują na zamianę: 702,80 g to masa butli SCHOTT (3), 768,62 g to butla 2. Według Eryka piknometr 2 był składany ze złą szyjką (nasadką), zostało powietrze.",
+   "description": "Próbki Marshalla A1.3 (naważka 1) i A2.1 (naważka 2) podgrzane i rozdrobnione. A1.3 — piknometr 2: pusty 768,62 g, z mieszanką 1782,40 g, z wodą 2678,77 g, woda 23,6 °C. A2.1 — piknometr 3: pusty 702,80 g, z mieszanką 1761,41 g, z wodą 2678,66 g, woda 23,9 °C. (Masy pustych w notatkach były zapisane na odwrót — potwierdzone przez Eryka.)",
    "summary": [
     {
-     "label": "A1.3 — ρmv (prawdopodobna)",
+     "label": "A1.3 — ρmv",
      "unit": "Mg/m³",
-     "value": "2,484–2,494"
+     "value": "2,484"
     },
     {
      "label": "A2.1 — ρmv (odrzucona)",
      "unit": "Mg/m³",
-     "value": "2,56–2,57"
+     "value": "2,570"
+    },
+    {
+     "label": "A1 — Vm",
+     "unit": "%",
+     "value": "3,3"
+    },
+    {
+     "label": "A2 — Vm (szac.)",
+     "unit": "%",
+     "value": "4,7"
     }
    ],
    "tables": [
     {
-     "caption": "ρmv w zależności od przypisania butli [Mg/m³]",
+     "caption": "Gęstość maksymalna 19.11",
      "columns": [
-      "Wariant przypisania",
-      "A1.3",
-      "A2.1"
+      "Próbka",
+      "Piknometr",
+      "m1 [g]",
+      "m2 [g]",
+      "m3 [g]",
+      "t [°C]",
+      "Mieszanka [g]",
+      "ρmv [Mg/m³]"
      ],
      "rows": [
       [
-       "Jak w notatkach",
-       "2,645",
-       "2,410"
+       "A1.3",
+       "2",
+       "768,62",
+       "1782,40",
+       "2678,77",
+       "23,6",
+       "1013,78",
+       "2,484"
       ],
       [
-       "Wg masy butli (A1.3 w butli 3, A2.1 w butli 2)",
-       "2,494",
-       "2,564"
-      ],
+       "A2.1",
+       "3",
+       "702,80",
+       "1761,41",
+       "2678,66",
+       "23,9",
+       "1058,61",
+       "2,570*"
+      ]
+     ]
+    },
+    {
+     "caption": "Vm z nowej ρmv",
+     "columns": [
+      "Próbka",
+      "ρbssd",
+      "ρmv",
+      "Vm [%]"
+     ],
+     "rows": [
       [
-       "Puste masy zamienione w notatkach",
+       "A1.1",
+       "2,401",
        "2,484",
-       "2,570"
+       "3,3"
+      ],
+      [
+       "A1.2",
+       "2,373",
+       "2,484",
+       "4,4"
+      ],
+      [
+       "A1.3",
+       "2,430",
+       "2,484",
+       "2,2"
+      ],
+      [
+       "A2.1",
+       "2,357",
+       "2,481 (szac.)",
+       "5,0"
+      ],
+      [
+       "A2.2",
+       "2,363",
+       "2,481 (szac.)",
+       "4,8"
+      ],
+      [
+       "A2.3",
+       "2,371",
+       "2,481 (szac.)",
+       "4,4"
       ]
      ]
     }
    ],
-   "conclusions": "Tylko A1.3 daje wartość realną (2,48–2,49, zgodną z oczekiwaną). A2.1 niemożliwa (> 2,55) — pomiar w butli 2 ze złą nasadką odrzucony. Szacunkowo: Vm A1 ok. 3,3–3,7 % (poniżej 4,0); Vm A2 (ρmv A1 − 0,003) ok. 4,7–5,1 % — w wymaganiu. Do potwierdzenia: która butla i nasadka były przy której próbce.",
+   "conclusions": "A1.3: ρmv 2,484 — wiarygodna (zgodna z oczekiwaną; objętość piknometru 2 z kalibracji pasuje). Potwierdza, że ρmv z 16–17.11 były zaniżone przez słabą próżnię.\n* A2.1: 2,570 niemożliwa — prawdopodobnie woda powyżej kreski (w lejku) lub zła nasadka; odrzucona.\nVm A1 śr. 3,3 % (2,2–4,4) — poniżej wymagania (próbki mocniej zagęszczone). Vm A2 śr. ok. 4,7 % (4,4–5,0) przy ρmv = 2,484 − 0,003 (więcej asfaltu) — w wymaganiu. A2 = mieszanka referencyjna.",
    "photos": []
   }
  ],
